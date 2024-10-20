@@ -12,7 +12,7 @@ title                    : "Ghazaleh's Homepage"
 title_separator          : "-"
 name                     : &name "Ghazaleh Mohseni"
 description              : &description "personal description"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://ghazzaale.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Ghazzaale/Ghazzaale.github.io"
 
