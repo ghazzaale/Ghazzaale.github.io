@@ -8,6 +8,6 @@ title: "About me"
    - /about.html
  ---
 
-This is Dr. Test Account's home on the web!
+This is Test Account's home on the web!
 
 
