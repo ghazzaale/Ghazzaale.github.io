@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "About me"
+title                    : "Ghazaleh's Homepage"
 title_separator          : "-"
 name                     : &name "Ghazaleh Mohseni"
 description              : &description "personal description"
