@@ -15,7 +15,7 @@ I am a PhD candidate in Transportation Engineering at the York University workin
 
 Alongside this, I develop advanced data analysis, visualization, and planning tools that incorporate principles from Machine Learning and Operations Research, aimed at improving decision-making in the transportation sector. In addition to my doctoral research, I engage in various side projects including the electrification of transportation systems, automated speed enforcement, and optimizing last-mile logistics. A brief summary of each project can be found in the Projects section of this website.
 
-In my free time, I enjoy playing online games and reading, particularly fiction.
+In my free time, I enjoy playing online games and reading books, particularly fiction!
 
 Let's connect if you have any feedback or new idea!
 
