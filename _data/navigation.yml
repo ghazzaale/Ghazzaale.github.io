@@ -7,24 +7,17 @@
 main:
   - title: "Projects"
     url: /projects/
-
   - title: "Publications"
-    url: /publications/    
-
- - title: "Conferences"
+    url: /publications/
+  - title: "Conferences"
     url: /talks/
-    
   - title: "Teaching"
-    url: /teaching/    
-    
+    url: /teaching/
   - title: "Portfolio"
     url: /portfolio/
-        
-  # - title: "Blog Posts"
-  #   url: /year-archive/
-    
   - title: "CV"
     url: /cv/
-    
+  # - title: "Blog Posts"
+  #   url: /year-archive/
   # - title: "Guide"
   #   url: /markdown/
