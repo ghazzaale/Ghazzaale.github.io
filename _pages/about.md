@@ -8,5 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-This is Test Account's home on the web!
+Hi! 
+I am a PhD candidate in Transportation Engineering at the York University working under supervision of Dr. Mehdi Nourinejad and Dr.Peter Park. My academic journey began with a Bachelor of Science in Civil Engineering, followed by a Master's degree in Transportation Systems Engineering. My PhD research thesis focuses on data-driven optimization of bike-share networks, exploring the intersections of sustainability, economic efficiency, and equity in transportation.
+Alongside this, I develop advanced data analysis, visualization, and planning tools that incorporate principles from Machine Learning and Operations Research, aimed at improving decision-making in the transportation sector. In addition to my doctoral research, I engage in various side projects including the electrification of transportation systems, automated speed enforcement, and optimizing last-mile logistics.
+
+Check out our lab developments : https://interactive-or.net/
 
