@@ -1,5 +1,5 @@
 ---
-permalink: /
+layout: archive
 title: "Portfolio"
 excerpt: "Portfolio"
 author_profile: true
