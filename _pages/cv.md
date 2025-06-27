@@ -63,10 +63,10 @@ redirect_from:
 
 <h2>Honors and Awards</h2>
 <ul>
-  <li><strong>2025:</strong> Women in Transportation (WTS) Canadian Education Foundation – Accessible Communities Scholarship. (<a href="#" target="_blank">Link</a>)</li>
-  <li><strong>2025:</strong> Semi-Finalist, Innovative Applications in Analytics Award (IAAA), INFORMS – Recognized for developing an advanced analytics-driven solution integrating deep learning and optimization modeling. (<a href="#" target="_blank">Link</a>)</li>
-  <li><strong>2024:</strong> Finalist in TRB Transit Data Challenge: Innovative Analytical Tools to Improve Public Transit. (<a href="#" target="_blank">Link</a>)</li>
-  <li><strong>2023:</strong> ITE Innovation Award of the Year – Issued at ITE Toronto AGM and ITE Christmas Luncheon. (<a href="#" target="_blank">Link 1</a>, <a href="#" target="_blank">Link 2</a>)</li>
+  <li><strong>2025:</strong> Women in Transportation (WTS) Canadian Education Foundation – Accessible Communities Scholarship. </li>
+  <li><strong>2025:</strong> Semi-Finalist, Innovative Applications in Analytics Award (IAAA), INFORMS – Recognized for developing an advanced analytics-driven solution integrating deep learning and optimization modeling. </li>
+  <li><strong>2024:</strong> Finalist in TRB Transit Data Challenge: Innovative Analytical Tools to Improve Public Transit. </li>
+  <li><strong>2023:</strong> ITE Innovation Award of the Year – Issued at ITE Toronto AGM and ITE Christmas Luncheon.</li>
 </ul>
 
 <h2>Volunteering</h2>
