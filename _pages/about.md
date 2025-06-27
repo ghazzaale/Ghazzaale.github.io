@@ -10,7 +10,7 @@ redirect_from:
 
 <div style="text-align: justify; margin-bottom: 20px;">
 
-I am a PhD candidate in Transportation Engineering at York University, affiliated with the <a href="https://interactive-or.net/" target="_blank" rel="noopener noreferrer"> <em>Interactive-OR Lab</em></a>. I have been fortunate to work under the supervision of <a href="https://www.linkedin.com/in/mehdi-nourinejad-a0040843/" target="_blank" rel="noopener noreferrer">Dr. Mehdi Nourinejad</a> (supervisor), who is also an Amazon Scholar, and Dr. Peter Park (co-supervisor).  My research focuses on shared micromobility systems, particularly the design and optimization of bike-sharing and e-bike networks. I work at the intersection of data science, optimization, and transportation systems, developing models and tools that support sustainable, equitable, and operationally viable mobility solutions.
+I am a PhD candidate in Transportation Engineering at York University, affiliated with the <a href="https://interactive-or.net/" target="_blank" rel="noopener noreferrer">Interactive-OR Lab</a>. I have been fortunate to work under the supervision of <a href="https://www.linkedin.com/in/mehdi-nourinejad-a0040843/" target="_blank" rel="noopener noreferrer">Dr. Mehdi Nourinejad</a> (supervisor), who is also an Amazon Scholar, and Dr. Peter Park (co-supervisor).  My research focuses on shared micromobility systems, particularly the design and optimization of bike-sharing and e-bike networks. I work at the intersection of data science, optimization, and transportation systems, developing models and tools that support sustainable, equitable, and operationally viable mobility solutions.
 
 <br>
 </div>
