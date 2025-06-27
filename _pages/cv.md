@@ -11,14 +11,14 @@ redirect_from:
 
 <div style="font-size: 14px; font-family: 'Georgia', serif; text-align: justify;">
 
-<h2>Education</h2>
+<h2 style="font-size: 16px; font-family: 'Georgia', serif;">Education</h2>
 <ul>
   <li><strong>Ph.D. in Transportation Engineering</strong>, York University, 2025 (expected)</li>
   <li><strong>M.Sc. in Transportation Engineering</strong>, Sharif University of Technology, 2017</li>
   <li><strong>B.Sc. in Civil Engineering</strong>, Isfahan University of Technology, 2014</li>
 </ul>
 
-<h2>Work Experience (Canada)</h2>
+<h2 style="font-size: 16px; font-family: 'Georgia', serif;">Work Experience (Canada)</h2>
 <ul>
   <li><strong>Mitacs Business Strategy Intern</strong>, Lassonde School of Engineering – York University (Jan 2025 – Present)
     <ul>
@@ -51,7 +51,7 @@ redirect_from:
   </li>
 </ul>
 
-<h2>Skills</h2>
+<h2 style="font-size: 16px; font-family: 'Georgia', serif;">Skills</h2>
 <ul>
   <li><strong>Programming & Data:</strong> Python, JavaScript, R, SQL, C++, MATLAB, REST APIs, Git/GitHub</li>
   <li><strong>Machine Learning:</strong> TensorFlow, PyTorch, Graph Neural Networks, demand forecasting</li>
@@ -61,7 +61,7 @@ redirect_from:
   <li><strong>Soft Skills:</strong> Project Management, Problem Solving, Cross-Functional Collaboration, Technical Communication</li>
 </ul>
 
-<h2>Honors and Awards</h2>
+<h2 style="font-size: 16px; font-family: 'Georgia', serif;">Honors and Awards</h2>
 <ul>
   <li><strong>2025:</strong> Women in Transportation (WTS) Canadian Education Foundation – Accessible Communities Scholarship. </li>
   <li><strong>2025:</strong> Semi-Finalist, Innovative Applications in Analytics Award (IAAA), INFORMS – Recognized for developing an advanced analytics-driven solution integrating deep learning and optimization modeling. </li>
@@ -69,7 +69,7 @@ redirect_from:
   <li><strong>2023:</strong> ITE Innovation Award of the Year – Issued at ITE Toronto AGM and ITE Christmas Luncheon.</li>
 </ul>
 
-<h2>Volunteering</h2>
+<h2 style="font-size: 16px; font-family: 'Georgia', serif;">Volunteering</h2>
 <ul>
   <li><strong>2022–2023:</strong> Graduate Representative – Adjudication Committee, Civil Engineering Department, York University
     <ul>
