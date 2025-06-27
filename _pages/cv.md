@@ -31,7 +31,7 @@ redirect_from:
   <li><strong>Graduate Research Assistant</strong>, Lassonde School of Engineering – York University (Sep 2021 – Present)
     <ul>
       <li>Researcher and product developer with the Interactive-OR Lab, contributing to projects in micromobility, emergency response, transit electrification, and urban safety planning.</li>
-      <li>Led development of data-driven tools and optimization models using technologies such as AWS, Mapbox, Firebase, and GNNs.</li>
+      <li>Led development of data-driven tools and optimization models.</li>
     </ul>
   </li>
 
