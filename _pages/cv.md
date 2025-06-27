@@ -30,11 +30,31 @@ redirect_from:
 </ul>
 
 <h2>Skills</h2>
-<ul>
-  <li><strong>Optimization Modeling</strong>: MIP/LP, Continuum Approximation, Heuristics</li>
-  <li><strong>Data Science & Machine Learning</strong>: Python, scikit-learn, GNNs, Markov models</li>
-  <li><strong>Geospatial & Tool Development</strong>: Mapbox, Leaflet, WebAssembly (GLPK.js), Firebase, AWS</li>
-  <li><strong>Visualization & Communication</strong>: D3.js, Plotly, academic writing, dashboarding</li>
-</ul>
+<table style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <td><strong>Programming & Data</strong></td>
+    <td>Python, JavaScript, R, SQL, C++, MATLAB, REST APIs, Git/GitHub</td>
+  </tr>
+  <tr>
+    <td><strong>Machine Learning</strong></td>
+    <td>TensorFlow, PyTorch, Graph Neural Networks, demand forecasting</td>
+  </tr>
+  <tr>
+    <td><strong>Optimization & Operations Research</strong></td>
+    <td>Mathematical Optimization (LP/MIP), Deep Learning, Operations Research, Large-scale model design</td>
+  </tr>
+  <tr>
+    <td><strong>Product Development & Cloud Deployment</strong></td>
+    <td>Web-based decision support tools, React, HTML/CSS, AWS (Lambda, S3), Firebase, Google Cloud Platform, WebAssembly solvers</td>
+  </tr>
+  <tr>
+    <td><strong>GIS & Spatial Analysis</strong></td>
+    <td>Mapbox, ArcGIS, TransCAD, PTV Vissim/Vissum, AutoCAD, Civil 3D, Arena</td>
+  </tr>
+  <tr>
+    <td><strong>Soft Skills</strong></td>
+    <td>Project Management, Problem Solving, Cross-Functional Collaboration, Technical Communication</td>
+  </tr>
+</table>
 
 </div>
