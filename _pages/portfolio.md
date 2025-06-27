@@ -10,7 +10,7 @@ redirect_from:
 
 <div style="font-size: 14px; font-family: 'Georgia', serif; text-align: justify;">
 
-***This page is under construction! **
+***This page is under construction! ** <br>
 
 Below you'll find a selection of my research and applied decision support tools in transportation engineering.
 
@@ -63,7 +63,7 @@ Below you'll find a selection of my research and applied decision support tools 
 
 #### 🛠️ Other Specialized Planning Tools
 <ul>
-  <li><strong>2024 | Transit PlanningPro</strong> – <em>Lead R&Dt</em><br>
+  <li><strong>2024 | Transit PlanningPro</strong> – <em>Lead R&D</em><br>
   🚦 4-step tool: demand → congestion → edits → KPIs<br>
   🔗 [<a href="#">Tool</a>] [<a href="#">PDF</a>]
   </li>
@@ -91,7 +91,6 @@ Below you'll find a selection of my research and applied decision support tools 
   </li>
 </ul>
 
-<p>🔍 For the full list and details, visit <a href="https://interactive-or.net/" target="_blank">Interactive-OR</a> or <a href="https://github.com/ghazzaale" target="_blank">GitHub</a>.</p>
-
+<p>🔍 For the full list and details, visit <a href="https://interactive-or.net/" target="_blank">Interactive-OR</a>.
 </div>
 
