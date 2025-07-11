@@ -20,13 +20,6 @@ redirect_from:
 
 <h2 style="font-size: 16px; font-family: 'Georgia', serif;">Work Experience (Canada)</h2>
 <ul>
-  <li><strong>Mitacs Business Strategy Intern</strong>, Lassonde School of Engineering – York University (Jan 2025 – Present)
-    <ul>
-      <li>Project: Optimizing Charging Infrastructure for Electric Bus Fleets in partnership with Mobility Future Lab (MFL).</li>
-      <li>Designed cost-efficient charging schedules by aligning depot electricity use with off-peak periods and bus operations.</li>
-      <li>Developed an interactive decision-support tool for what-if scenario analysis using WebAssembly and Node.js.</li>
-    </ul>
-  </li>
 
   <li><strong>Graduate Research Assistant</strong>, Lassonde School of Engineering – York University (Sep 2021 – Present)
     <ul>
@@ -39,6 +32,14 @@ redirect_from:
     <ul>
       <li>Courses supported: Civil Engineering Project Management (FA21/FA24), Traffic Simulation Modelling (WI22), Civil Engineering for Sustainable Future (WI22), Transportation Engineering (FA22), Civil Engineering Design Project (WI23/WI25).</li>
       <li>Delivered tutorials, mentored students, and supported simulation and design-based coursework in AutoCAD, Civil 3D, and PTV Vissim.</li>
+    </ul>
+  </li>
+
+<li><strong>Mitacs Business Strategy Intern</strong>, Lassonde School of Engineering – York University (Jan 2025 – July 2025)
+    <ul>
+      <li>Project: Optimizing Charging Infrastructure for Electric Bus Fleets in partnership with Mobility Future Lab (MFL).</li>
+      <li>Designed cost-efficient charging schedules by aligning depot electricity use with off-peak periods and bus operations.</li>
+      <li>Developed an interactive decision-support tool for what-if scenario analysis using WebAssembly and Node.js.</li>
     </ul>
   </li>
 
