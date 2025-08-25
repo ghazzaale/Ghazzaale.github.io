@@ -107,7 +107,7 @@ author_profile: true
   /* Modal */
   .modal-backdrop{
     position:fixed; inset:0; display:none;
-    align-items:center; justify-content:center;
+    align-items:left; justify-content:center;
     background: rgba(67, 77, 98, 0.65);
     z-index:1000000;
     padding: 20px;  
@@ -115,7 +115,7 @@ author_profile: true
   .modal{
     /* width:min(960px,92vw); */
     /* width: min(1100px, 94vw); */
-    width: 60vw;          /* percent of viewport width */
+    width: 50vw;          /* percent of viewport width */
   max-width: 1100px;    /* keep a ceiling */
   min-width: 320px; 
 
@@ -208,16 +208,16 @@ data-desc="A web decision-support tool for bike-share expansion, charger deploym
     <article class="card">
       <button class="card-btn"
         data-title="Real-Time Bike-Share Relocation Optimization"
-        data-yearrole="2024 · Lead R&amp;D"
+        data-yearrole="2024 · Researcher &amp; Product Developer"
         data-sub="Optimization for full and partial bike relocation"
         data-img="/images/relocation.png"
-        data-desc="Server-side optimization for rebalancing docked systems under live system states while minimizing service disruption."
+data-desc="Using a real-time API, we ingest station status and run a heuristic with a TSP solver to generate relocation routes that respect operational constraints (capacity, time windows), enabling partial or full rebalancing."
         data-links='[
           {"label":"Demo","href":"https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_bikesharetoronto-activity-7293717346311946240-xz3H"}
         ]'>
         <div class="card-top">
           <div class="title">Real-Time Bike-Share Relocation Optimization</div>
-          <div class="pill">2024 · Lead R&D</div>
+          <div class="pill">2024 · Researcher &<br> Product Developer</div>
         </div>
         <div class="pill">Optimization for full and partial bike relocation</div>
         <img class="thumb" src="/images/relocation.png" alt="Relocation optimizer preview">
@@ -231,7 +231,7 @@ data-desc="A web decision-support tool for bike-share expansion, charger deploym
         data-yearrole="2024 · Lead R&amp;D"
         data-sub="Pick-up and drop-off prediction with transit integration"
         data-img="/images/scooter.png"
-        data-desc="Planning and analytics for free-floating fleets including demand prediction and integration with nearby transit."
+data-desc="Planning and analytics for free-floating fleets with demand prediction that incorporates weather, supports short- and long-term horizons, and integrates nearby transit stops and ridership."
         data-links='[]'>
         <div class="card-top">
           <div class="title">E-Scooter Planner</div>
@@ -249,7 +249,7 @@ data-desc="A web decision-support tool for bike-share expansion, charger deploym
         data-yearrole="2022 · Lead R&amp;D"
         data-sub="Routing with KPIs: GHG, calories, transfers"
         data-img="/images/multimodal.png"
-        data-desc="Interactive routing across modes with live KPI estimation and scenario exploration."
+data-desc="Integrates bikeshare, transit, and driving in a single trip planner, with end to end routing and KPI comparisons (time, cost, GHG, transfers) to surface the best option for each scenario. This was my first project!"
         data-links='[
           {"label":"Demo","href":"https://www.linkedin.com/feed/update/urn:li:activity:7082171999480926208"}
         ]'>
@@ -257,7 +257,7 @@ data-desc="A web decision-support tool for bike-share expansion, charger deploym
           <div class="title">Multimodal Trip Planner</div>
           <div class="pill">2022 · Lead R&D</div>
         </div>
-        <div class="pill">Routing with KPIs: GHG, calories, transfers</div>
+        <div class="pill">Multimodal routing with KPIs: GHG, calories, transfers</div>
         <img class="thumb" src="/images/multimodal.png" alt="Multimodal planner preview">
       </button>
     </article>
@@ -269,7 +269,7 @@ data-desc="A web decision-support tool for bike-share expansion, charger deploym
         data-yearrole="2024 · Lead R&D"
         data-sub="Supply and demand analysis using LLMs"
         data-img="/images/ridealike.png"
-        data-desc="Exploratory analytics and dashboards for marketplace supply and demand using natural-language assisted workflows."
+        data-desc="Descriptive analysis for marketplace supply and demand using LLM workflows."
         data-links='[]'>
         <div class="card-top">
           <div class="title">Peer-to-Peer Ridesharing</div>
