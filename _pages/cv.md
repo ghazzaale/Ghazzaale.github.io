@@ -35,7 +35,7 @@ redirect_from:
     </ul>
   </li>
 
-<li><strong>Mitacs Business Strategy Intern</strong>, Lassonde School of Engineering – York University (Jan 2025 – July 2025)
+<li><strong>Mitacs Business Strategy Intern</strong>, Lassonde School of Engineering – York University (Jan 2025 – August 2025)
     <ul>
       <li>Project: Optimizing Charging Infrastructure for Electric Bus Fleets in partnership with Mobility Future Lab (MFL).</li>
       <li>Designed cost-efficient charging schedules by aligning depot electricity use with off-peak periods and bus operations.</li>

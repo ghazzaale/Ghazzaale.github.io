@@ -5,164 +5,487 @@ permalink: /portfolio/
 author_profile: true
 ---
 
+<style>
+  :root {
+    --bg:#0b0d12;
+    --card:#121622;
+    --text:#e7ecf3;
+    --muted:#aab5c6;
+    --accent:#76b7ff;
+    --ring:rgba(118,183,255,.35);
+    --border:rgba(255,255,255,.08);
+  }
+  .portfolio-wrap{
+    font-family: Georgia, serif;
+    color: var(--text);
+  }
+  .portfolio-intro{
+    font-size: 14px;
+    text-align: justify;
+    margin: 0 0 16px 0;
+  }
+  .section-title{
+    text-align:center;
+    font-size: 20px;
+    margin: 28px 0 16px;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(1,minmax(0,1fr));
+    gap:14px;
+  }
+  @media (min-width:700px){ .grid{ grid-template-columns: repeat(2,minmax(0,1fr)); } }
+  @media (min-width:1000px){ .grid{ grid-template-columns: repeat(3,minmax(0,1fr)); } }
 
-<div style="font-size: 14px; font-family: 'Georgia', serif; text-align: justify;">
+  .card{
+    background: var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    overflow:hidden;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .card:focus-within, .card:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--ring);
+    border-color: var(--ring);
+  }
+  .card-btn{
+    display:block;
+    width:100%;
+    text-align:left;
+    padding:14px;
+    background:transparent;
+    border:0;
+    cursor:pointer;
+    color:inherit;
+  }
+  .card-top{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:10px;
+  }
+  .pill{
+    font-size:12px;
+    color: var(--muted);
+  }
+  .title{
+    font-weight:700;
+    font-size:16px;
+    line-height:1.25;
+  }
+  .thumb{
+    width:100%;
+    aspect-ratio:16/9;
+    object-fit:cover;
+    border-radius:12px;
+    border:1px solid var(--border);
+    margin-top:10px;
+  }
 
-<!-- <h2 style="font-size: 16px; font-family: 'Georgia', serif;">🚀 Selected Interactive Tools Portfolio</h2> -->
+  /* Modal */
+  .modal-backdrop{
+    position:fixed; inset:0; display:none;
+    align-items:center; justify-content:center;
+    background: rgba(4,6,10,.65);
+    z-index:1000;
+  }
+  .modal{
+    width:min(960px,92vw);
+    background: #121622;
+    border:1px solid var(--border);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow: 0 18px 60px rgba(0,0,0,.5);
+    display:grid;
+    grid-template-columns: 1.2fr 1fr;
+  }
+  @media (max-width:900px){ .modal{ grid-template-columns: 1fr; } }
 
-<h3 style="font-size: 18px; font-family: 'Georgia', serif;text-align: center;"> 🛴 Micromobility and Multimodal Routing and Planning</h3>
-<ul>
-  <li>
-      <div style="display: flex; align-items: flex-start; justify-content: space-between;">
-        <div style="flex: 1;">
-        <strong>2024 | Descriptive Analytics Tool for Peer-to-Peer Ridesharing</strong> – <em>Researcher & Product Developer</em><br>
-  <strong>Industry Champion:</strong> RideAlike<br>
-  📍 Supply and demand analysis powered by large language models (LLMs)<br>
-  <!-- 🔗 [<a href="#">Slides</a>] [<a href="#">Video</a>] [<a href="#">PDF</a>] -->
-   </div>
-    <img src="/images/ridealike.png" alt="RideAlike Screenshot" style="max-width: 300px; margin-left: 20px; border-radius: 8px;" />
+  .modal-media{
+    background:#0e1420;
+  }
+  .modal-media img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .modal-body{
+    padding:18px 18px 16px;
+  }
+  .modal-head{
+    display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+    margin-bottom:8px;
+  }
+  .modal-title{ font-size:18px; font-weight:700; }
+  .modal-sub{ font-size:13px; color:var(--muted); margin-top:4px;}
+  .modal-desc{ font-size:14px; color:var(--text); opacity:.95; margin:10px 0 14px; text-align:justify;}
+  .links{
+    display:flex; flex-wrap:wrap; gap:8px;
+  }
+  .link-btn{
+    text-decoration:none;
+    font-size:13px;
+    padding:8px 12px;
+    border-radius:10px;
+    background:#0f1726;
+    border:1px solid var(--border);
+    color: var(--accent);
+  }
+  .close-btn{
+    background:#161b29;
+    border:1px solid var(--border);
+    color:var(--text);
+    border-radius:10px;
+    padding:6px 10px;
+    cursor:pointer;
+  }
+</style>
+
+<div class="portfolio-wrap">
+
+  <p class="portfolio-intro">
+    Explore a selection of interactive planning tools and research prototypes. Click any project card to view a larger preview and links.
+  </p>
+
+  <h3 class="section-title">Micromobility and Multimodal Routing and Planning</h3>
+  <div class="grid">
+    <!-- Bikeshare Pro -->
+    <article class="card">
+      <button class="card-btn"
+        data-title="Bikeshare Pro"
+        data-yearrole="2023 · Lead R&amp;D"
+        data-sub="Station planning, electrification, GNN demand, transit integration"
+        data-img="/images/bikeshare.png"
+        data-desc="A web decision-support tool for bike-share expansion, charger deployment, and multimodal integration built on optimization and predictive models."
+        data-links='[
+          {"label":"Tool Description","href":"https://interactive-or.net/bikesharepro"},
+          {"label":"Video","href":"https://www.youtube.com/watch?v=JYsBq0uCxRQ&list=PLMQSwmI9u1hxwkDlHrtIriCNH1xZ1m863"},
+          {"label":"Paper Demo","href":"https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_flow-maximizing-facility-location-using-continuum-activity-7291560428415991808-4foT"}
+        ]'>
+        <div class="card-top">
+          <div class="title">Bikeshare Pro</div>
+          <div class="pill">2023 · Lead R&D</div>
+        </div>
+        <div class="pill">Station planning, electrification, GNN demand, transit integration</div>
+        <img class="thumb" src="/images/bikeshare.png" alt="Bikeshare Pro preview">
+      </button>
+    </article>
+
+    <!-- Real-Time Relocation -->
+    <article class="card">
+      <button class="card-btn"
+        data-title="Real-Time Bike-Share Relocation Optimization"
+        data-yearrole="2024 · Lead R&amp;D"
+        data-sub="Optimization for full and partial bike relocation"
+        data-img="/images/relocation.png"
+        data-desc="Server-side optimization for rebalancing docked systems under live system states while minimizing service disruption."
+        data-links='[
+          {"label":"Demo","href":"https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_bikesharetoronto-activity-7293717346311946240-xz3H"}
+        ]'>
+        <div class="card-top">
+          <div class="title">Real-Time Bike-Share Relocation Optimization</div>
+          <div class="pill">2024 · Lead R&D</div>
+        </div>
+        <div class="pill">Optimization for full and partial bike relocation</div>
+        <img class="thumb" src="/images/relocation.png" alt="Relocation optimizer preview">
+      </button>
+    </article>
+
+    <!-- E-Scooter Planner -->
+    <article class="card">
+      <button class="card-btn"
+        data-title="E-Scooter Planner"
+        data-yearrole="2024 · Lead R&amp;D"
+        data-sub="Pick-up and drop-off prediction with transit integration"
+        data-img="/images/scooter.png"
+        data-desc="Planning and analytics for free-floating fleets including demand prediction and integration with nearby transit."
+        data-links='[]'>
+        <div class="card-top">
+          <div class="title">E-Scooter Planner</div>
+          <div class="pill">2024 · Lead R&D</div>
+        </div>
+        <div class="pill">Pick-up and drop-off prediction with transit integration</div>
+        <img class="thumb" src="/images/scooter.png" alt="E-Scooter Planner preview">
+      </button>
+    </article>
+
+    <!-- Multimodal Trip Planner -->
+    <article class="card">
+      <button class="card-btn"
+        data-title="Multimodal Trip Planner"
+        data-yearrole="2022 · Lead R&amp;D"
+        data-sub="Routing with KPIs: GHG, calories, transfers"
+        data-img="/images/multimodal.png"
+        data-desc="Interactive routing across modes with live KPI estimation and scenario exploration."
+        data-links='[
+          {"label":"Demo","href":"https://www.linkedin.com/feed/update/urn:li:activity:7082171999480926208"}
+        ]'>
+        <div class="card-top">
+          <div class="title">Multimodal Trip Planner</div>
+          <div class="pill">2022 · Lead R&D</div>
+        </div>
+        <div class="pill">Routing with KPIs: GHG, calories, transfers</div>
+        <img class="thumb" src="/images/multimodal.png" alt="Multimodal planner preview">
+      </button>
+    </article>
+
+    <!-- RideAlike -->
+    <article class="card">
+      <button class="card-btn"
+        data-title="Descriptive Analytics for Peer-to-Peer Ridesharing"
+        data-yearrole="2024 · Researcher &amp; Product Developer"
+        data-sub="Supply and demand analysis using LLMs"
+        data-img="/images/ridealike.png"
+        data-desc="Exploratory analytics and dashboards for marketplace supply and demand using natural-language assisted workflows."
+        data-links='[]'>
+        <div class="card-top">
+          <div class="title">Descriptive Analytics for Peer-to-Peer Ridesharing</div>
+          <div class="pill">2024 · Researcher & Product Developer</div>
+        </div>
+        <div class="pill">Supply and demand analysis using LLMs</div>
+        <img class="thumb" src="/images/ridealike.png" alt="RideAlike preview">
+      </button>
+    </article>
   </div>
-  </li>
-  <hr style="border: none; border-top: 1px solid #ccc; margin-top: 12px; margin-bottom: 16px;" />
 
-  <li><div style="display: flex; align-items: flex-start; justify-content: space-between;">
-        <div style="flex: 1;">
-          <strong>2024 | E-Scooter Planner</strong> – <em>Lead R&D</em><br>
-  <strong>Industry Champion:</strong> SCOOTY-Brampton<br>
-  📍 Pick-up/drop-off prediction, transit integration<br>
-  <!-- 🔗 [<a href="#">Slides</a>] [<a href="#">Video</a>] [<a href="#">PDF</a>] -->
-    </div>
-    <img src="/images/scooter.png" alt="RideAlike Screenshot" style="max-width: 300px; margin-left: 20px; border-radius: 8px;" />
+  <h3 class="section-title">Electrification Infrastructure and Optimization</h3>
+  <div class="grid">
+    <!-- EV Charger Pro -->
+    <article class="card">
+      <button class="card-btn"
+        data-title="EV Charger Pro"
+        data-yearrole="2024 · Product Developer"
+        data-sub="EV demand forecasting and charger siting"
+        data-img="/images/evpro.png"
+        data-desc="Forecasting and siting support for EV charging networks with scenario planning."
+        data-links='[
+          {"label":"Demo","href":"https://interactive-or.net/evchargerplanning"}
+        ]'>
+        <div class="card-top">
+          <div class="title">EV Charger Pro</div>
+          <div class="pill">2024 · Product Developer</div>
+        </div>
+        <div class="pill">EV demand forecasting and charger siting</div>
+        <img class="thumb" src="/images/evpro.png" alt="EV Charger Pro preview">
+      </button>
+    </article>
+
+    <!-- Electric Transit Scheduling Pro -->
+    <article class="card">
+      <button class="card-btn"
+        data-title="Electric Transit Scheduling Pro"
+        data-yearrole="2024 · Researcher &amp; Lead Product Developer"
+        data-sub="GTFS-based in-route charging optimization"
+        data-img="/images/etransit.png"
+        data-desc="Scheduling support for electric bus fleets with in-route and depot charging strategies."
+        data-links='[
+          {"label":"Demo","href":"https://www.linkedin.com/posts/mehdi-nourinejad-a0040843_transit-electrification-mta-activity-7200811915428651008-AfOE"},
+          {"label":"Paper","href":"https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_transit-electrification-interactive-operations-activity-7348460897138339840-DyTR"}
+        ]'>
+        <div class="card-top">
+          <div class="title">Electric Transit Scheduling Pro</div>
+          <div class="pill">2024 · Researcher & Lead Product Developer</div>
+        </div>
+        <div class="pill">GTFS-based in-route charging optimization</div>
+        <img class="thumb" src="/images/etransit.png" alt="Electric Transit Scheduling preview">
+      </button>
+    </article>
+
+    <!-- School Bus Charging -->
+    <article class="card">
+      <button class="card-btn"
+        data-title="Charging Optimization for School Buses"
+        data-yearrole="2024 · Researcher &amp; Lead Product Developer"
+        data-sub="Depot cost minimization and charging windows"
+        data-img="/images/schoolbus.png"
+        data-desc="Depot-level charging strategy design with cost controls and peak avoidance."
+        data-links='[]'>
+        <div class="card-top">
+          <div class="title">Charging Optimization for School Buses</div>
+          <div class="pill">2024 · Researcher & Lead Product Developer</div>
+        </div>
+        <div class="pill">Depot cost minimization and charging windows</div>
+        <img class="thumb" src="/images/schoolbus.png" alt="School bus charging preview">
+      </button>
+    </article>
   </div>
-  </li>
-  <hr style="border: none; border-top: 1px solid #ccc; margin-top: 12px; margin-bottom: 16px;" />
 
-  <li><div style="display: flex; align-items: flex-start; justify-content: space-between;">
-        <div style="flex: 1;">
-          <strong>2024 | Real-Time Bike-Share Relocation Optimization</strong> – <em>Lead R&D</em><br>
-  🚲 Optimization for full/partial bike relocation<br>
-  🔗 [<a href="https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_bikesharetoronto-activity-7293717346311946240-xz3H?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTHrvgBk17mK_BgkAwln-q4XYMZo5fgSJw">Demo</a>]
-  <!-- 🔗 [<a href="#">Tool</a>] [<a href="#">Demo</a>] [<a href="#">PDF</a>] -->
+  <h3 class="section-title">Other Specialized Planning Tools</h3>
+  <div class="grid">
+    <!-- ResponsePro -->
+    <article class="card">
+      <button class="card-btn"
+        data-title="ResponsePro"
+        data-yearrole="2024 · Lead R&amp;D"
+        data-sub="Fire station planning and response analytics"
+        data-img="/images/responsepro.png"
+        data-desc="Deployment analytics and coverage evaluation for emergency services."
+        data-links='[
+          {"label":"Tool","href":"https://interactive-or.net/responsepro"}
+        ]'>
+        <div class="card-top">
+          <div class="title">ResponsePro</div>
+          <div class="pill">2024 · Lead R&D</div>
+        </div>
+        <div class="pill">Fire station planning and response analytics</div>
+        <img class="thumb" src="/images/responsepro.png" alt="ResponsePro preview">
+      </button>
+    </article>
+
+    <!-- Transit PlanningPro -->
+    <article class="card">
+      <button class="card-btn"
+        data-title="Transit PlanningPro"
+        data-yearrole="2024 · Lead R&amp;D"
+        data-sub="Network edits with KPIs from demand to congestion"
+        data-img="/images/transitplanner.png"
+        data-desc="Interactive four-stage workflow: demand, congestion, network edits, KPIs."
+        data-links='[
+          {"label":"Demo","href":"https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_transit-network-design-and-scheduling-we-activity-7310471035953258496-vr0D"},
+          {"label":"Tool Description","href":"https://interactive-or.net/transit"}
+        ]'>
+        <div class="card-top">
+          <div class="title">Transit PlanningPro</div>
+          <div class="pill">2024 · Lead R&D</div>
+        </div>
+        <div class="pill">Network edits with KPIs from demand to congestion</div>
+        <img class="thumb" src="/images/transitplanner.png" alt="Transit planner preview">
+      </button>
+    </article>
+
+    <!-- Snow PlowingPro -->
+    <article class="card">
+      <button class="card-btn"
+        data-title="Snow PlowingPro"
+        data-yearrole="2024 · Product Developer"
+        data-sub="Arc-routing for winter maintenance"
+        data-img="/images/snow.png"
+        data-desc="Route design and service analytics for snow clearance operations."
+        data-links='[
+          {"label":"Tool Description","href":"https://interactive-or.net/snowplowpro"}
+        ]'>
+        <div class="card-top">
+          <div class="title">Snow PlowingPro</div>
+          <div class="pill">2024 · Product Developer</div>
+        </div>
+        <div class="pill">Arc-routing for winter maintenance</div>
+        <img class="thumb" src="/images/snow.png" alt="Snow PlowingPro preview">
+      </button>
+    </article>
+
+    <!-- Parking Pricing Tool -->
+    <article class="card">
+      <button class="card-btn"
+        data-title="Parking Pricing Tool"
+        data-yearrole="2024 · Product Developer"
+        data-sub="Adaptive pricing strategies for curbside management"
+        data-img="/images/parking.png"
+        data-desc="Elasticity-aware curb pricing with policy-driven scenarios."
+        data-links='[
+          {"label":"Demo","href":"https://www.linkedin.com/posts/mehdi-nourinejad-a0040843_parking-dynamicpricing-communityimprovement-activity-7225121703939518465-RWt6"}
+        ]'>
+        <div class="card-top">
+          <div class="title">Parking Pricing Tool</div>
+          <div class="pill">2024 · Product Developer</div>
+        </div>
+        <div class="pill">Adaptive pricing strategies for curbside management</div>
+        <img class="thumb" src="/images/parking.png" alt="Parking pricing preview">
+      </button>
+    </article>
+
+    <!-- Vision Zero -->
+    <article class="card">
+      <button class="card-btn"
+        data-title="Vision Zero Tool"
+        data-yearrole="2023 · Product Developer"
+        data-sub="Automated Speed Enforcement camera allocation"
+        data-img="/images/ase.png"
+        data-desc="Allocation strategies for ASE programs that target high-risk corridors."
+        data-links='[
+          {"label":"Tool Description","href":"https://interactive-or.net/ase"}
+        ]'>
+        <div class="card-top">
+          <div class="title">Vision Zero Tool</div>
+          <div class="pill">2023 · Product Developer</div>
+        </div>
+        <div class="pill">Automated Speed Enforcement camera allocation</div>
+        <img class="thumb" src="/images/ase.png" alt="Vision Zero ASE preview">
+      </button>
+    </article>
   </div>
-    <img src="/images/relocation.png" alt="RideAlike Screenshot" style="max-width: 300px; margin-left: 20px; border-radius: 8px;" />
-  </div>
-</li>
-  <hr style="border: none; border-top: 1px solid #ccc; margin-top: 12px; margin-bottom: 16px;" />
 
-  <li><div style="display: flex; align-items: flex-start; justify-content: space-between;">
-        <div style="flex: 1;">
-          <strong>2023 | Bikeshare Pro</strong> – <em>Lead R&D</em><br>
-  📊 Station planning, electrification, GNN-based demand, transit integration<br>
-  🔗 [<a href="https://interactive-or.net/bikesharepro">Tool Description</a>] [<a href="https://www.youtube.com/watch?v=JYsBq0uCxRQ&list=PLMQSwmI9u1hxwkDlHrtIriCNH1xZ1m863">Video</a>] [<a href="https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_flow-maximizing-facility-location-using-continuum-activity-7291560428415991808-4foT?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTHrvgBk17mK_BgkAwln-q4XYMZo5fgSJw">Paper Demo</a>]
-  </div>
-    <img src="/images/bikeshare.png" alt="RideAlike Screenshot" style="max-width: 300px; margin-left: 20px; border-radius: 8px;" />
-  </div>
-</li>
-  <hr style="border: none; border-top: 1px solid #ccc; margin-top: 12px; margin-bottom: 16px;" />
-
-  <li><div style="display: flex; align-items: flex-start; justify-content: space-between;">
-        <div style="flex: 1;">
-          <strong>2022 | Multimodal Trip Planner</strong> – <em>Lead R&D</em><br>
-  🚶🚴🚍 Multimodal routing, KPIs: GHG, calories, transfers<br>
-  🔗 [<a href="https://www.linkedin.com/feed/update/urn:li:activity:7082171999480926208?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTHrvgBk17mK_BgkAwln-q4XYMZo5fgSJw">Demo</a>] 
-  </div>
-    <img src="/images/multimodal.png" alt="RideAlike Screenshot" style="max-width: 300px; margin-left: 20px; border-radius: 8px;" />
-  </div>
-</li>
-</ul>
-
-<hr style="border: none; border-top: 1px solid #ccc; width: 60%; margin: 12px auto 16px auto;" />
-
-
-<h3 style="font-size: 18px; font-family: 'Georgia', serif;text-align: center;"> ⚡ Electrification Infrastructure & Optimization</h3>
-<ul>
-  <li>
-    <div style="display: flex; align-items: flex-start; justify-content: space-between;">
-        <div style="flex: 1;">
-          <strong>2024 | Charging Optimization for School Buses</strong> – <em>Researcher/Lead Product Developer</em><br>
-  <strong>Industry Champion:</strong> Mobility Futures Lab<br>
-  🔌 Depot cost minimization, charging window selection<br>
-  <!-- 🔗 [<a href="#">Slides</a>] [<a href="#">PDF</a>] -->
-   </div>
-    <img src="/images/schoolbus.png" alt="RideAlike Screenshot" style="max-width: 300px; margin-left: 20px; border-radius: 8px;" />
-  </div>
-  </li>
-  <hr style="border: none; border-top: 1px solid #ccc; margin-top: 12px; margin-bottom: 16px;" />
-
-  <li><div style="display: flex; align-items: flex-start; justify-content: space-between;">
-        <div style="flex: 1;">
-          <strong>2024 | Electric Transit Scheduling Pro</strong> – <em>Researcher/Lead Product Developer</em><br>
-  <strong>Industry Champion:</strong> WSP<br>
-  🚌 In-route GTFS-based charging optimization<br>
-  🔗 [<a href="https://www.linkedin.com/posts/mehdi-nourinejad-a0040843_transit-electrification-mta-activity-7200811915428651008-AfOE?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTHrvgBk17mK_BgkAwln-q4XYMZo5fgSJw">Demo</a>] [<a href="https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_transit-electrification-interactive-operations-activity-7348460897138339840-DyTR?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTHrvgBk17mK_BgkAwln-q4XYMZo5fgSJw">Paper</a>]
-  </div>
-    <img src="/images/etransit.png" alt="Ebus Screenshot" style="max-width: 300px; margin-left: 20px; border-radius: 8px;" />
-  </div></li>
-  <hr style="border: none; border-top: 1px solid #ccc; margin-top: 12px; margin-bottom: 16px;" />
-
-  <li><div style="display: flex; align-items: flex-start; justify-content: space-between;">
-        <div style="flex: 1;">
-          <strong>2024 | EV Charger Pro</strong> – <em>Product Developer</em><br>
-  <strong>Industry Champion:</strong> Arup<br>
-  🗺️ EV demand forecasting + charger siting<br>
-  🔗 [<a href="https://interactive-or.net/evchargerplanning">Demo</a>]
-  </div>
-    <img src="/images/evpro.png" alt="EVPro Screenshot" style="max-width: 300px; margin-left: 20px; border-radius: 8px;" />
-  </div></li>
-</ul>
-
-<hr style="border: none; border-top: 1px solid #ccc; width: 60%; margin: 12px auto 16px auto;" />
-
-<h3 style="font-size: 18px; font-family: 'Georgia', serif;text-align: center;"> 🛠️ Other Specialized Planning Tools</h3>
-<ul>
-  <li><div style="display: flex; align-items: flex-start; justify-content: space-between;">
-        <div style="flex: 1;"><strong>2024 | Transit PlanningPro</strong> – <em>Lead R&D</em><br>
-  🚦 4-step tool: demand → congestion → edits → KPIs<br>
-  🔗 [<a href="https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_transit-network-design-and-scheduling-we-activity-7310471035953258496-vr0D?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTHrvgBk17mK_BgkAwln-q4XYMZo5fgSJw">Demo</a>] [<a href="https://interactive-or.net/transit">Tool Description</a>]
-  </div>
-    <img src="/images/transitplanner.png" alt="RideAlike Screenshot" style="max-width: 300px; margin-left: 20px; border-radius: 8px;" />
-  </div></li>
-  <hr style="border: none; border-top: 1px solid #ccc; margin-top: 12px; margin-bottom: 16px;" />
-
-  <li><div style="display: flex; align-items: flex-start; justify-content: space-between;">
-        <div style="flex: 1;"><strong>2024 | Snow PlowingPro</strong> – <em>Product Developer</em><br>
-  ❄️ Arc-routing for snow clearance optimization<br>
-  🔗 [<a href="https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_winter-maintenance-optimization-winter-activity-7313033986014883840-sUo2?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTHrvgBk17mK_BgkAwln-q4XYMZo5fgSJw">Demo</a>] [<a href="https://interactive-or.net/snowplowpro">Tool Description</a>]
-  </div>
-    <img src="/images/snow.png" alt="RideAlike Screenshot" style="max-width: 300px; margin-left: 20px; border-radius: 8px;" />
-  </div></li>
-  <hr style="border: none; border-top: 1px solid #ccc; margin-top: 12px; margin-bottom: 16px;" />
-
-  <li><div style="display: flex; align-items: flex-start; justify-content: space-between;">
-        <div style="flex: 1;"><strong>2024 | ResponsePro</strong> – <em>Lead R&D</em><br>
-  <strong>Industry:</strong> Fire Departments (e.g., Fredericton, Innisfil)<br>
-  🚒 Fire station planning, response analytics<br>
-  🔗 [<a href="https://www.linkedin.com/posts/mehdi-nourinejad-a0040843_toronto-ugcPost-7328945846643843072-FuE1?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTHrvgBk17mK_BgkAwln-q4XYMZo5fgSJw">Demo</a>] [<a href="https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_fire-toronto-interactive-activity-7304983951184412672-4c50?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTHrvgBk17mK_BgkAwln-q4XYMZo5fgSJw">Demo</a>] [<a href="https://interactive-or.net/responsepro">Tool Description</a>]
-  </div>
-    <img src="/images/responsepro.png" alt="RideAlike Screenshot" style="max-width: 300px; margin-left: 20px; border-radius: 8px;" />
-  </div></li>
-  <hr style="border: none; border-top: 1px solid #ccc; margin-top: 12px; margin-bottom: 16px;" />
-
-  <li><div style="display: flex; align-items: flex-start; justify-content: space-between;">
-        <div style="flex: 1;">
-          <strong>2024 | Parking Pricing Tool</strong> – <em>Product Developer</em><br>
-  🅿️ Adaptive pricing strategies for curbside management<br>
-  🔗 [<a href="https://www.linkedin.com/posts/mehdi-nourinejad-a0040843_parking-dynamicpricing-communityimprovement-activity-7225121703939518465-RWt6?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTHrvgBk17mK_BgkAwln-q4XYMZo5fgSJw">Demo</a>]
-   </div>
-    <img src="/images/parking.png" alt="Parkingpro Screenshot" style="max-width: 300px; margin-left: 20px; border-radius: 8px;" />
-  </div></li>
-  <hr style="border: none; border-top: 1px solid #ccc; margin-top: 12px; margin-bottom: 16px;" />
-
-  <li><div style="display: flex; align-items: flex-start; justify-content: space-between;">
-        <div style="flex: 1;"><strong>2023 | Vision Zero Tool</strong> – <em>Product Developer</em><br>
-  <strong>Industry Champion:</strong> City of Vaughan – Mitacs<br>
-  🚨 ASE camera allocation to reduce violations<br>
-  🔗 [<a href="https://www.linkedin.com/posts/mehdi-nourinejad-a0040843_visionzero-automatedspeedenforcement-cityofvaughan-activity-7212260613316624385-BJcG?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTHrvgBk17mK_BgkAwln-q4XYMZo5fgSJw">Demo</a>] [<a href="https://interactive-or.net/ase">Tool Description</a>] 
-   </div>
-    <img src="/images/ase.png" alt="RideAlike Screenshot" style="max-width: 300px; margin-left: 20px; border-radius: 8px;" />
-  </div></li>
-</ul>
-
-<p>🔍 For the full list and details, visit <a href="https://interactive-or.net/" target="_blank">Interactive-OR</a> or <a href="https://github.com/ghazzaale" target="_blank">GitHub</a>.</p>
-
+  <p style="text-align:center; margin:20px 0 6px;">
+    For more, visit <a href="https://interactive-or.net/" target="_blank" rel="noopener">Interactive-OR</a> or <a href="https://github.com/ghazzaale" target="_blank" rel="noopener">GitHub</a>.
+  </p>
 </div>
+
+<!-- Modal -->
+<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-media"><img id="modalImg" src="" alt=""></div>
+    <div class="modal-body">
+      <div class="modal-head">
+        <div>
+          <div id="modalTitle" class="modal-title"></div>
+          <div id="modalSub" class="modal-sub"></div>
+        </div>
+        <button class="close-btn" id="modalClose">Close</button>
+      </div>
+      <div id="modalDesc" class="modal-desc"></div>
+      <div id="modalLinks" class="links"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const q = s => document.querySelector(s);
+  const qa = s => Array.from(document.querySelectorAll(s));
+
+  const backdrop = q('#modalBackdrop');
+  const img = q('#modalImg');
+  const title = q('#modalTitle');
+  const sub = q('#modalSub');
+  const desc = q('#modalDesc');
+  const links = q('#modalLinks');
+  const closeBtn = q('#modalClose');
+
+  function openModal(data){
+    img.src = data.img || '';
+    img.alt = data.title ? data.title + ' preview' : 'Project preview';
+    title.textContent = data.title || '';
+    sub.textContent = data.yearrole ? data.yearrole + ' · ' + (data.sub || '') : (data.sub || '');
+    desc.textContent = data.desc || '';
+    links.innerHTML = '';
+    try{
+      const arr = JSON.parse(data.links || '[]');
+      arr.forEach(x => {
+        const a = document.createElement('a');
+        a.href = x.href; a.target = '_blank'; a.rel = 'noopener';
+        a.className = 'link-btn'; a.textContent = x.label;
+        links.appendChild(a);
+      });
+    }catch(e){}
+    backdrop.style.display = 'flex';
+    backdrop.setAttribute('aria-hidden','false');
+  }
+  function closeModal(){
+    backdrop.style.display = 'none';
+    backdrop.setAttribute('aria-hidden','true');
+  }
+  qa('.card-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      openModal({
+        title: btn.dataset.title,
+        yearrole: btn.dataset.yearrole,
+        sub: btn.dataset.sub,
+        img: btn.dataset.img,
+        desc: btn.dataset.desc,
+        links: btn.dataset.links
+      });
+    });
+  });
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', e => { if(e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+</script>
