@@ -11,7 +11,8 @@ author_profile: true
     --card:#121622;
     --text:#e7ecf3;
     --muted:#aab5c6;
-    --accent:#76b7ff;
+    --accent:#4588be;
+        --normal:#000000;
     --ring:rgba(118,183,255,.35);
     --border:rgba(255,255,255,.08);
   }
@@ -23,12 +24,23 @@ author_profile: true
     font-size: 14px;
     text-align: justify;
     margin: 0 0 16px 0;
+    color: var(--normal); 
   }
-  .section-title{
-    text-align:center;
-    font-size: 20px;
-    margin: 28px 0 16px;
-  }
+  .section-title {
+  text-align:center;
+  font-size:20px;
+  margin:28px 0 16px;
+  color: var(--normal);           
+  letter-spacing:.2px;            
+}
+.section-title.gradient {
+  background: linear-gradient(90deg, #010101, #b892ff 50%, #76ffd2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;              /* reveal the gradient */
+}
+
+
   .grid{
     display:grid;
     grid-template-columns: repeat(1,minmax(0,1fr));
@@ -117,7 +129,7 @@ author_profile: true
     display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
     margin-bottom:8px;
   }
-  .modal-title{ font-size:18px; font-weight:700; }
+  .modal-title{ font-size:18px; font-weight:700; color:var(--text)}
   .modal-sub{ font-size:13px; color:var(--muted); margin-top:4px;}
   .modal-desc{ font-size:14px; color:var(--text); opacity:.95; margin:10px 0 14px; text-align:justify;}
   .links{
@@ -148,14 +160,14 @@ author_profile: true
     Explore a selection of interactive planning tools and research prototypes. Click any project card to view a larger preview and links.
   </p>
 
-  <h3 class="section-title">Micromobility and Multimodal Routing and Planning</h3>
+  <h3 class="section-title gradient">Micromobility and Multimodal Routing and Planning</h3>
   <div class="grid">
     <!-- Bikeshare Pro -->
     <article class="card">
       <button class="card-btn"
         data-title="Bikeshare Pro"
         data-yearrole="2023 · Lead R&amp;D"
-        data-sub="Station planning, electrification, GNN demand, transit integration"
+        data-sub="Ridership prediction, Station planning, Electrification, Transit integration"
         data-img="/images/bikeshare.png"
         data-desc="A web decision-support tool for bike-share expansion, charger deployment, and multimodal integration built on optimization and predictive models."
         data-links='[
@@ -167,7 +179,7 @@ author_profile: true
           <div class="title">Bikeshare Pro</div>
           <div class="pill">2023 · Lead R&D</div>
         </div>
-        <div class="pill">Station planning, electrification, GNN demand, transit integration</div>
+        <div class="pill">Ridership prediction, Station planning, Electrification, Transit integration</div>
         <img class="thumb" src="/images/bikeshare.png" alt="Bikeshare Pro preview">
       </button>
     </article>
@@ -249,7 +261,7 @@ author_profile: true
     </article>
   </div>
 
-  <h3 class="section-title">Electrification Infrastructure and Optimization</h3>
+  <h3 class="section-title gradient">Electrification Infrastructure and Optimization</h3>
   <div class="grid">
     <!-- EV Charger Pro -->
     <article class="card">
@@ -311,7 +323,7 @@ author_profile: true
     </article>
   </div>
 
-  <h3 class="section-title">Other Specialized Planning Tools</h3>
+  <h3 class="section-title gradient">Other Specialized Planning Tools</h3>
   <div class="grid">
     <!-- ResponsePro -->
     <article class="card">
@@ -415,8 +427,10 @@ author_profile: true
     </article>
   </div>
 
-  <p style="text-align:center; margin:20px 0 6px;">
-    For more, visit <a href="https://interactive-or.net/" target="_blank" rel="noopener">Interactive-OR</a> or <a href="https://github.com/ghazzaale" target="_blank" rel="noopener">GitHub</a>.
+  <p style="text-align:center; margin:20px 0 6px; color: #000000;">
+        For more, visit <a href="https://interactive-or.net/" target="_blank" rel="noopener">Interactive-OR</a>.
+
+    <!-- For more, visit <a href="https://interactive-or.net/" target="_blank" rel="noopener">Interactive-OR</a> or <a href="https://github.com/ghazzaale" target="_blank" rel="noopener">GitHub</a>. -->
   </p>
 </div>
 
