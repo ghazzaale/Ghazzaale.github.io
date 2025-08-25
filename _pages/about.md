@@ -9,14 +9,17 @@ redirect_from:
 ---
 
 <div style="text-align: justify; margin-bottom: 20px; font-size: 14px; font-family: 'Georgia', serif;">
+I recently defended my PhD in Transportation Engineering at York University and will be taking on the role of R&D Director at the <a href="https://interactive-or.net/" target="_blank" rel="noopener noreferrer">Interactive-OR Lab</a>, where I am also continuing as a PDV. My journey has been one of bridging complex research with real-world solutions. I have had the opportunity to collaborate with cities, public agencies, and startups to translate advanced methods in data science and optimization into practical planning tools. This work has taught me how to design, build, and deploy interactive decision-support systems on the cloud using technologies such as AWS, Firebase, WebAssembly, and Mapbox.  
 
-I am a PhD candidate in Transportation Engineering at York University, affiliated with the <a href="https://interactive-or.net/" target="_blank" rel="noopener noreferrer">Interactive-OR Lab</a>. I have been fortunate to work under the supervision of <a href="https://www.linkedin.com/in/mehdi-nourinejad-a0040843/" target="_blank" rel="noopener noreferrer">Dr. Mehdi Nourinejad</a> (supervisor), who is also an Amazon Scholar, and Dr. Peter Park (co-supervisor).  My research focuses on shared micromobility systems, particularly the design and optimization of bike-sharing and e-bike networks. I work at the intersection of data science, optimization, and transportation systems, developing models and tools that support sustainable, equitable, and operationally viable mobility solutions.
+
+<!-- I am a PhD candidate in Transportation Engineering at York University, affiliated with the <a href="https://interactive-or.net/" target="_blank" rel="noopener noreferrer">Interactive-OR Lab</a>. I have been fortunate to work under the supervision of <a href="https://www.linkedin.com/in/mehdi-nourinejad-a0040843/" target="_blank" rel="noopener noreferrer">Dr. Mehdi Nourinejad</a> (supervisor), who is also an Amazon Scholar, and Dr. Peter Park (co-supervisor).  
+My research focuses on shared micromobility systems, particularly the design and optimization of bike-sharing and e-bike networks. I work at the intersection of data science, optimization, and transportation systems, developing models and tools that support sustainable, equitable, and operationally viable mobility solutions. -->
 
 </div>
 
 <div style="text-align: justify; margin-bottom: 20px; font-size: 14px; font-family: 'Georgia', serif;">
 
-My work integrates advanced techniques, including Graph Neural Networks for ridership prediction, Continuum Approximation and force-based algorithms for station placement, and two-dimensional Markovian models for e-bike charging and relocation. These methodologies form the foundation of <strong>Bikeshare Pro</strong>, a web-based decision-support tool I developed to help cities and operators optimize bike-share expansion, charger deployment, and multimodal integration.
+My PhD thesis was focused on shared micromobility systems, particularly the design and optimization of bike-sharing and e-bike networks. This research laid the foundation for <strong>Bikeshare Pro</strong>, a web-based decision-support tool that helps cities and operators plan bike-share expansion, charger deployment, and multimodal integration. Along the way, I applied advanced methods in machine learning and optimization, including Graph Neural Networks for ridership prediction, force-based algorithms for station placement, and Markovian models for e-bike charging. Beyond micromobility, I’ve also led projects in electric bus charging, automated speed enforcement, emergency response planning, and urban service logistics.
 
 </div>
 
@@ -28,13 +31,7 @@ My work integrates advanced techniques, including Graph Neural Networks for ride
 
 <div style="text-align: justify; margin-bottom: 20px; font-size: 14px; font-family: 'Georgia', serif;">
 
-Beyond micromobility, I’ve led and contributed to diverse projects in electric bus charging, automated enforcement, emergency response planning, and urban service logistics, among others. I regularly collaborate with public agencies, startups, and researchers to develop advanced optimization models and turn them into actionable, interactive planning tools — hosted on the cloud and deployed through web interfaces using technologies like AWS, Firebase, WebAssembly, and Mapbox.
-
-</div>
-
-<div style="text-align: justify; margin-bottom: 20px; font-size: 14px; font-family: 'Georgia', serif;">
-
-I am passionate about bridging the gap between academic research and real-world impact. You can explore some of my applied and research work in the "Portfolio" section. If you're interested in collaboration, feedback, or sharing ideas — I’d love to connect!
+I am passionate about bridging the gap between complex academic research and real-world practice. You can explore some of my applied and research projects in the ‘Portfolio’ section. If you’re interested in collaboration, feedback, or exchanging ideas, I’d be delighted to connect! 
 
 </div>
 
