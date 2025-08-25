@@ -114,7 +114,11 @@ author_profile: true
   }
   .modal{
     /* width:min(960px,92vw); */
-    width: min(1100px, 94vw);
+    /* width: min(1100px, 94vw); */
+    width: 60vw;          /* percent of viewport width */
+  max-width: 1100px;    /* keep a ceiling */
+  min-width: 320px; 
+
   max-height: 88vh;
     background:#1a2233; 
     border:1px solid var(--border);
@@ -182,18 +186,17 @@ author_profile: true
     <!-- Bikeshare Pro -->
     <article class="card">
       <button class="card-btn"
-        data-title="Bikeshare Pro"
+        data-title="Bikeshare Pro 🏆"
         data-yearrole="2023 · Lead R&amp;D"
         data-sub="Ridership prediction, Station planning, Electrification, Transit integration"
         data-img="/images/bikeshare.png"
-        data-desc="A web decision-support tool for bike-share expansion, charger deployment, and multimodal integration built on optimization and predictive models."
-        data-links='[
+data-desc="A web decision-support tool for bike-share expansion, charger deployment, and multimodal integration, built on optimization and predictive models. Award-winning, piloted with partners, and scaled to 15+ cities."        data-links='[
           {"label":"Tool Description","href":"https://interactive-or.net/bikesharepro"},
           {"label":"Video","href":"https://www.youtube.com/watch?v=JYsBq0uCxRQ&list=PLMQSwmI9u1hxwkDlHrtIriCNH1xZ1m863"},
           {"label":"Paper Demo","href":"https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_flow-maximizing-facility-location-using-continuum-activity-7291560428415991808-4foT"}
         ]'>
         <div class="card-top">
-          <div class="title">Bikeshare Pro</div>
+          <div class="title">Bikeshare Pro 🏆</div>
           <div class="pill">2023 · Lead R&D</div>
         </div>
         <div class="pill">Ridership prediction, Station planning, Electrification, Transit integration</div>
@@ -262,15 +265,15 @@ author_profile: true
     <!-- RideAlike -->
     <article class="card">
       <button class="card-btn"
-        data-title="Descriptive Analytics for Peer-to-Peer Ridesharing"
-        data-yearrole="2024 · Researcher &amp; Product Developer"
+        data-title="Peer-to-Peer Ridesharing"
+        data-yearrole="2024 · Lead R&D"
         data-sub="Supply and demand analysis using LLMs"
         data-img="/images/ridealike.png"
         data-desc="Exploratory analytics and dashboards for marketplace supply and demand using natural-language assisted workflows."
         data-links='[]'>
         <div class="card-top">
-          <div class="title">Descriptive Analytics for Peer-to-Peer Ridesharing</div>
-          <div class="pill">2024 · Researcher & Product Developer</div>
+          <div class="title">Peer-to-Peer Ridesharing</div>
+          <div class="pill">2024 · Lead R&D</div>
         </div>
         <div class="pill">Supply and demand analysis using LLMs</div>
         <img class="thumb" src="/images/ridealike.png" alt="RideAlike preview">
@@ -314,7 +317,7 @@ author_profile: true
         ]'>
         <div class="card-top">
           <div class="title">Electric Transit Scheduling Pro</div>
-          <div class="pill">2024 · Researcher & Lead Product Developer</div>
+          <div class="pill">2024 · Researcher &<br> Lead Product Developer</div>
         </div>
         <div class="pill">GTFS-based in-route charging optimization</div>
         <img class="thumb" src="/images/etransit.png" alt="Electric Transit Scheduling preview">
@@ -332,7 +335,7 @@ author_profile: true
         data-links='[]'>
         <div class="card-top">
           <div class="title">Charging Optimization for School Buses</div>
-          <div class="pill">2024 · Researcher & Lead Product Developer</div>
+          <div class="pill">2024 · Researcher &<br> Lead Product Developer</div>
         </div>
         <div class="pill">Depot cost minimization and charging windows</div>
         <img class="thumb" src="/images/schoolbus.png" alt="School bus charging preview">
