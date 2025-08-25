@@ -173,6 +173,69 @@ author_profile: true
     padding:6px 10px;
     cursor:pointer;
   }
+
+/* Theme for upcoming items */
+.card.upcoming{
+  background: linear-gradient(180deg, #1c2333 0%, #121827 100%);
+  border-color: rgba(255,255,255,.18);
+  box-shadow: 0 10px 28px rgba(118,183,255,.18);
+}
+.card.upcoming:hover,
+.card.upcoming:focus-within{
+  box-shadow: 0 14px 36px rgba(118,183,255,.28);
+}
+
+/* Make the button feel special with a gradient ring */
+.card.upcoming .card-btn{ position: relative; }
+.card.upcoming .card-btn::before{
+  content:"";
+  position:absolute; inset:0;
+  border-radius:16px;
+  padding:1px;
+  background: linear-gradient(135deg, #76b7ff, #b892ff, #76ffd2);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  pointer-events:none;
+}
+
+/* Title and meta color tweaks for visibility */
+.card.upcoming .title{
+  display:flex; align-items:center; gap:8px;
+}
+.status-chip{
+  display:inline-flex; align-items:center;
+  font-size:12px; font-weight:700; letter-spacing:.3px;
+  padding:4px 10px; border-radius:999px;
+  color:#0b0d12;
+  background: linear-gradient(90deg, #ffd476, #ff9fcf);
+  box-shadow: 0 6px 18px rgba(255,200,120,.25);
+}
+.card.upcoming .pill{ color:#e7ecf3; opacity:.95; }
+
+.card{ position:relative; }  /* required for .status-chip positioning */
+
+/* Image treatment for upcoming */
+.card.upcoming .thumb{ filter: saturate(1.05) brightness(.95); }
+
+.card.upcoming .card-btn[disabled]{
+  cursor:not-allowed;
+  opacity:1;                         /* override browser’s default dimming */
+}
+
+/* Placeholder when there is no image */
+.thumb.placeholder{
+  display:flex; align-items:center; justify-content:center;
+  aspect-ratio:16/9;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.1);
+  background:
+    repeating-linear-gradient(135deg, rgba(255,255,255,.06) 0 10px, transparent 10px 20px),
+    radial-gradient(1200px 400px at 0% 0%, #22304a, #161b29 60%);
+  color:#e7ecf3;
+  font-weight:600;
+}
+
+
 </style>
 
 <div class="portfolio-wrap">
@@ -279,6 +342,28 @@ data-desc="Integrates bikeshare, transit, and driving in a single trip planner, 
         <img class="thumb" src="/images/ridealike.png" alt="RideAlike preview">
       </button>
     </article>
+
+    <article class="card upcoming">
+  <button class="card-btn" disabled
+    data-title="Bike Lane Planning"
+    data-yearrole="2025 · Lead R&amp;D"
+    data-sub="Corridor prioritization · equity and safety overlays"
+    data-img=""
+    data-desc="Network-wide scoring and phased roll-out for protected bike lanes. Launching soon."
+    data-links='[]'>
+    <div class="card-top">
+      <div class="title">
+        Bike Lane Planning
+        <span class="status-chip">Coming soon</span>
+      </div>
+      <div class="pill">2025 · Lead R&amp;D</div>
+    </div>
+    <div class="pill">Corridor prioritization · equity and safety overlays</div>
+    <div class="thumb placeholder">Preview coming soon</div>
+  </button>
+</article>
+
+
   </div>
 
   <h3 class="section-title gradient">Electrification Infrastructure and Optimization</h3>
@@ -290,8 +375,7 @@ data-desc="Integrates bikeshare, transit, and driving in a single trip planner, 
         data-yearrole="2024 · Product Developer"
         data-sub="EV demand forecasting and charger siting"
         data-img="/images/evpro.png"
-        data-desc="Forecasting and siting support for EV charging networks with scenario planning."
-        data-links='[
+data-desc="EV charger siting with scenario planning that integrates travel survey patterns and vehicle ownership data to target high-use locations."        data-links='[
           {"label":"Demo","href":"https://interactive-or.net/evchargerplanning"}
         ]'>
         <div class="card-top">
@@ -328,14 +412,14 @@ data-desc="Integrates bikeshare, transit, and driving in a single trip planner, 
     <article class="card">
       <button class="card-btn"
         data-title="Charging Optimization for School Buses"
-        data-yearrole="2024 · Researcher &amp; Lead Product Developer"
+        data-yearrole="2024 · Researcher &amp; Product Developer"
         data-sub="Depot cost minimization and charging windows"
         data-img="/images/schoolbus.png"
-        data-desc="Depot-level charging strategy design with cost controls and peak avoidance."
+data-desc="Large-scale depot charging optimization with cost control and peak management. I implemented a custom heuristic and moved the compute kernel to WebAssembly for near native performance."
         data-links='[]'>
         <div class="card-top">
-          <div class="title">Charging Optimization for School Buses</div>
-          <div class="pill">2024 · Researcher &<br> Lead Product Developer</div>
+          <div class="title">Depot Charging Optimization</div>
+          <div class="pill">2024 · Researcher &<br> Product Developer</div>
         </div>
         <div class="pill">Depot cost minimization and charging windows</div>
         <img class="thumb" src="/images/schoolbus.png" alt="School bus charging preview">
@@ -352,7 +436,7 @@ data-desc="Integrates bikeshare, transit, and driving in a single trip planner, 
         data-yearrole="2024 · Lead R&amp;D"
         data-sub="Fire station planning and response analytics"
         data-img="/images/responsepro.png"
-        data-desc="Deployment analytics and coverage evaluation for emergency services."
+data-desc="Deployment analytics and coverage evaluation for emergency services, already in use by Fire Chiefs in four cities. Includes incident prediction and station deployment optimization, with sensitive call data stored securely on Canadian servers using Google servicies."
         data-links='[
           {"label":"Tool","href":"https://interactive-or.net/responsepro"}
         ]'>
@@ -372,7 +456,7 @@ data-desc="Integrates bikeshare, transit, and driving in a single trip planner, 
         data-yearrole="2024 · Lead R&amp;D"
         data-sub="Network edits with KPIs from demand to congestion"
         data-img="/images/transitplanner.png"
-        data-desc="Interactive four-stage workflow: demand, congestion, network edits, KPIs."
+data-desc="Interactive four stage workflow covering demand, congestion, network edits, and KPIs. This project is where I learned GTFS Static end to end: ingesting feeds, validating routes, trips, and stops, and turning them into networks and schedules for analysis."
         data-links='[
           {"label":"Demo","href":"https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_transit-network-design-and-scheduling-we-activity-7310471035953258496-vr0D"},
           {"label":"Tool Description","href":"https://interactive-or.net/transit"}
@@ -393,7 +477,7 @@ data-desc="Integrates bikeshare, transit, and driving in a single trip planner, 
         data-yearrole="2024 · Product Developer"
         data-sub="Arc-routing for winter maintenance"
         data-img="/images/snow.png"
-        data-desc="Route design and service analytics for snow clearance operations."
+data-desc="Developed with the City of Aurora. Phase 1 delivers optimized arc routing with route design and service level analytics. Phase 2 will add real-time fleet management, storm re-planning, and service-level monitoring."
         data-links='[
           {"label":"Tool Description","href":"https://interactive-or.net/snowplowpro"}
         ]'>
@@ -433,7 +517,7 @@ data-desc="Integrates bikeshare, transit, and driving in a single trip planner, 
         data-yearrole="2023 · Product Developer"
         data-sub="Automated Speed Enforcement camera allocation"
         data-img="/images/ase.png"
-        data-desc="Allocation strategies for ASE programs that target high-risk corridors."
+data-desc="Allocation strategies for ASE programs targeting high-risk corridors, interactive community safety zones analysis,  and cost-aware analysis that considers unit, installation, and operating costs to maximize safety impact per dollar under budget constraints."
         data-links='[
           {"label":"Tool Description","href":"https://interactive-or.net/ase"}
         ]'>
@@ -441,10 +525,73 @@ data-desc="Integrates bikeshare, transit, and driving in a single trip planner, 
           <div class="title">Vision Zero Tool</div>
           <div class="pill">2023 · Product Developer</div>
         </div>
-        <div class="pill">Automated Speed Enforcement camera allocation</div>
+        <div class="pill">Automated Speed Enforcement camera allocation and cost analysis</div>
         <img class="thumb" src="/images/ase.png" alt="Vision Zero ASE preview">
       </button>
     </article>
+
+    <article class="card upcoming">
+  <button class="card-btn" disabled
+    data-title="Transit Bunching Monitor and Prevention"
+    data-yearrole="2025 · R&amp;D Director"
+    data-sub="Real-time headway analytics and bunching risk alerts"
+    data-img=""
+    data-desc="Live ingestion of GTFS-RT and AVL to estimate headways, predict bunching risk, predict bunching KPI in short-term, and suggest interventions."
+    data-links='[]'>
+    <div class="card-top">
+      <div class="title">
+        Transit Bunching Monitor and Prevention
+        <span class="status-chip">Coming soon</span>
+      </div>
+      <div class="pill">2025 · R&amp;D Director</div>
+    </div>
+    <div class="pill">Real-time headway analytics and bunching risk alerts</div>
+    <div class="thumb placeholder">Preview coming soon</div>
+  </button>
+</article>
+
+<!-- Wildfire Proof Pro (Upcoming) -->
+<!-- <article class="card upcoming">
+  <button class="card-btn" disabled
+    data-title="Wildfire Proof Pro"
+    data-yearrole="2025 · R&amp;D Director"
+    data-sub="Community risk, protection planning, and evacuation analytics"
+    data-img=""
+data-desc="Uses vegetation data to predict wildfire propagation and, with optimization models, recommends prioritized mitigation and response actions. Launching soon."
+    data-links='[]'>
+    <div class="card-top">
+      <div class="title">
+        Wildfire Proof Pro
+        <span class="status-chip">Coming soon</span>
+      </div>
+      <div class="pill">2025 · R&amp;D Director</div>
+    </div>
+    <div class="pill">Community risk, protection planning, and evacuation analytics</div>
+    <div class="thumb placeholder">Preview coming soon</div>
+  </button>
+</article> -->
+
+<!-- Traffic Assignment Tool (Upcoming) -->
+<article class="card upcoming">
+  <button class="card-btn" disabled
+    data-title="Traffic Assignment Tool"
+    data-yearrole="2025 · R&amp;D Director"
+    data-sub="Road network generation · construction-aware planning"
+    data-img=""
+    data-desc="We generate the road network and couple the planner with planned construction APIs. Users can add construction areas and time windows, then evaluate impacts on traffic flows, congestion, and related KPIs."
+    data-links='[]'>
+    <div class="card-top">
+      <div class="title">
+        Traffic Assignment Tool
+        <span class="status-chip">Coming soon</span>
+      </div>
+      <div class="pill">2025 · R&amp;D Director</div>
+    </div>
+    <div class="pill">Road network generation · construction-aware planning</div>
+    <div class="thumb placeholder">Preview coming soon</div>
+  </button>
+</article>
+
   </div>
 
   <p style="text-align:center; margin:20px 0 6px; color: #000000;">
