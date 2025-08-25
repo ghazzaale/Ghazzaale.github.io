@@ -106,79 +106,25 @@ author_profile: true
 
   /* Modal */
   .modal-backdrop{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    background: rgba(67, 77, 98, 0.85);
-    z-index: 999999;
-    padding: 20px;
-    box-sizing: border-box;
+    position:fixed; inset:0; display:none;
+    align-items:center; justify-content:center;
+    background: rgba(67, 77, 98, 0.65);
+    z-index:1000000;
+    padding: 20px;  
   }
-  .modal-backdrop.is-open{ 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   .modal{
+    /* width:min(960px,92vw); */
     width: min(1100px, 94vw);
-    max-height: 88vh;
-    overflow: hidden;
-    background: #1a2233; 
-    border: 1px solid var(--border);
-    border-radius: 18px;
+  max-height: 88vh;
+    background:#1a2233; 
+    border:1px solid var(--border);
+    border-radius:18px;
+    overflow:hidden;
     box-shadow: 0 18px 60px rgba(0,0,0,.5);
-    display: grid;
+    display:grid;
     grid-template-columns: 1.2fr 1fr;
-    position: relative;
   }
-  @media (max-width:900px){ 
-    .modal{ 
-      grid-template-columns: 1fr; 
-      width: 95vw;
-      max-height: 90vh;
-    }
-    .modal-backdrop {
-      padding: 10px;
-    }
-  }
-  
-  body.modal-open{ 
-    overflow: hidden; 
-    padding-right: var(--sbw, 0px); 
-  }
-  
-  /* Ensure modal appears above other elements */
-  .modal-backdrop {
-    z-index: 999999 !important;
-  }
-  
-  /* Prevent body scroll when modal is open */
-  body.modal-open {
-    position: fixed;
-    width: 100%;
-  }
-  
-  /* Additional modal styling to ensure visibility */
-  .modal-backdrop.is-open {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-  
-  .modal {
-    z-index: 1000000 !important;
-    position: relative !important;
-  }
-  
-  /* Ensure modal content is visible */
-  .modal-media img {
-    max-width: 100%;
-    height: auto;
-  }
+  @media (max-width:900px){ .modal{ grid-template-columns: 1fr; } }
 
   .modal-media{
     background:#1a2233;
@@ -223,67 +169,6 @@ author_profile: true
     padding:6px 10px;
     cursor:pointer;
   }
-/* Theme for upcoming items */
-.card.upcoming{
-  background: linear-gradient(180deg, #1c2333 0%, #121827 100%);
-  border-color: rgba(255,255,255,.18);
-  box-shadow: 0 10px 28px rgba(118,183,255,.18);
-}
-.card.upcoming:hover,
-.card.upcoming:focus-within{
-  box-shadow: 0 14px 36px rgba(118,183,255,.28);
-}
-
-/* Make the button feel special with a gradient ring */
-.card.upcoming .card-btn[disabled]{
-  cursor:not-allowed;
-  opacity:1;                         /* override browser’s default dimming */
-}
-.card.upcoming .card-btn{ pointer-events:auto; }  /* allow cursor change */
-
-.card.upcoming .card-btn::before{
-  content:"";
-  position:absolute; inset:0;
-  border-radius:16px;
-  padding:1px;
-  background: linear-gradient(135deg, #76b7ff, #b892ff, #76ffd2);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor; mask-composite: exclude;
-  pointer-events:none;
-}
-
-/* Title and meta color tweaks for visibility */
-.card.upcoming .title{ color:#ffffff; display:flex; align-items:center; gap:8px; }
-.card.upcoming .pill{ color:#e7ecf3; opacity:.95; }
-
-/* Visible status chip in the header, accessible and stylable */
-.status-chip{
-  display:inline-flex; align-items:center;
-  font-size:12px; font-weight:700; letter-spacing:.3px;
-  padding:4px 10px; border-radius:999px;
-  color:#0b0d12;
-  background: linear-gradient(90deg, #ffd476, #ff9fcf);
-  box-shadow: 0 6px 18px rgba(255,200,120,.25);
-}
-.card{ position:relative; }  /* required for .status-chip positioning */
-
-/* Image treatment for upcoming */
-.card.upcoming .thumb{ filter: saturate(1.05) brightness(.95); }
-
-/* Placeholder when there is no image */
-.thumb.placeholder{
-  display:flex; align-items:center; justify-content:center;
-  aspect-ratio:16/9;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.1);
-  background:
-    repeating-linear-gradient(135deg, rgba(255,255,255,.06) 0 10px, transparent 10px 20px),
-    radial-gradient(1200px 400px at 0% 0%, #22304a, #161b29 60%);
-  color:#e7ecf3;
-  font-weight:600;
-}
-
-
 </style>
 
 <div class="portfolio-wrap">
@@ -391,47 +276,6 @@ author_profile: true
         <img class="thumb" src="/images/ridealike.png" alt="RideAlike preview">
       </button>
     </article>
-    <!-- Bike Lane Planning (Upcoming) -->
-<article class="card upcoming">
-  <span class="status-chip">Coming soon</span>
-  <button class="card-btn" disabled
-    data-title="Bike Lane Planning"
-    data-yearrole="2025 · Lead R&amp;D"
-    data-sub="Corridor prioritization · equity and safety overlays"
-        data-img=""
-    data-desc="Network-wide scoring and phased roll-out for protected bike lanes, integrating demand, safety, equity, and network continuity. Launching soon."
-    data-links='[]'>
-    <div class="card-top">
-      <div class="title">Bike Lane Planning</div>
-      <div class="pill">2025 · Lead R&amp;D</div>
-    </div>
-    <div class="pill">Corridor prioritization · equity and safety overlays</div>
-    <!-- <img class="thumb" src="/images/bikelanes.png" alt="Bike Lane Planning preview" loading="lazy"> -->
-         <div class="thumb placeholder">Preview coming soon</div>
-
-  </button>
-</article>
-    <!-- data-img="/images/bikelanes.png" -->
-
-
-<!-- 
-    <article class="card upcoming">
-  <button class="card-btn"
-    data-title="GTFS Bunching Monitor"
-    data-yearrole="2025 · Lead R&D"
-    data-sub="Real-time bunching and gap detection with alerts"
-    data-img="/images/bunching.png"
-    data-desc="Live analytics for headways, bunching risk, and interventions. Launching soon."
-    data-links='[]'>
-    <div class="card-top">
-      <div class="title">GTFS Bunching Monitor</div>
-      <div class="pill">2025 · Lead R&amp;D</div>
-    </div>
-    <div class="pill">Real-time bunching and gap detection with alerts</div>
-    <img class="thumb" src="/images/bunching.png" alt="GTFS bunching preview">
-  </button>
-</article> -->
-
   </div>
 
   <h3 class="section-title gradient">Electrification Infrastructure and Optimization</h3>
@@ -602,14 +446,9 @@ author_profile: true
 
   <p style="text-align:center; margin:20px 0 6px; color: #000000;">
         For more, visit <a href="https://interactive-or.net/" target="_blank" rel="noopener">Interactive-OR</a>.
+
+    <!-- For more, visit <a href="https://interactive-or.net/" target="_blank" rel="noopener">Interactive-OR</a> or <a href="https://github.com/ghazzaale" target="_blank" rel="noopener">GitHub</a>. -->
   </p>
-  
-  <!-- Test button for debugging -->
-  <div style="text-align: center; margin: 20px 0;">
-    <button onclick="testModal()" style="padding: 10px 20px; background: #4588be; color: white; border: none; border-radius: 5px; cursor: pointer;">
-      Test Modal
-    </button>
-  </div>
 </div>
 
 <!-- Modal -->
@@ -641,139 +480,43 @@ author_profile: true
   const desc = q('#modalDesc');
   const links = q('#modalLinks');
   const closeBtn = q('#modalClose');
-  
-  console.log('Modal elements found:', {
-    backdrop: !!backdrop,
-    img: !!img,
-    title: !!title,
-    sub: !!sub,
-    desc: !!desc,
-    links: !!links,
-    closeBtn: !!closeBtn
-  });
-
-  // Ensure modal backdrop is in the body
-  if (backdrop && backdrop.parentElement !== document.body) {
-    console.log('Moving modal backdrop to body');
-    document.body.appendChild(backdrop);
-  }
-  
-  console.log('Modal backdrop parent:', backdrop ? backdrop.parentElement : 'No backdrop found');
 
   function openModal(data){
-    console.log('Opening modal with data:', data);
-    
-    // Set modal content
     img.src = data.img || '';
     img.alt = data.title ? data.title + ' preview' : 'Project preview';
     title.textContent = data.title || '';
     sub.textContent = data.yearrole ? data.yearrole + ' · ' + (data.sub || '') : (data.sub || '');
     desc.textContent = data.desc || '';
     links.innerHTML = '';
-    
     try{
       const arr = JSON.parse(data.links || '[]');
       arr.forEach(x => {
         const a = document.createElement('a');
-        a.href = x.href; 
-        a.target = '_blank'; 
-        a.rel = 'noopener';
-        a.className = 'link-btn'; 
-        a.textContent = x.label;
+        a.href = x.href; a.target = '_blank'; a.rel = 'noopener';
+        a.className = 'link-btn'; a.textContent = x.label;
         links.appendChild(a);
       });
-    }catch(e){
-      console.warn('Error parsing links:', e);
-    }
-
-    // Show modal
-    backdrop.classList.add('is-open');
+    }catch(e){}
+    backdrop.style.display = 'flex';
     backdrop.setAttribute('aria-hidden','false');
-
-    // Lock page scroll and avoid layout shift
-    const sbw = window.innerWidth - document.documentElement.clientWidth;
-    document.body.style.setProperty('--sbw', sbw ? sbw + 'px' : '0px');
-    document.body.classList.add('modal-open');
-    
-    // Focus management
-    setTimeout(() => {
-      if (closeBtn) closeBtn.focus();
-    }, 100);
-    
-    console.log('Modal should now be visible');
   }
-
-
   function closeModal(){
-    console.log('Closing modal');
-    backdrop.classList.remove('is-open');
+    backdrop.style.display = 'none';
     backdrop.setAttribute('aria-hidden','true');
-    document.body.classList.remove('modal-open');
-    document.body.style.removeProperty('--sbw');
   }
-
-  // Add event listeners to card buttons
-  const cardButtons = qa('.card-btn');
-  console.log('Found card buttons:', cardButtons.length);
-  
-  cardButtons.forEach((btn, index) => {
-    btn.addEventListener('click', (e) => {
-      console.log('Card button clicked:', index);
-      e.preventDefault();
-      e.stopPropagation();
-      
-      const isUpcoming = btn.closest('.card')?.classList.contains('upcoming');
-      if(isUpcoming){
-        // Show teaser modal for upcoming items
-        openModal({
-          title: btn.dataset.title || "Upcoming",
-          yearrole: (btn.dataset.yearrole || "") + " · Launching soon",
-          sub: btn.dataset.sub || "",
-          img: btn.dataset.img || "",
-          desc: "This tool is in development. Check back soon for the live demo and docs.",
-          links: '[]'
-        });
-      } else {
-        openModal({
-          title: btn.dataset.title,
-          yearrole: btn.dataset.yearrole,
-          sub: btn.dataset.sub,
-          img: btn.dataset.img,
-          desc: btn.dataset.desc,
-          links: btn.dataset.links
-        });
-      }
+  qa('.card-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      openModal({
+        title: btn.dataset.title,
+        yearrole: btn.dataset.yearrole,
+        sub: btn.dataset.sub,
+        img: btn.dataset.img,
+        desc: btn.dataset.desc,
+        links: btn.dataset.links
+      });
     });
   });
-
-  // Add event listeners for closing modal
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeModal);
-  }
-  
-  if (backdrop) {
-    backdrop.addEventListener('click', e => { 
-      if(e.target === backdrop) closeModal(); 
-    });
-  }
-  
-  document.addEventListener('keydown', e => { 
-    if(e.key === 'Escape' && backdrop.classList.contains('is-open')) {
-      closeModal(); 
-    }
-  });
-  
-  // Test function for debugging
-  window.testModal = function() {
-    console.log('Test modal function called');
-    openModal({
-      title: 'Test Modal',
-      yearrole: '2024 · Test',
-      sub: 'This is a test modal',
-      img: '/images/bikeshare.png',
-      desc: 'This is a test modal to verify that the modal functionality is working correctly.',
-      links: '[{"label":"Test Link","href":"https://example.com"}]'
-    });
-  };
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', e => { if(e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
 </script>
-
