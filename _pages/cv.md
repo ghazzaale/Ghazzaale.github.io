@@ -22,7 +22,7 @@ redirect_from:
 <ul>
 
   <li><strong>R&D Director</strong>, Interactive-OR Lab – York University (Sep 2025 - Present)
-     <em>(also serving as Postdoctoral Visitor)</em>
+     <em>(also serving as Postdoctoral Fellow)</em>
   <br>
   Leading research and development strategy for applied optimization and ML-analytics tools in transportation and urban systems. 
   Supervising cross-functional teams and expanded partnerships with cities, agencies, and startups to deliver and scale industry-partnered Interactive-OR projects.</li>
