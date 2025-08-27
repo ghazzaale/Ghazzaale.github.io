@@ -28,6 +28,7 @@ redirect_from:
   Supervising cross-functional teams and expanded partnerships with cities, agencies, and startups to deliver and scale industry-partnered Interactive-OR projects.</li>
 
   <li><strong>Graduate Research Assistant</strong>, Lassonde School of Engineering – York University (Sep 2021 – August 2025)
+  </br>
   Researcher and product developer with the Interactive-OR Lab, contributing to projects in micromobility, emergency response, transit electrification, and urban safety planning.
     <ul>
     <li><strong>Mitacs Business Strategy Intern</strong>, Lassonde School of Engineering – York University (Jan 2025 – August 2025)
@@ -48,9 +49,8 @@ redirect_from:
   </li>
 
   <li><strong>Graduate Teaching Assistant</strong>, Lassonde School of Engineering – York University (Sep 2021 – August 2025)
-    <ul>
-      <li>Delivered tutorials, mentored students, and supported simulation and design-based coursework in AutoCAD, Civil 3D, and PTV Vissim.</li>
-    </ul>
+  </br>
+Delivered tutorials, mentored students, and supported simulation and design-based coursework in AutoCAD, Civil 3D, and PTV Vissim.
   </li>
 
 
