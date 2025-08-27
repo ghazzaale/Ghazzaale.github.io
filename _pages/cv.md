@@ -33,7 +33,7 @@ redirect_from:
 
   <li><strong>Graduate Research Assistant</strong>, Lassonde School of Engineering – York University (Sep 2021 – August 2025)
   <br>
-  Researcher and product developer with the Interactive-OR Lab, contributing to projects in micromobility, emergency response, transit electrification, and urban safety planning.
+  Researcher and product developer with the Interactive-OR Lab.
     <ul>
     <li><strong>Mitacs Business Strategy Intern</strong>, Lassonde School of Engineering – York University (Jan 2025 – August 2025)
     <ul>
