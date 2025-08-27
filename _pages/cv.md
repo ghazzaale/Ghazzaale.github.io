@@ -23,12 +23,12 @@ redirect_from:
 
   <li><strong>R&D Director</strong>, Interactive-OR Lab – York University (Sep 2025 - Present)
      <em>(also serving as Postdoctoral Visitor)</em>
-  </br>
+  <br>
   Leading research and development strategy for applied optimization and ML-analytics tools in transportation and urban systems. 
   Supervising cross-functional teams and expanded partnerships with cities, agencies, and startups to deliver and scale industry-partnered Interactive-OR projects.</li>
 
   <li><strong>Graduate Research Assistant</strong>, Lassonde School of Engineering – York University (Sep 2021 – August 2025)
-  </br>
+  <br>
   Researcher and product developer with the Interactive-OR Lab, contributing to projects in micromobility, emergency response, transit electrification, and urban safety planning.
     <ul>
     <li><strong>Mitacs Business Strategy Intern</strong>, Lassonde School of Engineering – York University (Jan 2025 – August 2025)
@@ -49,7 +49,7 @@ redirect_from:
   </li>
 
   <li><strong>Graduate Teaching Assistant</strong>, Lassonde School of Engineering – York University (Sep 2021 – August 2025)
-  </br>
+  <br>
 Delivered tutorials, mentored students, and supported simulation and design-based coursework in AutoCAD, Civil 3D, and PTV Vissim.
   </li>
 
