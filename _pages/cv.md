@@ -91,5 +91,3 @@ Delivered tutorials, mentored students, and supported simulation and design-base
     </ul>
   </li>
 </ul>
-
-</div>
