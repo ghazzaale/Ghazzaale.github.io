@@ -53,13 +53,18 @@ redirect_from:
 </ul>
 
 <h2 style="font-size: 16px; font-family: 'Georgia', serif;">Skills</h2>
-<ul>
+<!-- <ul>
   <li><strong>Programming & Data:</strong> Python, JavaScript, R, SQL, C++, MATLAB, REST APIs, Git/GitHub</li>
   <li><strong>Machine Learning:</strong> TensorFlow, PyTorch, Graph Neural Networks, demand forecasting</li>
   <li><strong>Optimization & Operations Research:</strong> Mathematical Optimization (LP/MIP), Deep Learning, Operations Research, Large-scale model design</li>
   <li><strong>Product Development & Cloud Deployment:</strong> Web-based decision support tools, React, HTML/CSS, AWS (Lambda, S3), Firebase, Google Cloud Platform, WebAssembly solvers</li>
   <li><strong>GIS & Spatial Analysis:</strong> Mapbox, ArcGIS, TransCAD, PTV Vissim/Vissum, AutoCAD, Civil 3D, Arena</li>
   <li><strong>Soft Skills:</strong> Project Management, Problem Solving, Cross-Functional Collaboration, Technical Communication</li>
+</ul> -->
+<ul>
+  <li><strong>Programming & Data:</strong> Python (Advanced), JavaScript (Advanced), R (Intermediate), SQL (Intermediate)</li>
+  <li><strong>Machine Learning & Optimization:</strong> Deep Learning Frameworks and Prediction Models, Mathematical Optimization (LP/MIP, OR-Tools)</li>
+  <li><strong>Systems & Tools:</strong> AWS – Lambda/S3 (Intermediate), Firebase (Intermediate), Google Cloud (Intermediate), Git/GitHub (Advanced), React (Intermediate), Mapbox (Advanced), ArcGIS (Intermediate)</li>
 </ul>
 
 <h2 style="font-size: 16px; font-family: 'Georgia', serif;">Honors and Awards</h2>
