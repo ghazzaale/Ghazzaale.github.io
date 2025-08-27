@@ -13,7 +13,7 @@ redirect_from:
 
 <h2 style="font-size: 16px; font-family: 'Georgia', serif;">Education</h2>
 <ul>
-  <li><strong>Ph.D. in Transportation Engineering</strong>, York University, 2025 (expected)</li>
+  <li><strong>Ph.D. in Transportation Engineering</strong>, York University, 2025</li>
   <li><strong>M.Sc. in Transportation Engineering</strong>, Sharif University of Technology, 2017</li>
   <li><strong>B.Sc. in Civil Engineering</strong>, Isfahan University of Technology, 2014</li>
 </ul>
@@ -21,36 +21,39 @@ redirect_from:
 <h2 style="font-size: 16px; font-family: 'Georgia', serif;">Work Experience (Canada)</h2>
 <ul>
 
-  <li><strong>Graduate Research Assistant</strong>, Lassonde School of Engineering – York University (Sep 2021 – Present)
+  <li><strong>R&D Director</strong>, Interactive-OR Lab – York University (Sep 2025 - Present)
+     <em>(also serving as Postdoctoral Visitor)</em>
+  Leading research and development strategy for applied optimization and ML-analytics tools in transportation and urban systems. 
+  Supervising cross-functional teams and expanded partnerships with cities, agencies, and startups to deliver and scale industry-partnered Interactive-OR projects.</li>
+</li>
+
+  <li><strong>Graduate Research Assistant</strong>, Lassonde School of Engineering – York University (Sep 2021 – August 2025)
+  Researcher and product developer with the Interactive-OR Lab, contributing to projects in micromobility, emergency response, transit electrification, and urban safety planning.
     <ul>
-      <li>Researcher and product developer with the Interactive-OR Lab, contributing to projects in micromobility, emergency response, transit electrification, and urban safety planning.</li>
-      <li>Led development of data-driven tools and optimization models.</li>
+    <li><strong>Mitacs Business Strategy Intern</strong>, Lassonde School of Engineering – York University (Jan 2025 – August 2025)
+    <ul>
+      <li>Optimizing Charging Infrastructure for Electric Bus Fleets in partnership with Mobility Future Lab (MFL).</li>
+    <li>Developed a cost minimization model using a heuristic approach.</li>
+      <li>Developed an interactive decision-support tool for what-if scenario analysis using WebAssembly and Node.js.</li>
+    </ul>
+    </li>
+<li><strong>Mitacs Accelerate Fellow Intern</strong>, Lassonde School of Engineering – York University (May 2023 – Dec 2023)
+<ul>
+      <li>Transportation Data Assessment and Planning in collaboration with the City of Vaughan.</li>
+      <li>Mapped MoveSmart policy goals to data gaps and infrastructure requirements across mobility domains.</li>
+      <li>Collaborated on an interactive tool to optimize Automated Speed Enforcement (ASE) camera deployment.</li>
+    </ul>
+    </li>
     </ul>
   </li>
 
-  <li><strong>Graduate Teaching Assistant</strong>, Lassonde School of Engineering – York University (Sep 2021 – Present)
+  <li><strong>Graduate Teaching Assistant</strong>, Lassonde School of Engineering – York University (Sep 2021 – August 2025)
     <ul>
-      <li>Courses supported: Civil Engineering Project Management (FA21/FA24), Traffic Simulation Modelling (WI22), Civil Engineering for Sustainable Future (WI22), Transportation Engineering (FA22), Civil Engineering Design Project (WI23/WI25).</li>
       <li>Delivered tutorials, mentored students, and supported simulation and design-based coursework in AutoCAD, Civil 3D, and PTV Vissim.</li>
     </ul>
   </li>
 
-<li><strong>Mitacs Business Strategy Intern</strong>, Lassonde School of Engineering – York University (Jan 2025 – August 2025)
-    <ul>
-      <li>Project: Optimizing Charging Infrastructure for Electric Bus Fleets in partnership with Mobility Future Lab (MFL).</li>
-      <li>Designed cost-efficient charging schedules by aligning depot electricity use with off-peak periods and bus operations.</li>
-      <li>Developed an interactive decision-support tool for what-if scenario analysis using WebAssembly and Node.js.</li>
-    </ul>
-  </li>
 
-  <li><strong>Mitacs Accelerate Fellow Intern</strong>, Lassonde School of Engineering – York University (May 2023 – Dec 2023)
-    <ul>
-      <li>Project: Transportation Data Assessment and Planning in collaboration with the City of Vaughan.</li>
-      <li>Mapped MoveSmart policy goals to data gaps and infrastructure requirements across mobility domains.</li>
-      <li>Collaborated on an interactive tool for Automated Speed Enforcement (ASE) camera deployment optimization.</li>
-    </ul>
-  </li>
-</ul>
 
 <h2 style="font-size: 16px; font-family: 'Georgia', serif;">Skills</h2>
 <!-- <ul>

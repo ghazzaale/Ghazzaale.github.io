@@ -8,9 +8,10 @@ author_profile: true
 <style>
   :root {
     --bg:#0b0d12;
-    --card:#121622;
-    --text:#e7ecf3;
-    --muted:#aab5c6;
+    --card:#d4d9e0;
+    --text:#000000;
+     --text2:#f8f5f5;
+    --muted:#000000;
     --accent:#4588be;
         --normal:#000000;
     --ring:rgba(118,183,255,.35);
@@ -37,10 +38,12 @@ author_profile: true
   font-size: clamp(24px, 3.4vw, 34px);   /* larger text, scales with width */
   line-height: 1.35;                      /* more line spacing */
   letter-spacing: .3px;                   /* slight tracking for readability */
-  background: linear-gradient(90deg, #010101, #b892ff 50%, #76ffd2);
+  background: linear-gradient(90deg, #010101, #000000 50%, #000000);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  margin-top: 5rem;  
+  margin-bottom: 5rem;
 }
 
 
@@ -154,9 +157,9 @@ author_profile: true
     display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
     margin-bottom:8px;
   }
-  .modal-title{ font-size:18px; font-weight:700; color:var(--text)}
-  .modal-sub{ font-size:13px; color:var(--muted); margin-top:4px;}
-  .modal-desc{ font-size:14px; color:var(--text); opacity:.95; margin:10px 0 14px; text-align:justify;}
+  .modal-title{ font-size:18px; font-weight:700; color:var(--text2)}
+  .modal-sub{ font-size:13px; color:var(--text2); margin-top:4px;}
+  .modal-desc{ font-size:14px; color:var(--text2); opacity:.95; margin:10px 0 14px; text-align:justify;}
   .links{
     display:flex; flex-wrap:wrap; gap:8px;
   }
@@ -172,7 +175,7 @@ author_profile: true
   .close-btn{
     background:#161b29;
     border:1px solid var(--border);
-    color:var(--text);
+    color:var(--text2);
     border-radius:10px;
     padding:6px 10px;
     cursor:pointer;
@@ -180,7 +183,7 @@ author_profile: true
 
 /* Theme for upcoming items */
 .card.upcoming{
-  background: linear-gradient(180deg, #1c2333 0%, #121827 100%);
+  background: linear-gradient(180deg, #dcdcde 0%, #cdcdcf 100%);
   border-color: rgba(255,255,255,.18);
   box-shadow: 0 10px 28px rgba(118,183,255,.18);
 }
@@ -214,7 +217,7 @@ author_profile: true
   background: linear-gradient(90deg, #ffd476, #ff9fcf);
   box-shadow: 0 6px 18px rgba(255,200,120,.25);
 }
-.card.upcoming .pill{ color:#e7ecf3; opacity:.95; }
+.card.upcoming .pill{ color:#0f0f10; opacity:.95; }
 
 .card{ position:relative; }  /* required for .status-chip positioning */
 
@@ -223,7 +226,7 @@ author_profile: true
 
 .card.upcoming .card-btn[disabled]{
   cursor:not-allowed;
-  opacity:1;                         /* override browser’s default dimming */
+  opacity:0.5;                         /* override browser’s default dimming */
 }
 
 /* Placeholder when there is no image */
@@ -248,7 +251,7 @@ author_profile: true
     Explore a selection of interactive planning tools and research prototypes. Click any project card to view a larger preview and links.
   </p>
 
-  <h3 class="section-title gradient">Micromobility and Multimodal Routing and Planning</h3>
+  <h3 class="section-title gradient">Micromobility and Multimodal Planning</h3>
   <div class="grid">
     <!-- Bikeshare Pro -->
     <article class="card">
@@ -370,7 +373,7 @@ data-desc="Integrates bikeshare, transit, and driving in a single trip planner, 
 
   </div>
 
-  <h3 class="section-title gradient">Electrification Infrastructure and Optimization</h3>
+  <h3 class="section-title gradient">Electrification</h3>
   <div class="grid">
     <!-- EV Charger Pro -->
     <article class="card">
@@ -431,9 +434,9 @@ data-desc="Large-scale depot charging optimization with cost control and peak ma
     </article>
   </div>
 
-  <h3 class="section-title gradient">Other Specialized Planning Tools</h3>
+   <h3 class="section-title gradient">Emergency Management</h3>
   <div class="grid">
-    <!-- ResponsePro -->
+ <!-- ResponsePro -->
     <article class="card">
       <button class="card-btn"
         data-title="ResponsePro"
@@ -453,7 +456,33 @@ data-desc="Deployment analytics and coverage evaluation for emergency services, 
       </button>
     </article>
 
-    <!-- Transit PlanningPro -->
+ <!-- Snow PlowingPro -->
+    <article class="card">
+      <button class="card-btn"
+        data-title="Snow PlowingPro"
+        data-yearrole="2024 · Product Developer"
+        data-sub="Arc-routing for winter maintenance"
+        data-img="/images/snow.png"
+data-desc="Developed with the City of Aurora. Phase 1 delivers optimized arc routing with route design and service level analytics. Phase 2 will add real-time fleet management, storm re-planning, and service-level monitoring."
+        data-links='[
+          {"label":"Tool Description","href":"https://interactive-or.net/snowplowpro"}
+        ]'>
+        <div class="card-top">
+          <div class="title">Snow PlowingPro</div>
+          <div class="pill">2024 · Product Developer</div>
+        </div>
+        <div class="pill">Arc-routing for winter maintenance</div>
+        <img class="thumb" src="/images/snow.png" alt="Snow PlowingPro preview">
+      </button>
+    </article>
+
+    </div>
+
+
+     <h3 class="section-title gradient">Transit Planning</h3>
+  <div class="grid">
+
+     <!-- Transit PlanningPro -->
     <article class="card">
       <button class="card-btn"
         data-title="Transit PlanningPro"
@@ -474,25 +503,30 @@ data-desc="Interactive four stage workflow covering demand, congestion, network 
       </button>
     </article>
 
-    <!-- Snow PlowingPro -->
-    <article class="card">
-      <button class="card-btn"
-        data-title="Snow PlowingPro"
-        data-yearrole="2024 · Product Developer"
-        data-sub="Arc-routing for winter maintenance"
-        data-img="/images/snow.png"
-data-desc="Developed with the City of Aurora. Phase 1 delivers optimized arc routing with route design and service level analytics. Phase 2 will add real-time fleet management, storm re-planning, and service-level monitoring."
-        data-links='[
-          {"label":"Tool Description","href":"https://interactive-or.net/snowplowpro"}
-        ]'>
-        <div class="card-top">
-          <div class="title">Snow PlowingPro</div>
-          <div class="pill">2024 · Product Developer</div>
-        </div>
-        <div class="pill">Arc-routing for winter maintenance</div>
-        <img class="thumb" src="/images/snow.png" alt="Snow PlowingPro preview">
-      </button>
-    </article>
+ <article class="card upcoming">
+  <button class="card-btn" disabled
+    data-title="Transit Bunching Monitor and Prevention"
+    data-yearrole="2025 · R&amp;D Director"
+    data-sub="Real-time headway analytics and bunching risk alerts"
+    data-img=""
+    data-desc="Live ingestion of GTFS-RT and AVL to estimate headways, predict bunching risk, predict bunching KPI in short-term, and suggest interventions."
+    data-links='[]'>
+    <div class="card-top">
+      <div class="title">
+        Transit Bunching Monitor and Prevention
+        <span class="status-chip">Coming soon</span>
+      </div>
+      <div class="pill">2025 · R&amp;D Director</div>
+    </div>
+    <div class="pill">Real-time headway analytics and bunching risk alerts</div>
+    <div class="thumb placeholder">Preview coming soon</div>
+  </button>
+</article>
+    </div>
+
+
+  <h3 class="section-title gradient">Other Tools</h3>
+  <div class="grid">
 
     <!-- Parking Pricing Tool -->
     <article class="card">
@@ -534,25 +568,7 @@ data-desc="Allocation strategies for ASE programs targeting high-risk corridors,
       </button>
     </article>
 
-    <article class="card upcoming">
-  <button class="card-btn" disabled
-    data-title="Transit Bunching Monitor and Prevention"
-    data-yearrole="2025 · R&amp;D Director"
-    data-sub="Real-time headway analytics and bunching risk alerts"
-    data-img=""
-    data-desc="Live ingestion of GTFS-RT and AVL to estimate headways, predict bunching risk, predict bunching KPI in short-term, and suggest interventions."
-    data-links='[]'>
-    <div class="card-top">
-      <div class="title">
-        Transit Bunching Monitor and Prevention
-        <span class="status-chip">Coming soon</span>
-      </div>
-      <div class="pill">2025 · R&amp;D Director</div>
-    </div>
-    <div class="pill">Real-time headway analytics and bunching risk alerts</div>
-    <div class="thumb placeholder">Preview coming soon</div>
-  </button>
-</article>
+   
 
 <!-- Wildfire Proof Pro (Upcoming) -->
 <!-- <article class="card upcoming">
