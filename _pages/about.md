@@ -9,13 +9,42 @@ redirect_from:
 ---
 
 <div style="text-align: justify; margin-bottom: 20px; font-size: 14px; font-family: 'Georgia', serif;">
-I recently defended my PhD in Transportation Engineering at York University and will be taking on the role of R&D Director at the <a href="https://interactive-or.net/" target="_blank" rel="noopener noreferrer">Interactive-OR Lab</a>, where I am also continuing as a PDF. My journey has been one of bridging complex research with real-world solutions, and I have had the opportunity to collaborate with cities, public agencies, and startups to translate advanced methods in data science and optimization into practical planning tools. This work has taught me how to design, build, and deploy interactive decision-support systems on the cloud using technologies such as AWS, Firebase, WebAssembly, and Mapbox.  
-
-
+I recently defended my PhD in Transportation Engineering at York University. I also lead R&D at the [Interactive-OR Lab](https://interactive-or.net/) while continuing as a Post-Doctoral Fellow. My work translates advanced data science and optimization into deployable planning tools for cities, agencies, and startups. I design, build, and ship interactive decision-support systems on the cloud using AWS, Firebase, WebAssembly, and Mapbox; always with a focus on measurable impact, equity, and user-centered design. 
 <!-- I am a PhD candidate in Transportation Engineering at York University, affiliated with the <a href="https://interactive-or.net/" target="_blank" rel="noopener noreferrer">Interactive-OR Lab</a>. I have been fortunate to work under the supervision of <a href="https://www.linkedin.com/in/mehdi-nourinejad-a0040843/" target="_blank" rel="noopener noreferrer">Dr. Mehdi Nourinejad</a> (supervisor), who is also an Amazon Scholar, and Dr. Peter Park (co-supervisor).  
 My research focuses on shared micromobility systems, particularly the design and optimization of bike-sharing and e-bike networks. I work at the intersection of data science, optimization, and transportation systems, developing models and tools that support sustainable, equitable, and operationally viable mobility solutions. -->
 
 </div>
+
+<section class="roadmap">
+  <figure class="roadmap-figure">
+    <img src="{{ '/images/roadmap.jpg' | relative_url }}"
+         alt="Research-to-Impact Roadmap"
+         loading="lazy" decoding="async">
+    <figcaption>My research-to-impact roadmap, from framing to deployment and dissemination.</figcaption>
+  </figure>
+</section>
+
+<style>
+.roadmap-figure {
+  margin: 1.5rem auto 2rem;
+  max-width: 1100px;
+  text-align: center;
+}
+.roadmap-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.15);
+}
+.roadmap-figure figcaption {
+  text-align: center;
+  font-size: .9rem;
+  color: #666;
+  margin-top: .6rem;
+}
+</style>
+
+
 
 <div style="text-align: justify; margin-bottom: 20px; font-size: 14px; font-family: 'Georgia', serif;">
 
