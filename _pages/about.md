@@ -18,7 +18,7 @@ My research focuses on shared micromobility systems, particularly the design and
 <figure class="about-roadmap">
   <img src="{{ '/images/roadmap.png' | relative_url }}" 
        alt="Research-to-Impact Roadmap"
-       loading="lazy" decoding="async">
+       loading="lazy" decoding="async" style="max-width: 200px; float: right; margin: 0 0 1rem 1rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);" />
   <figcaption>My research-to-impact roadmap, connecting research, tool development, and dissemination.</figcaption>
 </figure>
 
