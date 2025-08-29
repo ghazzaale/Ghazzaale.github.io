@@ -25,9 +25,9 @@ redirect_from:
      <em>(also serving as Postdoctoral Fellow)</em>
   <br>
   <ul>
-  <li>Leading research and development for applied optimization and ML-analytics tools in transportation and urban systems. </li>
+  <li>Leading research and product development for applied optimization and ML-analytics tools in transportation and urban systems. </li>
   <li>
-  Supervising teams and expanding partnerships with cities, agencies, and startups to deliver and scale industry-partnered Interactive-OR projects.</li>
+  Supervising teams and expanding partnerships to deliver and scale industry-partnered Interactive-OR projects.</li>
   </ul>
   </li>
 
@@ -80,8 +80,8 @@ Delivered tutorials, mentored students, and supported simulation and design-base
 
 <h2 style="font-size: 16px; font-family: 'Georgia', serif;">Honors and Awards</h2>
 <ul>
-  <li><strong> Women in Transportation (WTS) Canadian Education Foundation, 2025</strong> Accessible Communities Scholarship (Sponsered by Left Turn Right Turn) </li>
-  <li><strong> Semi-Finalist, Innovative Applications in Analytics Award (IAAA), INFORMS- 2025</strong> Recognized for developing an advanced analytics-driven solution integrating deep learning and optimization modeling. </li>
+  <li><strong> Women in Transportation (WTS) Canadian Education Foundation, 2025</strong> <br>Accessible Communities Scholarship (Sponsered by Left Turn Right Turn) </li>
+  <li><strong> Semi-Finalist, Innovative Applications in Analytics Award (IAAA), INFORMS- 2025</strong> <br>Recognized for developing an advanced analytics-driven solution integrating deep learning and optimization modeling. </li>
   <li><strong> Finalist, TRB Transit Data Challenge: Innovative Analytical Tools to Improve Public Transit- 2024</strong> </li>
   <li><strong> ITE Innovation Award of the Year-2023</strong> Issued at ITE Toronto AGM and ITE Christmas Luncheon.</li>
 </ul>
@@ -93,6 +93,6 @@ Delivered tutorials, mentored students, and supported simulation and design-base
   </li>
   <li><strong> Mentor – UNHack 2022</strong> Bergeron Entrepreneurs in Science and Technology (BEST Lab), Lassonde School of Engineering, York University
     <br>
-    >Mentored 4 student groups during UNHack 2022 innovation challenge.
+    Mentored 4 student groups during UNHack 2022 innovation challenge.
   </li>
 </ul>
