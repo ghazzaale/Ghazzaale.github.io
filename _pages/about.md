@@ -15,34 +15,32 @@ My research focuses on shared micromobility systems, particularly the design and
 
 </div>
 
-<section class="roadmap">
-  <figure class="roadmap-figure">
-    <img src="{{'/images/roadmap.png' | relative_url }}"
-         alt="Research-to-Impact Roadmap"
-         loading="lazy" decoding="async">
-    <figcaption>My research-to-impact roadmap, from framing to deployment and dissemination.</figcaption>
-  </figure>
-</section>
+<figure class="about-roadmap">
+  <img src="{{ '/images/roadmap.png' | relative_url }}" 
+       alt="Research-to-Impact Roadmap"
+       loading="lazy" decoding="async">
+  <figcaption>My research-to-impact roadmap, connecting research, tool development, and dissemination.</figcaption>
+</figure>
 
 <style>
-.roadmap-figure {
-  margin: 1.5rem auto 2rem;
-  max-width: 1100px;
+.about-roadmap {
+  margin: 2rem auto;
+  max-width: 800px;   /* controls size */
   text-align: center;
 }
-.roadmap-figure img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0,0,0,.15);
+.about-roadmap img {
+  width: 100%; 
+  height: auto; 
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
-.roadmap-figure figcaption {
-  text-align: center;
-  font-size: .9rem;
-  color: #666;
+.about-roadmap figcaption {
   margin-top: .6rem;
+  font-size: 0.9rem;
+  color: #666;
 }
 </style>
+
 
 
 
