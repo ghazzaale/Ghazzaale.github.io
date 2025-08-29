@@ -18,14 +18,14 @@ My research focuses on shared micromobility systems, particularly the design and
 <figure class="about-roadmap">
   <img src="{{ '/images/roadmap.png' | relative_url }}" 
        alt="Research-to-Impact Roadmap"
-       loading="lazy" decoding="async" style="max-width: 200px; float: right; margin: 0 0 1rem 1rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.1);" />
+       loading="lazy" decoding="async" />
   <figcaption>My research-to-impact roadmap, connecting research, tool development, and dissemination.</figcaption>
 </figure>
 
 <style>
 .about-roadmap {
   margin: 2rem auto;
-  max-width: 800px;   /* controls size */
+  max-width: 600px;   /* controls size */
   text-align: center;
 }
 .about-roadmap img {
@@ -38,6 +38,7 @@ My research focuses on shared micromobility systems, particularly the design and
   margin-top: .6rem;
   font-size: 0.9rem;
   color: #666;
+  text-align: center;
 }
 </style>
 
