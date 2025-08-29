@@ -262,7 +262,7 @@ author_profile: true
 
 /* Tabs */
 .tabs {
-  display:flex; gap:8px; flex-wrap:wrap; justify-content:left;
+  display:flex; gap:8px; flex-wrap:wrap; justify-content:center;
   margin: 10px 0 24px;
 }
 .tab-btn {
@@ -701,8 +701,8 @@ data-desc="Uses vegetation data to predict wildfire propagation and, with optimi
 </div>
 
 <script>
-/* ==== Tabs: build from each H3 + its next .grid ==== */
-(function(){
+
+  document.addEventListener('DOMContentLoaded', function(){
   const wrap = document.querySelector('.portfolio-wrap');
   if(!wrap) return;
 
@@ -805,7 +805,7 @@ data-desc="Uses vegetation data to predict wildfire propagation and, with optimi
     activateTab(tabs[idx]);
     e.preventDefault();
   });
-})();
+});
 
   const q = s => document.querySelector(s);
   const qa = s => Array.from(document.querySelectorAll(s));
