@@ -25,9 +25,9 @@ redirect_from:
      <em>(also serving as Postdoctoral Fellow)</em>
   <br>
   <ul>
-  <li>Leading research and development strategy for applied optimization and ML-analytics tools in transportation and urban systems. </li>
+  <li>Leading research and development for applied optimization and ML-analytics tools in transportation and urban systems. </li>
   <li>
-  Supervising cross-functional teams and expanded partnerships with cities, agencies, and startups to deliver and scale industry-partnered Interactive-OR projects.</li>
+  Supervising teams and expanding partnerships with cities, agencies, and startups to deliver and scale industry-partnered Interactive-OR projects.</li>
   </ul>
   </li>
 
@@ -36,18 +36,22 @@ redirect_from:
   Researcher and product developer with the Interactive-OR Lab.
     <ul>
     <li><strong>Mitacs Business Strategy Intern</strong>, Lassonde School of Engineering – York University (Jan 2025 – August 2025)
-    <ul>
+    <br>
+    Optimizing Charging Infrastructure for Electric Bus Fleets in partnership with Mobility Future Lab (MFL).
+    <!-- <ul>
       <li>Optimizing Charging Infrastructure for Electric Bus Fleets in partnership with Mobility Future Lab (MFL).</li>
     <li>Developed a cost minimization model using a heuristic approach.</li>
       <li>Developed an interactive decision-support tool for what-if scenario analysis using WebAssembly and Node.js.</li>
-    </ul>
+    </ul> -->
     </li>
 <li><strong>Mitacs Accelerate Fellow Intern</strong>, Lassonde School of Engineering – York University (May 2023 – Dec 2023)
-<ul>
+<br>
+Transportation data assessment and collaboration on Automated Speed Enforcement (ASE) camera deployment optimization.
+<!-- <ul>
       <li>Transportation Data Assessment and Planning in collaboration with the City of Vaughan.</li>
       <li>Mapped MoveSmart policy goals to data gaps and infrastructure requirements across mobility domains.</li>
       <li>Collaborated on an interactive tool to optimize Automated Speed Enforcement (ASE) camera deployment.</li>
-    </ul>
+    </ul> -->
     </li>
     </ul>
   </li>
@@ -76,22 +80,19 @@ Delivered tutorials, mentored students, and supported simulation and design-base
 
 <h2 style="font-size: 16px; font-family: 'Georgia', serif;">Honors and Awards</h2>
 <ul>
-  <li><strong>2025:</strong> Women in Transportation (WTS) Canadian Education Foundation – Accessible Communities Scholarship. </li>
-  <li><strong>2025:</strong> Semi-Finalist, Innovative Applications in Analytics Award (IAAA), INFORMS – Recognized for developing an advanced analytics-driven solution integrating deep learning and optimization modeling. </li>
-  <li><strong>2024:</strong> Finalist in TRB Transit Data Challenge: Innovative Analytical Tools to Improve Public Transit. </li>
-  <li><strong>2023:</strong> ITE Innovation Award of the Year – Issued at ITE Toronto AGM and ITE Christmas Luncheon.</li>
+  <li><strong> Women in Transportation (WTS) Canadian Education Foundation</strong> Accessible Communities Scholarship- 2025 </li>
+  <li><strong> Semi-Finalist, Innovative Applications in Analytics Award (IAAA), INFORMS- 2025</strong> Recognized for developing an advanced analytics-driven solution integrating deep learning and optimization modeling. </li>
+  <li><strong> Finalist, TRB Transit Data Challenge: Innovative Analytical Tools to Improve Public Transit- 2024</strong> </li>
+  <li><strong> ITE Innovation Award of the Year-2023</strong> Issued at ITE Toronto AGM and ITE Christmas Luncheon.</li>
 </ul>
 
 <h2 style="font-size: 16px; font-family: 'Georgia', serif;">Volunteering</h2>
 <ul>
-  <li><strong>2022–2023:</strong> Graduate Representative – Adjudication Committee, Civil Engineering Department, York University
-    <ul>
-      <li>Evaluated tenure and promotion documentation for four Assistant Professors in Civil Engineering.</li>
-    </ul>
+  <li><strong>Graduate Representative – Adjudication Committee</strong> 2022-2023, Civil Engineering Department, York University
+    <br> Evaluated tenure and promotion documentation for four Assistant Professors in Civil Engineering.
   </li>
-  <li><strong>2022:</strong> Mentor – UNHack 2022, Bergeron Entrepreneurs in Science and Technology (BEST Lab), Lassonde School of Engineering, York University
-    <ul>
-      <li>Mentored 4 student groups during UNHack 2022 innovation challenge.</li>
-    </ul>
+  <li><strong> Mentor – UNHack 2022</strong> Bergeron Entrepreneurs in Science and Technology (BEST Lab), Lassonde School of Engineering, York University
+    <br>
+    >Mentored 4 student groups during UNHack 2022 innovation challenge.
   </li>
 </ul>
