@@ -7,16 +7,17 @@ author_profile: true
 
 <style>
   :root {
-    --bg:#0b0d12;
-    --card:#d4d9e0;
-    --text:#000000;
-     --text2:#f8f5f5;
-    --muted:#000000;
-    --accent:#4588be;
-        --normal:#000000;
-    --ring:rgba(118,183,255,.35);
-    --border:rgba(255,255,255,.08);
-  }
+  --bg:#f4e6c4;      /* parchment-like light background */
+  --card:#e6d2a4;    /* warm beige card color */
+  --text:#3a2f1d;    /* dark brown for text */
+  --text2:#5a4630;   /* softer medium brown */
+  --muted:#7a6242;   /* muted accent text */
+  --accent:#c27b2a;  /* warm accent (like gold/ink) */
+  --normal:#000000;  /* keep black if needed */
+  --ring:rgba(194,123,42,.35); /* warm ring highlight */
+  --border:rgba(90,70,48,.25); /* soft brown border */
+}
+
   .portfolio-wrap{
     font-family: Georgia, serif;
     color: var(--text);
@@ -127,7 +128,7 @@ author_profile: true
   min-width: 320px; 
 
   max-height: 88vh;
-    background:#1a2233; 
+    background:var(--card);
     border:1px solid var(--border);
     border-radius:18px;
     overflow:hidden;
@@ -138,7 +139,7 @@ author_profile: true
   @media (max-width:900px){ .modal{ grid-template-columns: 1fr; } }
 
   .modal-media{
-    background:#1a2233;
+    background:var(--bg);
     padding: 5px;
   }
   .modal-media img{
@@ -168,18 +169,27 @@ author_profile: true
     font-size:13px;
     padding:8px 12px;
     border-radius:10px;
-    background:#0f1726;
+    background:var(--card);
     border:1px solid var(--border);
     color: var(--accent);
   }
+  .link-btn:hover{
+  background: var(--accent);      /* invert on hover */
+  color: var(--text2);            /* light ink text */
+}
+
   .close-btn{
-    background:#161b29;
+    background:var(--bg);   
     border:1px solid var(--border);
     color:var(--text2);
     border-radius:10px;
     padding:6px 10px;
     cursor:pointer;
   }
+  .close-btn:hover{
+  background: var(--accent);      /* gold hover */
+  color: var(--text2);            /* light ink text */
+}
 
 /* Theme for upcoming items */
 .card.upcoming{
