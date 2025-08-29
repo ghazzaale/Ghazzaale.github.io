@@ -702,110 +702,110 @@ data-desc="Uses vegetation data to predict wildfire propagation and, with optimi
 
 <script>
 
-  document.addEventListener('DOMContentLoaded', function(){
-  const wrap = document.querySelector('.portfolio-wrap');
-  if(!wrap) return;
+//   document.addEventListener('DOMContentLoaded', function(){
+//   const wrap = document.querySelector('.portfolio-wrap');
+//   if(!wrap) return;
 
-  // Collect sections: every H3.section-title followed by the next sibling .grid
-  const headings = Array.from(wrap.querySelectorAll('h3.section-title.gradient'));
-  const sections = [];
-  headings.forEach(h => {
-    // find the next sibling element that is a .grid (skip text nodes or other elements)
-    let sib = h.nextElementSibling;
-    while(sib && !sib.classList.contains('grid')) sib = sib.nextElementSibling;
-    if(sib && sib.classList.contains('grid')) {
-      sections.push({ heading: h, panel: sib, label: h.textContent.trim() });
-    }
-  });
-  if(sections.length < 2) return; // not worth tabbing if only one
+//   // Collect sections: every H3.section-title followed by the next sibling .grid
+//   const headings = Array.from(wrap.querySelectorAll('h3.section-title.gradient'));
+//   const sections = [];
+//   headings.forEach(h => {
+//     // find the next sibling element that is a .grid (skip text nodes or other elements)
+//     let sib = h.nextElementSibling;
+//     while(sib && !sib.classList.contains('grid')) sib = sib.nextElementSibling;
+//     if(sib && sib.classList.contains('grid')) {
+//       sections.push({ heading: h, panel: sib, label: h.textContent.trim() });
+//     }
+//   });
+//   if(sections.length < 2) return; // not worth tabbing if only one
 
-  // Create the tabs bar
-  const tabsBar = document.createElement('div');
-  tabsBar.className = 'tabs';
-  tabsBar.setAttribute('role','tablist');
-  tabsBar.setAttribute('aria-label','Portfolio sections');
+//   // Create the tabs bar
+//   const tabsBar = document.createElement('div');
+//   tabsBar.className = 'tabs';
+//   tabsBar.setAttribute('role','tablist');
+//   tabsBar.setAttribute('aria-label','Portfolio sections');
 
-  // Insert tabs bar just after the intro paragraph (or before first heading)
-  const intro = wrap.querySelector('.portfolio-intro');
-  if(intro && intro.nextSibling) {
-    intro.parentNode.insertBefore(tabsBar, intro.nextSibling);
-  } else {
-    wrap.insertBefore(tabsBar, headings[0]);
-  }
-  wrap.classList.add('has-tabs');
+//   // Insert tabs bar just after the intro paragraph (or before first heading)
+//   const intro = wrap.querySelector('.portfolio-intro');
+//   if(intro && intro.nextSibling) {
+//     intro.parentNode.insertBefore(tabsBar, intro.nextSibling);
+//   } else {
+//     wrap.insertBefore(tabsBar, headings[0]);
+//   }
+//   wrap.classList.add('has-tabs');
 
-  // Build tab buttons and turn each H3+.grid into a tab panel
-  sections.forEach((sec, idx) => {
-    const idBase = 'tab-' + (sec.label.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$|--+/g,'') || ('section-'+idx));
-    const tabId = idBase + '-btn';
-    const panelId = idBase + '-panel';
+//   // Build tab buttons and turn each H3+.grid into a tab panel
+//   sections.forEach((sec, idx) => {
+//     const idBase = 'tab-' + (sec.label.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$|--+/g,'') || ('section-'+idx));
+//     const tabId = idBase + '-btn';
+//     const panelId = idBase + '-panel';
 
-    // Make button
-    const btn = document.createElement('button');
-    btn.className = 'tab-btn';
-    btn.id = tabId;
-    btn.setAttribute('role','tab');
-    btn.setAttribute('aria-controls', panelId);
-    btn.setAttribute('aria-selected', idx === 0 ? 'true' : 'false');
-    btn.setAttribute('tabindex', idx === 0 ? '0' : '-1');
-    btn.textContent = sec.label;
-    tabsBar.appendChild(btn);
+//     // Make button
+//     const btn = document.createElement('button');
+//     btn.className = 'tab-btn';
+//     btn.id = tabId;
+//     btn.setAttribute('role','tab');
+//     btn.setAttribute('aria-controls', panelId);
+//     btn.setAttribute('aria-selected', idx === 0 ? 'true' : 'false');
+//     btn.setAttribute('tabindex', idx === 0 ? '0' : '-1');
+//     btn.textContent = sec.label;
+//     tabsBar.appendChild(btn);
 
-    // Wrap the heading + its grid into a panel container
-    const panel = document.createElement('div');
-    panel.className = 'tab-panel' + (idx === 0 ? ' active' : '');
-    panel.id = panelId;
-    panel.setAttribute('role','tabpanel');
-    panel.setAttribute('aria-labelledby', tabId);
+//     // Wrap the heading + its grid into a panel container
+//     const panel = document.createElement('div');
+//     panel.className = 'tab-panel' + (idx === 0 ? ' active' : '');
+//     panel.id = panelId;
+//     panel.setAttribute('role','tabpanel');
+//     panel.setAttribute('aria-labelledby', tabId);
 
-    // Move heading and grid into the panel
-    sec.heading.parentNode.insertBefore(panel, sec.heading);
-    panel.appendChild(sec.heading);
-    panel.appendChild(sec.panel);
-  });
+//     // Move heading and grid into the panel
+//     sec.heading.parentNode.insertBefore(panel, sec.heading);
+//     panel.appendChild(sec.heading);
+//     panel.appendChild(sec.panel);
+//   });
 
-  // Activate a tab
-  function activateTab(newBtn){
-    const current = tabsBar.querySelector('[aria-selected="true"]');
-    if(current === newBtn) return;
+//   // Activate a tab
+//   function activateTab(newBtn){
+//     const current = tabsBar.querySelector('[aria-selected="true"]');
+//     if(current === newBtn) return;
 
-    // update buttons
-    if(current){
-      current.setAttribute('aria-selected','false');
-      current.setAttribute('tabindex','-1');
-    }
-    newBtn.setAttribute('aria-selected','true');
-    newBtn.setAttribute('tabindex','0');
-    newBtn.focus({preventScroll:true});
+//     // update buttons
+//     if(current){
+//       current.setAttribute('aria-selected','false');
+//       current.setAttribute('tabindex','-1');
+//     }
+//     newBtn.setAttribute('aria-selected','true');
+//     newBtn.setAttribute('tabindex','0');
+//     newBtn.focus({preventScroll:true});
 
-    // update panels
-    const newPanelId = newBtn.getAttribute('aria-controls');
-    wrap.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-    const newPanel = document.getElementById(newPanelId);
-    if(newPanel) newPanel.classList.add('active');
-  }
+//     // update panels
+//     const newPanelId = newBtn.getAttribute('aria-controls');
+//     wrap.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+//     const newPanel = document.getElementById(newPanelId);
+//     if(newPanel) newPanel.classList.add('active');
+//   }
 
-  // Click handlers
-  tabsBar.addEventListener('click', e => {
-    const btn = e.target.closest('.tab-btn[role="tab"]');
-    if(btn) activateTab(btn);
-  });
+//   // Click handlers
+//   tabsBar.addEventListener('click', e => {
+//     const btn = e.target.closest('.tab-btn[role="tab"]');
+//     if(btn) activateTab(btn);
+//   });
 
-  // Keyboard navigation
-  tabsBar.addEventListener('keydown', e => {
-    const keys = ['ArrowRight','ArrowLeft','Home','End'];
-    if(!keys.includes(e.key)) return;
-    const tabs = Array.from(tabsBar.querySelectorAll('.tab-btn[role="tab"]'));
-    const current = document.activeElement.closest('.tab-btn[role="tab"]') || tabs.find(t=>t.getAttribute('aria-selected')==='true');
-    let idx = tabs.indexOf(current);
-    if(e.key === 'ArrowRight') idx = (idx+1) % tabs.length;
-    if(e.key === 'ArrowLeft') idx = (idx-1+tabs.length) % tabs.length;
-    if(e.key === 'Home') idx = 0;
-    if(e.key === 'End') idx = tabs.length-1;
-    activateTab(tabs[idx]);
-    e.preventDefault();
-  });
-});
+//   // Keyboard navigation
+//   tabsBar.addEventListener('keydown', e => {
+//     const keys = ['ArrowRight','ArrowLeft','Home','End'];
+//     if(!keys.includes(e.key)) return;
+//     const tabs = Array.from(tabsBar.querySelectorAll('.tab-btn[role="tab"]'));
+//     const current = document.activeElement.closest('.tab-btn[role="tab"]') || tabs.find(t=>t.getAttribute('aria-selected')==='true');
+//     let idx = tabs.indexOf(current);
+//     if(e.key === 'ArrowRight') idx = (idx+1) % tabs.length;
+//     if(e.key === 'ArrowLeft') idx = (idx-1+tabs.length) % tabs.length;
+//     if(e.key === 'Home') idx = 0;
+//     if(e.key === 'End') idx = tabs.length-1;
+//     activateTab(tabs[idx]);
+//     e.preventDefault();
+//   });
+// });
 
   const q = s => document.querySelector(s);
   const qa = s => Array.from(document.querySelectorAll(s));
