@@ -80,7 +80,7 @@ Delivered tutorials, mentored students, and supported simulation and design-base
 
 <h2 style="font-size: 16px; font-family: 'Georgia', serif;">Honors and Awards</h2>
 <ul>
-  <li><strong> Women in Transportation (WTS) Canadian Education Foundation</strong> Accessible Communities Scholarship- 2025 </li>
+  <li><strong> Women in Transportation (WTS) Canadian Education Foundation, 2025</strong> Accessible Communities Scholarship (Sponsered by Left Turn Right Turn) </li>
   <li><strong> Semi-Finalist, Innovative Applications in Analytics Award (IAAA), INFORMS- 2025</strong> Recognized for developing an advanced analytics-driven solution integrating deep learning and optimization modeling. </li>
   <li><strong> Finalist, TRB Transit Data Challenge: Innovative Analytical Tools to Improve Public Transit- 2024</strong> </li>
   <li><strong> ITE Innovation Award of the Year-2023</strong> Issued at ITE Toronto AGM and ITE Christmas Luncheon.</li>
@@ -88,7 +88,7 @@ Delivered tutorials, mentored students, and supported simulation and design-base
 
 <h2 style="font-size: 16px; font-family: 'Georgia', serif;">Volunteering</h2>
 <ul>
-  <li><strong>Graduate Representative – Adjudication Committee</strong> 2022-2023, Civil Engineering Department, York University
+  <li><strong>Graduate Representative – Adjudication Committee, 2022-2023</strong> Civil Engineering Department, York University
     <br> Evaluated tenure and promotion documentation for four Assistant Professors in Civil Engineering.
   </li>
   <li><strong> Mentor – UNHack 2022</strong> Bergeron Entrepreneurs in Science and Technology (BEST Lab), Lassonde School of Engineering, York University
