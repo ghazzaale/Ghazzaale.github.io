@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Ghazaleh Mohseni - Transportation Engineering Researcher"
+title                    : "Ghazaleh Mohseni - Home Page"
 title_separator          : "-"
 name                     : &name "Ghazaleh Mohseni"
 description              : &description "R&D Director at Interactive-OR Lab, York University. PhD in Transportation Engineering specializing in bike-sharing systems, electric mobility, optimization, and machine learning. Developer of Bikeshare Pro and other interactive decision-support tools."
