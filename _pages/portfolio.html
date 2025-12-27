@@ -1423,8 +1423,14 @@ html {
 </div>
 
 <script>
+// Portfolio page JavaScript
 (function() {
   'use strict';
+  
+  // Validate script is loading
+  if (typeof console !== 'undefined') {
+    console.log('Portfolio script loading...');
+  }
 
   // DOM Elements
   const searchInput = document.getElementById('searchInput');
@@ -1456,7 +1462,7 @@ html {
       return parseInt(yearMatch[1], 10);
     }
     // Fallback: try to get from project-data
-    const projectData = card.querySelector('.project-data')?.textContent;
+    const projectData = card.querySelector('.project-data')?.textContent?.trim();
     if (projectData) {
       try {
         const data = JSON.parse(projectData);
@@ -1823,10 +1829,15 @@ html {
       const dataEl = card.querySelector('.project-data');
       if (dataEl) {
         try {
-          const data = JSON.parse(dataEl.textContent);
+          const jsonText = dataEl.textContent.trim();
+          if (!jsonText) {
+            console.error('Empty project data for card');
+            return;
+          }
+          const data = JSON.parse(jsonText);
           openModal(data);
         } catch (e) {
-          console.error('Error parsing project data:', e);
+          console.error('Error parsing project data:', e, 'Data:', dataEl.textContent.substring(0, 100));
         }
       }
     });
@@ -1862,5 +1873,10 @@ html {
 
   // Initialize
   filterProjects();
+  
+  // Validate script loaded successfully
+  if (typeof console !== 'undefined') {
+    console.log('Portfolio script loaded successfully');
+  }
 })();
 </script>
