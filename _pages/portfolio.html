@@ -1485,8 +1485,9 @@ html {
 
   // Function to check if card is "coming soon"
   function isComingSoon(card) {
+    const statusBadge = card.querySelector('.status-badge');
     return card.classList.contains('upcoming') || 
-           card.querySelector('.status-badge')?.textContent.includes('Coming soon');
+           (statusBadge && statusBadge.textContent && statusBadge.textContent.includes('Coming soon'));
   }
 
   // Function to sort cards by year (newest first)
