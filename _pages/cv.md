@@ -2,23 +2,130 @@
 layout: archive
 title: "CV"
 permalink: /cv/
-author_profile: true
+author_profile: false
+description: "Curriculum Vitae of Ghazaleh Mohseni - R&D Director at Interactive-OR Lab, York University. Education, work experience, skills, honors, and awards in transportation engineering."
+keywords: "CV, resume, transportation engineering, research experience, academic background"
 redirect_from:
   - /resume
 ---
 
 {% include base_path %}
 
-<div style="font-size: 14px; font-family: 'Georgia', serif; text-align: justify;">
+<style>
+/* Fix layout when sidebar is hidden - make content full width */
+.archive {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-top: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 0 !important;
+  float: none !important;
+  clear: both !important;
+  overflow: visible !important;
+}
 
-<h2 style="font-size: 16px; font-family: 'Georgia', serif;">Education</h2>
+#main {
+  max-width: 100% !important;
+  padding-left: 1em;
+  padding-right: 1em;
+  overflow: visible !important;
+}
+
+/* Hide the default page title and remove its space */
+.archive .page__title {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0 !important;
+}
+
+/* Modern Typography - Matching Portfolio Style */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --primary-light: #3b82f6;
+  --secondary: #64748b;
+  --accent: #0ea5e9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  --border: #e2e8f0;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-content {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(0.9375rem, 1.5vw, 1rem);
+  line-height: 1.7;
+  color: var(--text-primary);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-xl) var(--spacing-md);
+  text-align: justify;
+}
+
+.page-content h2 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: var(--spacing-xl) 0 var(--spacing-lg) 0;
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--border);
+  letter-spacing: -0.01em;
+}
+
+.page-content h2:first-of-type {
+  margin-top: var(--spacing-lg);
+}
+
+.page-content ul {
+  margin: var(--spacing-md) 0;
+  padding-left: var(--spacing-xl);
+}
+
+.page-content li {
+  margin-bottom: var(--spacing-md);
+  line-height: 1.7;
+}
+
+.page-content strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.page-content a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.page-content a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.page-content em {
+  color: var(--text-secondary);
+}
+</style>
+
+<div class="page-content">
+
+<h2>Education</h2>
 <ul>
   <li><strong>Ph.D. in Transportation Engineering</strong>, York University, 2025</li>
   <li><strong>M.Sc. in Transportation Engineering</strong>, Sharif University of Technology, 2017</li>
   <li><strong>B.Sc. in Civil Engineering</strong>, Isfahan University of Technology, 2014</li>
 </ul>
 
-<h2 style="font-size: 16px; font-family: 'Georgia', serif;">Work Experience (Canada)</h2>
+<h2>Work Experience (Canada)</h2>
 <ul>
 
   <li><strong>R&D Director</strong>, Interactive-OR Lab – York University (Sep 2025 - Present)
@@ -63,7 +170,7 @@ Delivered tutorials, mentored students, and supported simulation and design-base
 
 
 
-<h2 style="font-size: 16px; font-family: 'Georgia', serif;">Skills</h2>
+<h2>Skills</h2>
 <!-- <ul>
   <li><strong>Programming & Data:</strong> Python, JavaScript, R, SQL, C++, MATLAB, REST APIs, Git/GitHub</li>
   <li><strong>Machine Learning:</strong> TensorFlow, PyTorch, Graph Neural Networks, demand forecasting</li>
@@ -78,7 +185,7 @@ Delivered tutorials, mentored students, and supported simulation and design-base
   <li><strong>Systems & Tools:</strong> AWS – Lambda/S3 (Intermediate), Firebase (Intermediate), Google Cloud (Intermediate), Git/GitHub (Advanced), React (Intermediate), Mapbox (Advanced), ArcGIS (Intermediate)</li>
 </ul>
 
-<h2 style="font-size: 16px; font-family: 'Georgia', serif;">Honors and Awards</h2>
+<h2>Honors and Awards</h2>
 <ul>
   <li><strong> Women in Transportation (WTS) Canadian Education Foundation, 2025</strong> <br>Accessible Communities Scholarship (Sponsered by Left Turn Right Turn) </li>
   <li><strong> Semi-Finalist, Innovative Applications in Analytics Award (IAAA), INFORMS- 2025</strong> <br>Recognized for developing an advanced analytics-driven solution integrating deep learning and optimization modeling. </li>
@@ -86,7 +193,7 @@ Delivered tutorials, mentored students, and supported simulation and design-base
   <li><strong> ITE Innovation Award of the Year-2023</strong> Issued at ITE Toronto AGM and ITE Christmas Luncheon.</li>
 </ul>
 
-<h2 style="font-size: 16px; font-family: 'Georgia', serif;">Volunteering</h2>
+<h2>Volunteering</h2>
 <ul>
   <li><strong>Graduate Representative – Adjudication Committee, 2022-2023</strong> Civil Engineering Department, York University
     <br> Evaluated tenure and promotion documentation for four Assistant Professors in Civil Engineering.
@@ -96,3 +203,4 @@ Delivered tutorials, mentored students, and supported simulation and design-base
     Mentored 4 student groups during UNHack 2022 innovation challenge.
   </li>
 </ul>
+</div>

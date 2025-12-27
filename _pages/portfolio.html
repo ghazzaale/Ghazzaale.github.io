@@ -2,716 +2,1864 @@
 layout: archive
 title: "🚀 Selected Interactive Tools Portfolio"
 permalink: /portfolio/
-author_profile: true
+author_profile: false
+description: "Interactive decision-support tools for transportation and urban systems. Explore bike-sharing planning tools, electric mobility optimization, emergency management systems, and transit planning solutions."
+keywords: "interactive tools, bike-sharing tools, transportation planning, optimization tools, decision support systems, urban mobility, transit planning"
 ---
 
 <style>
- :root {
-  --bg:#f5faff;       /* soft airy light blue background */
-  --card:#e8f1f8;     /* slightly darker card blue for contrast */
-  --text:#1c2a33;     /* deep blue-gray for high readability */
-  --text2:#3d5060;    /* softer medium blue-gray for secondary text */
-  --muted:#6c8290;    /* muted cool accent for hints and labels */
-  --accent:#2a7bc2;   /* clean, professional blue accent */
-  --normal:#000000;   /* keep black for absolute elements if needed */
-  --ring:rgba(42,123,194,0.35); /* soft blue glow for focus rings */
-  --border:rgba(60,80,100,0.25); /* subtle blue-gray border */
+/* Fix layout when sidebar is hidden - make content full width */
+/* Override Susy grid system spacing for archive when no sidebar */
+.archive {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  float: none !important;
+  clear: both !important;
+  overflow: visible !important;
+}
+
+/* Override the main container to use full width */
+#main {
+  max-width: 100% !important;
+  padding-left: 1em;
+  padding-right: 1em;
+  overflow: visible !important;
+}
+
+/* Ensure body and html don't clip modals */
+body.modal-open,
+html.modal-open {
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+/* Hide the default page title since we have our own hero section */
+.archive .page__title {
+  display: none;
+}
+
+:root {
+  /* Modern Professional Color Palette */
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --primary-light: #3b82f6;
+  --secondary: #64748b;
+  --accent: #0ea5e9;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  
+  /* Neutrals */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --border: #e2e8f0;
+  --border-hover: #cbd5e1;
+  
+  /* Text */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  --text-muted: #94a3b8;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
-  .portfolio-wrap{
-    font-family: Georgia, serif;
-    color: var(--text);
-  }
-  .portfolio-intro{ font-size: 16px; /* slightly larger for readability */ line-height: 1.6; /* more breathing space */ max-width: 800px; /* keep it narrow for focus */ margin: 0 auto 24px auto; /* center horizontally */ text-align: center; /* better flow than justified */ color: var(--text2); /* softer than black */ background: rgba(255,255,255,0.4); /* faint background for parchment feel */ padding: 14px 20px; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,.05); }
-  .section-title {
-  text-align:center;
-  font-size:20px;
-  margin:28px 0 16px;
-  color: var(--normal);           
-  letter-spacing:.2px;            
+/* Hero Section */
+.portfolio-hero {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg) 0;
 }
-.section-title.gradient {
-  font-size: clamp(24px, 3.4vw, 34px);   /* larger text, scales with width */
-  line-height: 1.35;                      /* more line spacing */
-  letter-spacing: .3px;                   /* slight tracking for readability */
-  background: linear-gradient(90deg, #010101, #000000 50%, #000000);
+
+.portfolio-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-lg);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: transparent;
-  margin-top: 4rem;  
-  margin-bottom: 4rem;
+  letter-spacing: -0.02em;
+}
+
+.portfolio-intro {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto var(--spacing-lg) auto;
+  line-height: 1.7;
+}
+
+/* Filter Section */
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-md);
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.filter-btn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+/* Search Bar */
+.portfolio-search {
+  margin-bottom: var(--spacing-md);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.portfolio-search input {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 3rem;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all var(--transition-base);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.portfolio-search input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.portfolio-search::before {
+  content: "🔍";
+  position: absolute;
+  left: var(--spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.25rem;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin: var(--spacing-3xl) 0 var(--spacing-xl) 0;
+  padding-bottom: var(--spacing-md);
+  border-bottom: 3px solid var(--border);
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  position: relative;
+  transition: all var(--transition-base);
+  scroll-margin-top: 80px; /* Offset for fixed header when scrolling */
+}
+
+/* Active section highlighting */
+.section-title.active-section {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  transform: translateX(4px);
+}
+
+.section-title.active-section::after {
+  width: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 2px;
+}
+
+/* Grid Layout */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+@media (min-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  }
+}
+
+/* Project Cards */
+.project-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.project-card:hover::before,
+.project-card:focus-within::before {
+  transform: scaleX(1);
+}
+
+/* Highlighted card for search results */
+.project-card.highlighted {
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Active section grid highlighting */
+.portfolio-grid.active-section-grid {
+  position: relative;
+}
+
+.portfolio-grid.active-section-grid::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--primary), var(--accent));
+  border-radius: 2px;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-light);
+}
+
+.project-card.hidden {
+  display: none;
+}
+
+/* Card Image */
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--bg-tertiary);
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.project-card:hover .card-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.card-image-wrapper .placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* Card Content */
+.card-content {
+  padding: var(--spacing-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+  flex: 1;
+  margin: 0;
+}
+
+.card-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--spacing-xs);
+  flex-shrink: 0;
+}
+
+.card-year-role {
+  font-size: 0.6875rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.card-tags {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: var(--spacing-md);
+  flex: 1;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  margin-left: var(--spacing-sm);
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #78350f;
+  box-shadow: 0 2px 4px rgba(251, 191, 36, 0.3);
+}
+
+/* Upcoming Card Styles */
+.project-card.upcoming {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-color: var(--border);
+  opacity: 0.85;
+}
+
+.project-card.upcoming::before {
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+}
+
+.project-card.upcoming .card-image-wrapper img {
+  filter: grayscale(0.3) brightness(0.95);
+}
+
+.project-card.upcoming:not(:hover) {
+  cursor: not-allowed;
+}
+
+/* Modal Styles - Popup Window */
+/* Override any theme modal styles */
+.modal-backdrop,
+#modalBackdrop {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(15, 23, 42, 0.75) !important;
+  backdrop-filter: blur(4px);
+  z-index: 99999 !important;
+  animation: fadeIn var(--transition-base);
+  overflow: hidden !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+}
+
+.modal-backdrop.active,
+#modalBackdrop.active {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: row !important;
 }
 
 
-
-  .grid{
-    display:grid;
-    grid-template-columns: repeat(1,minmax(0,1fr));
-    gap:14px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  @media (min-width:700px){ .grid{ grid-template-columns: repeat(2,minmax(0,1fr)); } }
-  @media (min-width:1000px){ .grid{ grid-template-columns: repeat(3,minmax(0,1fr)); } }
-
-  .card{
-    background: var(--card);
-    border:1px solid var(--border);
-    border-radius:16px;
-    overflow:hidden;
-    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  to {
+    opacity: 1;
   }
-  .card:focus-within, .card:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px var(--ring);
-    border-color: var(--ring);
-  }
-  .card-btn{
-    display:block;
-    width:100%;
-    text-align:left;
-    padding:14px;
-    background:transparent;
-    border:0;
-    cursor:pointer;
-    color:inherit;
-  }
-  .card-top{
-    display:flex;
-    /* align-items:center; */
-    align-items:flex-start;      /* top-align both items */
-    gap:12px;
-    margin-bottom:10px;
-  }
-  .card-top .title{
-  flex:1 1 auto;               /* let the title wrap as needed */
 }
-.card-top .pill{
-  margin-left:auto;            /* push to the far right */
-  align-self:flex-start;       /* pin to the top */
-  white-space:nowrap;          /* keep year · role on one line */
+
+/* Override theme's .modal class - the theme has conflicting styles */
+.modal-backdrop .modal,
+#modalBackdrop .modal,
+.modal-backdrop.active .modal {
+  width: min(90vw, 1200px) !important;
+  max-width: calc(100vw - 40px) !important;
+  max-height: calc(100vh - 90px) !important;
+  margin: 0 !important;
+  background: var(--bg-primary) !important;
+  border-radius: 24px !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-2xl) !important;
+  display: grid !important;
+  grid-template-columns: 1.2fr 1fr !important;
+  animation: slideUp var(--transition-slow);
+  border: 1px solid var(--border) !important;
+  position: relative !important;
+  box-sizing: border-box;
+  align-self: center;
+  flex-shrink: 0;
+  flex-grow: 0;
+  transform: none !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  min-height: 0 !important;
+  z-index: auto !important;
 }
-  .pill{
-    font-size:12px;
-    color: var(--muted);
-  }
-  .title{
-    font-weight:700;
-    font-size:16px;
-    line-height:1.25;
-  }
-  .thumb{
-    width:100%;
-    aspect-ratio:16/9;
-    object-fit:cover;
-    border-radius:12px;
-    border:1px solid var(--border);
-    margin-top:10px;
-  }
 
-  /* Modal */
-  .modal-backdrop{
-    position:fixed; inset:0; display:none;
-    align-items:left; justify-content:center;
-    background: rgba(67, 77, 98, 0.65);
-    z-index:1000000;
-    padding: 20px;  
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
   }
-  .modal{
-    /* width:min(960px,92vw); */
-    /* width: min(1100px, 94vw); */
-    width: 50vw;          /* percent of viewport width */
-  max-width: 1100px;    /* keep a ceiling */
-  min-width: 320px; 
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-  max-height: 88vh;
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow: 0 18px 60px rgba(0,0,0,.5);
-    display:grid;
-    grid-template-columns: 1.2fr 1fr;
-  }
-  @media (max-width:900px){ .modal{ grid-template-columns: 1fr; } }
-
-  .modal-media{
-    background:var(--bg);
-    padding: 5px;
-  }
-  .modal-media img{
-    width:100%; height:100%;
-    object-fit:cover;
-    display:block;
-    border-radius: 5px;
-  }
-  .modal-body{
-    padding:18px 18px 16px;
-     overflow: auto;
-  max-height: 88vh;
+@media (max-width: 900px) {
+  .modal {
+    grid-template-columns: 1fr;
+    max-height: calc(100vh - 90px);
+    width: calc(100vw - 40px);
+    max-width: calc(100vw - 40px);
   }
   
-  .modal-head{
-    display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
-    margin-bottom:8px;
+  .modal-backdrop {
+    padding: 20px;
   }
-  .modal-title{ font-size:18px; font-weight:700; color:var(--text2)}
-  .modal-sub{ font-size:13px; color:var(--text2); margin-top:4px;}
-  .modal-desc{ font-size:14px; color:var(--text2); opacity:.95; margin:10px 0 14px; text-align:justify;}
-  .links{
-    display:flex; flex-wrap:wrap; gap:8px;
+  
+  .modal-body,
+  .modal-media {
+    max-height: calc(100vh - 150px);
   }
-  .link-btn{
-    text-decoration:none;
-    font-size:13px;
-    padding:8px 12px;
-    border-radius:10px;
-    background:var(--card);
-    border:1px solid var(--border);
-    color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .modal {
+    width: calc(100vw - 20px);
+    max-width: calc(100vw - 20px);
+    max-height: calc(100vh - 80px);
+    border-radius: 16px;
   }
-  .link-btn:hover{
-  background: var(--accent);      /* invert on hover */
-  color: var(--text2);            /* light ink text */
-}
-
-  .close-btn{
-    background:var(--bg);   
-    border:1px solid var(--border);
-    color:var(--text2);
-    border-radius:10px;
-    padding:6px 10px;
-    cursor:pointer;
+  
+  .modal-backdrop {
+    padding: 10px;
   }
-  .close-btn:hover{
-  background: var(--accent);      /* gold hover */
-  color: var(--text2);            /* light ink text */
+  
+  .modal-body {
+    padding: var(--spacing-lg);
+    max-height: calc(100vh - 100px);
+  }
+  
+  .modal-media {
+    max-height: calc(100vh - 100px);
+  }
 }
 
-/* Theme for upcoming items */
-.card.upcoming{
-  background: linear-gradient(180deg, #dcdcde 0%, #cdcdcf 100%);
-  border-color: rgba(255,255,255,.18);
-  box-shadow: 0 10px 28px rgba(118,183,255,.18);
-}
-.card.upcoming:hover,
-.card.upcoming:focus-within{
-  box-shadow: 0 14px 36px rgba(118,183,255,.28);
-}
-
-/* Make the button feel special with a gradient ring */
-.card.upcoming .card-btn{ position: relative; }
-.card.upcoming .card-btn::before{
-  content:"";
-  position:absolute; inset:0;
-  border-radius:16px;
-  padding:1px;
-  background: linear-gradient(135deg, #76b7ff, #b892ff, #76ffd2);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor; mask-composite: exclude;
-  pointer-events:none;
+.modal-media {
+  background: var(--bg-tertiary);
+  padding: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  max-height: calc(100vh - 110px);
 }
 
-/* Title and meta color tweaks for visibility */
-.card.upcoming .title{
-  display:flex; align-items:center; gap:8px;
-}
-.status-chip{
-  display:inline-flex; align-items:center;
-  font-size:12px; font-weight:700; letter-spacing:.3px;
-  padding:4px 10px; border-radius:999px;
-  color:#0b0d12;
-  background: linear-gradient(90deg, #ffd476, #ff9fcf);
-  box-shadow: 0 6px 18px rgba(255,200,120,.25);
-}
-.card.upcoming .pill{ color:#0f0f10; opacity:.95; }
-
-.card{ position:relative; }  /* required for .status-chip positioning */
-
-/* Image treatment for upcoming */
-.card.upcoming .thumb{ filter: saturate(1.05) brightness(.95); }
-
-.card.upcoming .card-btn[disabled]{
-  cursor:not-allowed;
-  opacity:0.5;                         /* override browser’s default dimming */
+.modal-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  max-height: calc(100vh - 110px);
 }
 
-/* Placeholder when there is no image */
-.thumb.placeholder{
-  display:flex; align-items:center; justify-content:center;
-  aspect-ratio:16/9;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.1);
-  background:
-    repeating-linear-gradient(135deg, rgba(255,255,255,.06) 0 10px, transparent 10px 20px),
-    radial-gradient(1200px 400px at 0% 0%, #22304a, #161b29 60%);
-  color:#e7ecf3;
-  font-weight:600;
+.modal-body {
+  padding: var(--spacing-lg);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  max-height: calc(100vh - 110px);
 }
 
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--border);
+}
 
+.modal-title {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin: 0;
+  flex: 1;
+}
 
+.modal-subtitle {
+  font-size: 0.6875rem;
+  color: var(--text-tertiary);
+  margin-top: var(--spacing-xs);
+  font-weight: 500;
+}
+
+.close-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  padding: var(--spacing-sm);
+  cursor: pointer;
+  font-size: 1.25rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+}
+
+.close-btn:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: rotate(90deg);
+}
+
+.modal-description {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.modal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border);
+}
+
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--primary);
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all var(--transition-base);
+}
+
+.link-btn:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.link-btn::after {
+  content: "→";
+  transition: transform var(--transition-base);
+}
+
+.link-btn:hover::after {
+  transform: translateX(4px);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-3xl);
+  color: var(--text-tertiary);
+}
+
+.empty-state-icon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.5;
+}
+
+.empty-state-text {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+/* Footer Link */
+.portfolio-footer {
+  text-align: center;
+  margin-top: var(--spacing-3xl);
+  padding-top: var(--spacing-2xl);
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.portfolio-footer a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-base);
+}
+
+.portfolio-footer a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.loading {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(
+    to right,
+    var(--bg-secondary) 0%,
+    var(--bg-tertiary) 50%,
+    var(--bg-secondary) 100%
+  );
+  background-size: 1000px 100%;
+}
+
+/* Accessibility */
+.project-card:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.filter-btn:focus-visible,
+.close-btn:focus-visible,
+.link-btn:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Print Styles */
+@media print {
+  .portfolio-filters,
+  .portfolio-search,
+  .modal-backdrop {
+    display: none !important;
+  }
+  
+  .project-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
 </style>
 
-<div class="portfolio-wrap">
+<div class="portfolio-container">
+  <!-- Hero Section -->
+  <div class="portfolio-hero">
+    <h1>🚀 Selected Interactive Tools Portfolio</h1>
+    <p class="portfolio-intro">
+      Here you'll find a collection of projects that translate research into practice. These tools bring together data science, predictive modeling, optimization, and design to tackle real-world challenges in transportation, mobility, and urban systems. Explore by category using the filters, and open any card to dive deeper into demos, papers, and additional resources.
+    </p>
+  </div>
 
-  <p class="portfolio-intro">
-Here you’ll find a collection of projects that translate research into practice. These tools bring together data science, predictive modeling, optimization, and design to tackle real-world challenges in transportation, mobility, and urban systems. <br> Explore by category using the tabs, and open any card to dive deeper into demos, papers, and additional resources.  </p>
+  <!-- Search Bar -->
+  <div class="portfolio-search">
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Search projects by name, technology, or description..."
+      aria-label="Search projects"
+    >
+  </div>
 
-  <h3 class="section-title gradient">Micromobility and Multimodal Planning</h3>
-  <div class="grid">
+  <!-- Filter Buttons -->
+  <div class="portfolio-filters" role="group" aria-label="Filter projects by category">
+    <button class="filter-btn active" data-filter="all" aria-pressed="true">All Projects</button>
+    <button class="filter-btn" data-filter="micromobility" aria-pressed="false">Micromobility</button>
+    <button class="filter-btn" data-filter="electrification" aria-pressed="false">Electrification</button>
+    <button class="filter-btn" data-filter="emergency" aria-pressed="false">Emergency Management</button>
+    <button class="filter-btn" data-filter="transit" aria-pressed="false">Transit Planning</button>
+    <button class="filter-btn" data-filter="other" aria-pressed="false">Other Tools</button>
+  </div>
+
+  <!-- Unified Portfolio Grid (for "All Projects" view) -->
+  <div class="portfolio-grid unified-grid" id="unified-portfolio-grid" data-category="all" style="display: none;"></div>
+
+  <!-- Micromobility Section -->
+  <h2 class="section-title" id="micromobility-section">Micromobility and Multimodal Planning</h2>
+  <div class="portfolio-grid" data-category="micromobility">
     <!-- Bikeshare Pro -->
-    <article class="card">
-      <button class="card-btn"
-        data-title="Bikeshare Pro 🏆"
-        data-yearrole="2023 · Lead R&amp;D"
-        data-sub="Ridership prediction, Station planning, Electrification, Transit integration"
-        data-img="/images/bikeshare.png"
-data-desc="A web decision-support tool for bike-share expansion, charger deployment, and multimodal integration, built on optimization and predictive models. Award-winning, piloted with partners, and scaled to 15+ cities."        data-links='[
-          {"label":"Tool Description","href":"https://interactive-or.net/bikesharepro"},
-          {"label":"Video","href":"https://www.youtube.com/watch?v=JYsBq0uCxRQ&list=PLMQSwmI9u1hxwkDlHrtIriCNH1xZ1m863"},
-          {"label":"Paper Demo","href":"https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_flow-maximizing-facility-location-using-continuum-activity-7291560428415991808-4foT"}
-        ]'>
-        <div class="card-top">
-          <div class="title">Bikeshare Pro 🏆</div>
-          <div class="pill">2023 · Lead R&D</div>
+    <article class="project-card" data-tags="ridership prediction station planning electrification transit integration optimization">
+      <div class="card-image-wrapper">
+        <img src="/images/bikeshare.png" alt="Bikeshare Pro preview" loading="lazy">
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">Bikeshare Pro 🏆</h3>
+          <div class="card-meta">
+            <span class="card-year-role">2023 · Lead R&D</span>
+          </div>
         </div>
-        <div class="pill">Ridership prediction, Station planning, Electrification, Transit integration</div>
-        <img class="thumb" src="/images/bikeshare.png" alt="Bikeshare Pro preview">
-      </button>
+        <p class="card-tags">Ridership prediction, Station planning, Electrification, Transit integration</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "Bikeshare Pro 🏆",
+          "yearrole": "2023 · Lead R&D",
+          "sub": "Ridership prediction, Station planning, Electrification, Transit integration",
+          "img": "/images/bikeshare.png",
+          "desc": "A web decision-support tool for bike-share expansion, charger deployment, and multimodal integration, built on optimization and predictive models. Award-winning, piloted with partners, and scaled to 15+ cities.",
+          "links": [
+            {"label": "Tool Description", "href": "https://interactive-or.net/bikesharepro"},
+            {"label": "Video", "href": "https://www.youtube.com/watch?v=JYsBq0uCxRQ&list=PLMQSwmI9u1hxwkDlHrtIriCNH1xZ1m863"},
+            {"label": "Paper 1", "href": "https://www.sciencedirect.com/science/article/pii/S0965856425003349?via%3Dihub"},
+            {"label": "Paper 2 Demo", "href": "https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_flow-maximizing-facility-location-using-continuum-activity-7291560428415991808-4foT"}
+          ]
+        }
+      </div>
     </article>
 
     <!-- Real-Time Relocation -->
-    <article class="card">
-      <button class="card-btn"
-        data-title="Real-Time Bike-Share Relocation Optimization"
-        data-yearrole="2024 · Researcher &amp; Product Developer"
-        data-sub="Optimization for full and partial bike relocation"
-        data-img="/images/relocation.png"
-data-desc="Using a real-time API, we ingest station status and run a heuristic with a TSP solver to generate relocation routes that respect operational constraints (capacity, time windows), enabling partial or full rebalancing."
-        data-links='[
-          {"label":"Demo","href":"https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_bikesharetoronto-activity-7293717346311946240-xz3H"}
-        ]'>
-        <div class="card-top">
-          <div class="title">Real-Time Bike-Share Relocation Optimization</div>
-          <div class="pill">2024 · Researcher &<br> Product Developer</div>
+    <article class="project-card" data-tags="optimization relocation tsp real-time api">
+      <div class="card-image-wrapper">
+        <img src="/images/relocation.png" alt="Real-Time Bike-Share Relocation Optimization preview" loading="lazy">
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">Real-Time Bike-Share Relocation Optimization</h3>
+          <div class="card-meta">
+            <span class="card-year-role">2024 · Researcher & Product Developer</span>
+          </div>
         </div>
-        <div class="pill">Optimization for full and partial bike relocation</div>
-        <img class="thumb" src="/images/relocation.png" alt="Relocation optimizer preview">
-      </button>
+        <p class="card-tags">Optimization for full and partial bike relocation</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "Real-Time Bike-Share Relocation Optimization",
+          "yearrole": "2024 · Researcher & Product Developer",
+          "sub": "Optimization for full and partial bike relocation",
+          "img": "/images/relocation.png",
+          "desc": "Using a real-time API, we ingest station status and run a heuristic with a TSP solver to generate relocation routes that respect operational constraints (capacity, time windows), enabling partial or full rebalancing.",
+          "links": [
+            {"label": "Demo", "href": "https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_bikesharetoronto-activity-7293717346311946240-xz3H"}
+          ]
+        }
+      </div>
     </article>
 
     <!-- E-Scooter Planner -->
-    <article class="card">
-      <button class="card-btn"
-        data-title="E-Scooter Planner"
-        data-yearrole="2024 · Lead R&amp;D"
-        data-sub="Pick-up and drop-off prediction with transit integration"
-        data-img="/images/scooter.png"
-data-desc="Planning and analytics for free-floating fleets with demand prediction that incorporates weather, supports short- and long-term horizons, and integrates nearby transit stops and ridership."
-        data-links='[
-          {"label":"Demo","href":"https://lnkd.in/p/gu4aBFRj"},
-          {"label":"Collaboration Highlight","href":"https://lnkd.in/p/g-WvWG3x"}
-        ]'>
-        <div class="card-top">
-          <div class="title">E-Scooter Planner</div>
-          <div class="pill">2024 · Lead R&D</div>
+    <article class="project-card" data-tags="prediction transit integration weather demand forecasting">
+      <div class="card-image-wrapper">
+        <img src="/images/scooter.png" alt="E-Scooter Planner preview" loading="lazy">
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">E-Scooter Planner</h3>
+          <div class="card-meta">
+            <span class="card-year-role">2024 · Lead R&D</span>
+          </div>
         </div>
-        <div class="pill">Pick-up and drop-off prediction with transit integration</div>
-        <img class="thumb" src="/images/scooter.png" alt="E-Scooter Planner preview">
-      </button>
+        <p class="card-tags">Pick-up and drop-off prediction with transit integration</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "E-Scooter Planner",
+          "yearrole": "2024 · Lead R&D",
+          "sub": "Pick-up and drop-off prediction with transit integration",
+          "img": "/images/scooter.png",
+          "desc": "Planning and analytics for free-floating fleets with demand prediction that incorporates weather, supports short- and long-term horizons, and integrates nearby transit stops and ridership.",
+          "links": [
+            {"label": "Demo", "href": "https://lnkd.in/p/gu4aBFRj"},
+            {"label": "Collaboration Highlight", "href": "https://lnkd.in/p/g-WvWG3x"}
+          ]
+        }
+      </div>
     </article>
 
     <!-- Multimodal Trip Planner -->
-    <article class="card">
-      <button class="card-btn"
-        data-title="Multimodal Trip Planner"
-        data-yearrole="2022 · Lead R&amp;D"
-        data-sub="Routing with KPIs: GHG, calories, transfers"
-        data-img="/images/multimodal.png"
-data-desc="Integrates bikeshare, transit, and driving in a single trip planner, with end to end routing and KPI comparisons (time, cost, GHG, transfers) to surface the best option for each scenario. This was my first project!"
-        data-links='[
-          {"label":"Demo","href":"https://www.linkedin.com/feed/update/urn:li:activity:7082171999480926208"}
-        ]'>
-        <div class="card-top">
-          <div class="title">Multimodal Trip Planner</div>
-          <div class="pill">2022 · Lead R&D</div>
-        </div>
-        <div class="pill">Multimodal routing with KPIs: GHG, calories, transfers</div>
-        <img class="thumb" src="/images/multimodal.png" alt="Multimodal planner preview">
-      </button>
-    </article>
-
-    <!-- RideAlike -->
-    <article class="card">
-      <button class="card-btn"
-        data-title="Peer-to-Peer Ridesharing"
-        data-yearrole="2024 · Lead R&D"
-        data-sub="Supply and demand analysis using LLMs"
-        data-img="/images/ridealike.png"
-        data-desc="Descriptive analysis for marketplace supply and demand using LLM workflows."
-        data-links='[{"label":"Demo","href":"https://lnkd.in/p/g86FbMJY"}]'>
-        <div class="card-top">
-          <div class="title">Peer-to-Peer Ridesharing</div>
-          <div class="pill">2024 · Lead R&D</div>
-        </div>
-        <div class="pill">Supply and demand analysis using LLMs</div>
-        <img class="thumb" src="/images/ridealike.png" alt="RideAlike preview">
-      </button>
-    </article>
-
-    <article class="card upcoming">
-  <button class="card-btn" disabled
-    data-title="Bike Lane Planning"
-    data-yearrole="2025 · Lead R&amp;D"
-    data-sub="Corridor prioritization · equity and safety overlays"
-    data-img=""
-    data-desc="Network-wide scoring and phased roll-out for protected bike lanes. Launching soon."
-    data-links='[]'>
-    <div class="card-top">
-      <div class="title">
-        Bike Lane Planning
-        <span class="status-chip">Coming soon</span>
+    <article class="project-card" data-tags="routing multimodal kpi ghg calories transfers">
+      <div class="card-image-wrapper">
+        <img src="/images/multimodal.png" alt="Multimodal Trip Planner preview" loading="lazy">
       </div>
-      <div class="pill">2025 · Lead R&amp;D</div>
-    </div>
-    <div class="pill">Corridor prioritization · equity and safety overlays</div>
-    <div class="thumb placeholder">Preview coming soon</div>
-  </button>
-</article>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">Multimodal Trip Planner</h3>
+          <div class="card-meta">
+            <span class="card-year-role">2022 · Lead R&D</span>
+          </div>
+        </div>
+        <p class="card-tags">Routing with KPIs: GHG, calories, transfers</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "Multimodal Trip Planner",
+          "yearrole": "2022 · Lead R&D",
+          "sub": "Routing with KPIs: GHG, calories, transfers",
+          "img": "/images/multimodal.png",
+          "desc": "Integrates bikeshare, transit, and driving in a single trip planner, with end to end routing and KPI comparisons (time, cost, GHG, transfers) to surface the best option for each scenario. This was my first project!",
+          "links": [
+            {"label": "Demo", "href": "https://www.linkedin.com/feed/update/urn:li:activity:7082171999480926208"}
+          ]
+        }
+      </div>
+    </article>
 
+    <!-- Peer-to-Peer Ridesharing -->
+    <article class="project-card" data-tags="llm supply demand analysis marketplace">
+      <div class="card-image-wrapper">
+        <img src="/images/ridealike.png" alt="Peer-to-Peer Ridesharing preview" loading="lazy">
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">Peer-to-Peer Ridesharing</h3>
+          <div class="card-meta">
+            <span class="card-year-role">2024 · Lead R&D</span>
+          </div>
+        </div>
+        <p class="card-tags">Supply and demand analysis using LLMs</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "Peer-to-Peer Ridesharing",
+          "yearrole": "2024 · Lead R&D",
+          "sub": "Supply and demand analysis using LLMs",
+          "img": "/images/ridealike.png",
+          "desc": "Descriptive analysis for marketplace supply and demand using LLM workflows.",
+          "links": [
+            {"label": "Demo", "href": "https://lnkd.in/p/g86FbMJY"}
+          ]
+        }
+      </div>
+    </article>
 
+    <!-- Bike Lane Planning (Upcoming) -->
+    <article class="project-card upcoming" data-tags="planning equity safety corridor">
+      <div class="card-image-wrapper">
+        <div class="placeholder">Preview coming soon</div>
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">
+            Bike Lane Planning
+            <span class="status-badge">Coming soon</span>
+          </h3>
+          <div class="card-meta">
+            <span class="card-year-role">2025 · Lead R&D</span>
+          </div>
+        </div>
+        <p class="card-tags">Corridor prioritization · equity and safety overlays</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "Bike Lane Planning",
+          "yearrole": "2025 · Lead R&D",
+          "sub": "Corridor prioritization · equity and safety overlays",
+          "img": "",
+          "desc": "Network-wide scoring and phased roll-out for protected bike lanes. Launching soon.",
+          "links": []
+        }
+      </div>
+    </article>
   </div>
 
-  <h3 class="section-title gradient">Electrification</h3>
-  <div class="grid">
+  <!-- Electrification Section -->
+  <h2 class="section-title" id="electrification-section">Electrification</h2>
+  <div class="portfolio-grid" data-category="electrification">
     <!-- EV Charger Pro -->
-    <article class="card">
-      <button class="card-btn"
-        data-title="EV Charger Pro"
-        data-yearrole="2024 · Product Developer"
-        data-sub="EV demand forecasting and charger siting"
-        data-img="/images/evpro.png"
-data-desc="EV charger siting with scenario planning that integrates travel survey patterns and vehicle ownership data to target high-use locations."        data-links='[
-          {"label":"Demo","href":"https://interactive-or.net/evchargerplanning"}
-        ]'>
-        <div class="card-top">
-          <div class="title">EV Charger Pro</div>
-          <div class="pill">2024 · Product Developer</div>
+    <article class="project-card" data-tags="ev charging demand forecasting siting">
+      <div class="card-image-wrapper">
+        <img src="/images/evpro.png" alt="EV Charger Pro preview" loading="lazy">
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">EV Charger Pro</h3>
+          <div class="card-meta">
+            <span class="card-year-role">2024 · Product Developer</span>
+          </div>
         </div>
-        <div class="pill">EV demand forecasting and charger siting</div>
-        <img class="thumb" src="/images/evpro.png" alt="EV Charger Pro preview">
-      </button>
+        <p class="card-tags">EV demand forecasting and charger siting</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "EV Charger Pro",
+          "yearrole": "2024 · Product Developer",
+          "sub": "EV demand forecasting and charger siting",
+          "img": "/images/evpro.png",
+          "desc": "EV charger siting with scenario planning that integrates travel survey patterns and vehicle ownership data to target high-use locations.",
+          "links": [
+            {"label": "Demo", "href": "https://interactive-or.net/evchargerplanning"}
+          ]
+        }
+      </div>
     </article>
 
     <!-- Electric Transit Scheduling Pro -->
-    <article class="card">
-      <button class="card-btn"
-        data-title="Electric Transit Scheduling Pro"
-        data-yearrole="2024 · Researcher &amp; Lead Product Developer"
-        data-sub="GTFS-based in-route charging optimization"
-        data-img="/images/etransit.png"
-        data-desc="Scheduling support for electric bus fleets with in-route and depot charging strategies."
-        data-links='[
-          {"label":"Demo","href":"https://www.linkedin.com/posts/mehdi-nourinejad-a0040843_transit-electrification-mta-activity-7200811915428651008-AfOE"},
-          {"label":"Paper","href":"https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_transit-electrification-interactive-operations-activity-7348460897138339840-DyTR"}
-        ]'>
-        <div class="card-top">
-          <div class="title">Electric Transit Scheduling Pro</div>
-          <div class="pill">2024 · Researcher &<br> Lead Product Developer</div>
+    <article class="project-card" data-tags="transit scheduling gtfs charging optimization">
+      <div class="card-image-wrapper">
+        <img src="/images/etransit.png" alt="Electric Transit Scheduling Pro preview" loading="lazy">
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">Electric Transit Scheduling Pro</h3>
+          <div class="card-meta">
+            <span class="card-year-role">2024 · Researcher & Lead Product Developer</span>
+          </div>
         </div>
-        <div class="pill">GTFS-based in-route charging optimization</div>
-        <img class="thumb" src="/images/etransit.png" alt="Electric Transit Scheduling preview">
-      </button>
+        <p class="card-tags">GTFS-based in-route charging optimization</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "Electric Transit Scheduling Pro",
+          "yearrole": "2024 · Researcher & Lead Product Developer",
+          "sub": "GTFS-based in-route charging optimization",
+          "img": "/images/etransit.png",
+          "desc": "Scheduling support for electric bus fleets with in-route and depot charging strategies.",
+          "links": [
+            {"label": "Demo", "href": "https://www.linkedin.com/posts/mehdi-nourinejad-a0040843_transit-electrification-mta-activity-7200811915428651008-AfOE"},
+            {"label": "Paper", "href": "https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_transit-electrification-interactive-operations-activity-7348460897138339840-DyTR"}
+          ]
+        }
+      </div>
     </article>
 
     <!-- School Bus Charging -->
-    <article class="card">
-      <button class="card-btn"
-        data-title="Charging Optimization for School Buses"
-        data-yearrole="2024 · Researcher &amp; Product Developer"
-        data-sub="Depot cost minimization and charging windows"
-        data-img="/images/schoolbus.png"
-data-desc="Large-scale depot charging optimization with cost control and peak management. I implemented a custom heuristic and moved the compute kernel to WebAssembly for near native performance."
-        data-links='[{"label":"Demo","href":"https://lnkd.in/p/g68wNidA"},{"label":"Collaboration Highlight","href":"https://lnkd.in/p/gjNjnHwt"}]'>
-        <div class="card-top">
-          <div class="title">Depot Charging Optimization</div>
-          <div class="pill">2024 · Researcher &<br> Product Developer</div>
+    <article class="project-card" data-tags="depot charging optimization webassembly cost minimization">
+      <div class="card-image-wrapper">
+        <img src="/images/schoolbus.png" alt="Charging Optimization for School Buses preview" loading="lazy">
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">Depot Charging Optimization</h3>
+          <div class="card-meta">
+            <span class="card-year-role">2024 · Researcher & Product Developer</span>
+          </div>
         </div>
-        <div class="pill">Depot cost minimization and charging windows</div>
-        <img class="thumb" src="/images/schoolbus.png" alt="School bus charging preview">
-      </button>
+        <p class="card-tags">Depot cost minimization and charging windows</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "Depot Charging Optimization",
+          "yearrole": "2024 · Researcher & Product Developer",
+          "sub": "Depot cost minimization and charging windows",
+          "img": "/images/schoolbus.png",
+          "desc": "Large-scale depot charging optimization with cost control and peak management. I implemented a custom heuristic and moved the compute kernel to WebAssembly for near native performance.",
+          "links": [
+            {"label": "Demo", "href": "https://lnkd.in/p/g68wNidA"},
+            {"label": "Collaboration Highlight", "href": "https://lnkd.in/p/gjNjnHwt"}
+          ]
+        }
+      </div>
     </article>
   </div>
 
-   <h3 class="section-title gradient">Emergency Management</h3>
-  <div class="grid">
- <!-- ResponsePro -->
-    <article class="card">
-      <button class="card-btn"
-        data-title="ResponsePro"
-        data-yearrole="2024 · Lead R&amp;D"
-        data-sub="Fire station planning and response analytics"
-        data-img="/images/responsepro.png"
-data-desc="Deployment analytics and coverage evaluation for emergency services, already in use by Fire Chiefs in four cities. Includes incident prediction and station deployment optimization, with sensitive call data stored securely on Canadian servers using Google servicies."
-        data-links='[
-          {"label":"Tool","href":"https://interactive-or.net/responsepro"}
-        ]'>
-        <div class="card-top">
-          <div class="title">ResponsePro</div>
-          <div class="pill">2024 · Lead R&D</div>
-        </div>
-        <div class="pill">Fire station planning and response analytics</div>
-        <img class="thumb" src="/images/responsepro.png" alt="ResponsePro preview">
-      </button>
-    </article>
-
- <!-- Snow PlowingPro -->
-    <article class="card">
-      <button class="card-btn"
-        data-title="Snow PlowingPro"
-        data-yearrole="2024 · Product Developer"
-        data-sub="Arc-routing for winter maintenance"
-        data-img="/images/snow.png"
-data-desc="Developed with the City of Aurora. Phase 1 delivers optimized arc routing with route design and service level analytics. Phase 2 will add real-time fleet management, storm re-planning, and service-level monitoring."
-        data-links='[
-          {"label":"Tool Description","href":"https://interactive-or.net/snowplowpro"}
-        ]'>
-        <div class="card-top">
-          <div class="title">Snow PlowingPro</div>
-          <div class="pill">2024 · Product Developer</div>
-        </div>
-        <div class="pill">Arc-routing for winter maintenance</div>
-        <img class="thumb" src="/images/snow.png" alt="Snow PlowingPro preview">
-      </button>
-    </article>
-
-    </div>
-
-
-     <h3 class="section-title gradient">Transit Planning</h3>
-  <div class="grid">
-
-     <!-- Transit PlanningPro -->
-    <article class="card">
-      <button class="card-btn"
-        data-title="Transit PlanningPro"
-        data-yearrole="2024 · Lead R&amp;D"
-        data-sub="Network edits with KPIs from demand to congestion"
-        data-img="/images/transitplanner.png"
-data-desc="Interactive four stage workflow covering demand, congestion, network edits, and KPIs. This project is where I learned GTFS Static end to end: ingesting feeds, validating routes, trips, and stops, and turning them into networks and schedules for analysis."
-        data-links='[
-          {"label":"Demo","href":"https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_transit-network-design-and-scheduling-we-activity-7310471035953258496-vr0D"},
-          {"label":"Tool Description","href":"https://interactive-or.net/transit"}
-        ]'>
-        <div class="card-top">
-          <div class="title">Transit PlanningPro</div>
-          <div class="pill">2024 · Lead R&D</div>
-        </div>
-        <div class="pill">Network edits with KPIs from demand to congestion</div>
-        <img class="thumb" src="/images/transitplanner.png" alt="Transit planner preview">
-      </button>
-    </article>
-
- <article class="card upcoming">
-  <button class="card-btn" disabled
-    data-title="Transit Bunching Monitor and Prevention"
-    data-yearrole="2025 · R&amp;D Director"
-    data-sub="Real-time headway analytics and bunching risk alerts"
-    data-img=""
-    data-desc="Live ingestion of GTFS-RT and AVL to estimate headways, predict bunching risk, predict bunching KPI in short-term, and suggest interventions."
-    data-links='[]'>
-    <div class="card-top">
-      <div class="title">
-        Transit Bunching Monitor and Prevention
-        <span class="status-chip">Coming soon</span>
+  <!-- Emergency Management Section -->
+  <h2 class="section-title" id="emergency-section">Emergency Management</h2>
+  <div class="portfolio-grid" data-category="emergency">
+    <!-- ResponsePro -->
+    <article class="project-card" data-tags="fire station planning response analytics emergency services">
+      <div class="card-image-wrapper">
+        <img src="/images/responsepro.png" alt="ResponsePro preview" loading="lazy">
       </div>
-      <div class="pill">2025 · R&amp;D Director</div>
-    </div>
-    <div class="pill">Real-time headway analytics and bunching risk alerts</div>
-    <div class="thumb placeholder">Preview coming soon</div>
-  </button>
-</article>
-    </div>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">ResponsePro</h3>
+          <div class="card-meta">
+            <span class="card-year-role">2024 · Lead R&D</span>
+          </div>
+        </div>
+        <p class="card-tags">Fire station planning and response analytics</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "ResponsePro",
+          "yearrole": "2024 · Lead R&D",
+          "sub": "Fire station planning and response analytics",
+          "img": "/images/responsepro.png",
+          "desc": "Deployment analytics and coverage evaluation for emergency services, already in use by Fire Chiefs in four cities. Includes incident prediction and station deployment optimization, with sensitive call data stored securely on Canadian servers using Google services.",
+          "links": [
+            {"label": "Tool", "href": "https://interactive-or.net/responsepro"}
+          ]
+        }
+      </div>
+    </article>
 
+    <!-- Snow PlowingPro -->
+    <article class="project-card" data-tags="arc routing winter maintenance optimization">
+      <div class="card-image-wrapper">
+        <img src="/images/snow.png" alt="Snow PlowingPro preview" loading="lazy">
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">Snow PlowingPro</h3>
+          <div class="card-meta">
+            <span class="card-year-role">2024 · Product Developer</span>
+          </div>
+        </div>
+        <p class="card-tags">Arc-routing for winter maintenance</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "Snow PlowingPro",
+          "yearrole": "2024 · Product Developer",
+          "sub": "Arc-routing for winter maintenance",
+          "img": "/images/snow.png",
+          "desc": "Developed with the City of Aurora. Phase 1 delivers optimized arc routing with route design and service level analytics. Phase 2 will add real-time fleet management, storm re-planning, and service-level monitoring.",
+          "links": [
+            {"label": "Tool Description", "href": "https://interactive-or.net/snowplowpro"}
+          ]
+        }
+      </div>
+    </article>
 
-  <h3 class="section-title gradient">Other Tools</h3>
-  <div class="grid">
+    <!-- Winter Maintenance Monitoring -->
+    <article class="project-card" data-tags="winter maintenance real-time monitoring snowplow tracking geospatial analytics smart cities public works">
+      <div class="card-image-wrapper">
+        <img src="/images/winter-maintenance.png" alt="Real-time Winter Maintenance Monitoring preview" loading="lazy">
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">Real-time Winter Maintenance Monitoring</h3>
+          <div class="card-meta">
+            <span class="card-year-role">2025 · R&D Director</span>
+          </div>
+        </div>
+        <p class="card-tags">Real-time operational tool for monitoring, analysis, and decision-making in winter maintenance</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "Real-time Winter Maintenance Monitoring",
+          "yearrole": "2025 · R&D Director",
+          "sub": "Real-time operational tool for monitoring, analysis, and decision-making in winter maintenance",
+          "img": "/images/winter-maintenance.png",
+          "desc": "A real-time operational tool for monitoring, analysis, and decision-making in winter maintenance operations. The system makes critical questions measurable in real time: Where is my snowplow right now? When will it reach my street? How well has each area been plowed by a specific time? This platform provides real-time visibility into plowing and salting operations across entire municipalities, enabling data-driven decision-making for winter maintenance teams and transparent communication with residents about service status.",
+          "links": [
+            {"label": "Demo", "href": "https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_aurora-activity-7406837265689194496-LZQw?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTHrvgBk17mK_BgkAwln-q4XYMZo5fgSJw"}
+          ]
+        }
+      </div>
+    </article>
+  </div>
+
+  <!-- Transit Planning Section -->
+  <h2 class="section-title" id="transit-section">Transit Planning</h2>
+  <div class="portfolio-grid" data-category="transit">
+    <!-- Transit PlanningPro -->
+    <article class="project-card" data-tags="gtfs network design congestion kpi">
+      <div class="card-image-wrapper">
+        <img src="/images/transitplanner.png" alt="Transit PlanningPro preview" loading="lazy">
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">Transit PlanningPro</h3>
+          <div class="card-meta">
+            <span class="card-year-role">2024 · Lead R&D</span>
+          </div>
+        </div>
+        <p class="card-tags">Network edits with KPIs from demand to congestion</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "Transit PlanningPro",
+          "yearrole": "2024 · Lead R&D",
+          "sub": "Network edits with KPIs from demand to congestion",
+          "img": "/images/transitplanner.png",
+          "desc": "Interactive four stage workflow covering demand, congestion, network edits, and KPIs. This project is where I learned GTFS Static end to end: ingesting feeds, validating routes, trips, and stops, and turning them into networks and schedules for analysis.",
+          "links": [
+            {"label": "Demo", "href": "https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_transit-network-design-and-scheduling-we-activity-7310471035953258496-vr0D"},
+            {"label": "Tool Description", "href": "https://interactive-or.net/transit"}
+          ]
+        }
+      </div>
+    </article>
+
+    <!-- Transit Headway Management with AI -->
+    <article class="project-card" data-tags="real-time ai headway management bunching ttc transit optimization">
+      <div class="card-image-wrapper">
+        <img src="/images/headway.png" alt="Transit Headway Management with AI preview" loading="lazy">
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">Transit Headway Management with AI - Supervisors Version</h3>
+          <div class="card-meta">
+            <span class="card-year-role">2025 · R&D Director</span>
+          </div>
+        </div>
+        <p class="card-tags">AI-powered headway management to reduce bus bunching and gapping</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "Transit Headway Management with AI - Supervisors Version",
+          "yearrole": "2025 · R&D Director",
+          "sub": "AI-powered headway management to reduce bus bunching and gapping",
+          "img": "/images/headway.png",
+          "desc": "A cloud-based, real-time decision-support platform that improves transit service reliability by integrating scheduled service data with live vehicle location updates. The tool maintains a continuously updated digital representation of routes, enabling supervisors to monitor headways, anticipate emerging irregularities, and apply targeted interventions. The system features an AI-guided holding recommendation engine that considers on-board occupancy and real-time headways to restore spacing with minimal passenger impact. It uses self-learning prediction models with what-if analysis to test proposed actions and show expected outcomes. In collaboration with the Toronto Transit Commission (TTC), the tool has been piloted on six routes, with supervisors using AI recommendations to correct 200+ instances of bunching. The system shifts headway management from reactive correction to adaptive, data-guided control that prevents service degradation before passengers experience it.",
+          "links": [
+            {"label": "White Paper", "href": "https://www.linkedin.com/posts/mehdi-nourinejad-a0040843_whitepaper-ugcPost-7408921412427550721-JeQ2?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTHrvgBk17mK_BgkAwln-q4XYMZo5fgSJw"},
+            {"label": "Demo", "href": "https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_ttc-activity-7397735836554813440-mdya?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTHrvgBk17mK_BgkAwln-q4XYMZo5fgSJw"}
+          ]
+        }
+      </div>
+    </article>
+
+    <!-- Transit Headway Management with AI - Managerial Version -->
+    <article class="project-card" data-tags="real-time ai headway management bunching transit optimization managerial analytics">
+      <div class="card-image-wrapper">
+        <img src="/images/headway-managerial.png" alt="Transit Headway Management with AI - Managerial Version preview" loading="lazy">
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">Transit Headway Management with AI - Managerial Version</h3>
+          <div class="card-meta">
+            <span class="card-year-role">2025 · R&D Director</span>
+          </div>
+        </div>
+        <p class="card-tags">AI-powered bunching detection, alleviation, and impact forecasting for high-frequency corridors</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "Transit Headway Management with AI - Managerial Version",
+          "yearrole": "2025 · R&D Director",
+          "sub": "AI-powered bunching detection, alleviation, and impact forecasting for high-frequency corridors",
+          "img": "/images/headway-managerial.png",
+          "desc": "A strategic optimization platform for alleviating bus bunching in high-frequency corridors through real-time bus holding at stations. The system rebalances service spacing and reduces passenger waiting times by applying AI-driven bunching detection, alleviation strategies, and impact forecasting. The optimization models are headway and occupancy sensitive, prioritizing bunching instances where the trailing bus has lower occupancy than the leading one. Holding times are maintained within industry standards to minimize extended in-vehicle waiting while effectively restoring service regularity.",
+          "links": [
+            {"label": "Demo", "href": "https://www.linkedin.com/posts/mehdi-nourinejad-a0040843_a-best-practice-for-alleviating-bus-bunching-ugcPost-7381767072458080256-zI4z?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTHrvgBk17mK_BgkAwln-q4XYMZo5fgSJw"}
+          ]
+        }
+      </div>
+    </article>
+  </div>
+
+  <!-- Other Tools Section -->
+  <h2 class="section-title" id="other-section">Other Tools</h2>
+  <div class="portfolio-grid" data-category="other">
+    <!-- HouseScout -->
+    <article class="project-card" data-tags="real estate urban analytics decision support spatial analysis open data prop tech gis">
+      <div class="card-image-wrapper">
+        <img src="/images/housescout.png" alt="HouseScout preview" loading="lazy">
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">HouseScout</h3>
+          <div class="card-meta">
+            <span class="card-year-role">2025 · R&D Director</span>
+          </div>
+        </div>
+        <p class="card-tags">Real estate decision support combining open data, spatial analysis, and user-defined priorities</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "HouseScout",
+          "yearrole": "2025 · R&D Director",
+          "sub": "Real estate decision support combining open data, spatial analysis, and user-defined priorities",
+          "img": "/images/housescout.png",
+          "desc": "HouseScout brings structure and transparency to real estate decision-making by combining open data, spatial analysis, and user-defined priorities in one place. Add properties and workplaces to the map, compare commute times, use customizable multi-criteria scoring for accessibility and schools, analyze nearby amenities with travel-time estimates, visualize X-minute reachability, optimize property visit routes, and explore contextual layers including schools, safety, flood risk, and infrastructure.",
+          "links": [
+            {"label": "Demo", "href": "https://www.linkedin.com/posts/ghazaleh-mohseni-hosseinabadi_realestate-urbananalytics-decisionsupport-activity-7407808924101488640-VkgM?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTHrvgBk17mK_BgkAwln-q4XYMZo5fgSJw"}
+          ]
+        }
+      </div>
+    </article>
 
     <!-- Parking Pricing Tool -->
-    <article class="card">
-      <button class="card-btn"
-        data-title="Parking Pricing Tool"
-        data-yearrole="2024 · Product Developer"
-        data-sub="Adaptive pricing strategies for curbside management"
-        data-img="/images/parking.png"
-        data-desc="Elasticity-aware curb pricing with policy-driven scenarios."
-        data-links='[
-          {"label":"Demo","href":"https://www.linkedin.com/posts/mehdi-nourinejad-a0040843_parking-dynamicpricing-communityimprovement-activity-7225121703939518465-RWt6"}
-        ]'>
-        <div class="card-top">
-          <div class="title">Parking Pricing Tool</div>
-          <div class="pill">2024 · Product Developer</div>
+    <article class="project-card" data-tags="pricing elasticity curbside management">
+      <div class="card-image-wrapper">
+        <img src="/images/parking.png" alt="Parking Pricing Tool preview" loading="lazy">
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">Parking Pricing Tool</h3>
+          <div class="card-meta">
+            <span class="card-year-role">2024 · Product Developer</span>
+          </div>
         </div>
-        <div class="pill">Adaptive pricing strategies for curbside management</div>
-        <img class="thumb" src="/images/parking.png" alt="Parking pricing preview">
-      </button>
+        <p class="card-tags">Adaptive pricing strategies for curbside management</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "Parking Pricing Tool",
+          "yearrole": "2024 · Product Developer",
+          "sub": "Adaptive pricing strategies for curbside management",
+          "img": "/images/parking.png",
+          "desc": "Elasticity-aware curb pricing with policy-driven scenarios.",
+          "links": [
+            {"label": "Demo", "href": "https://www.linkedin.com/posts/mehdi-nourinejad-a0040843_parking-dynamicpricing-communityimprovement-activity-7225121703939518465-RWt6"}
+          ]
+        }
+      </div>
     </article>
 
     <!-- Vision Zero -->
-    <article class="card">
-      <button class="card-btn"
-        data-title="Vision Zero Tool"
-        data-yearrole="2023 · Product Developer"
-        data-sub="Automated Speed Enforcement camera allocation"
-        data-img="/images/ase.png"
-data-desc="Allocation strategies for ASE programs targeting high-risk corridors, interactive community safety zones analysis,  and cost-aware analysis that considers unit, installation, and operating costs to maximize safety impact per dollar under budget constraints."
-        data-links='[
-          {"label":"Tool Description","href":"https://interactive-or.net/ase"}
-        ]'>
-        <div class="card-top">
-          <div class="title">Vision Zero Tool</div>
-          <div class="pill">2023 · Product Developer</div>
+    <article class="project-card" data-tags="safety ase speed enforcement allocation">
+      <div class="card-image-wrapper">
+        <img src="/images/ase.png" alt="Vision Zero Tool preview" loading="lazy">
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">Vision Zero Tool</h3>
+          <div class="card-meta">
+            <span class="card-year-role">2023 · Product Developer</span>
+          </div>
         </div>
-        <div class="pill">Automated Speed Enforcement camera allocation and cost analysis</div>
-        <img class="thumb" src="/images/ase.png" alt="Vision Zero ASE preview">
-      </button>
+        <p class="card-tags">Automated Speed Enforcement camera allocation and cost analysis</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "Vision Zero Tool",
+          "yearrole": "2023 · Product Developer",
+          "sub": "Automated Speed Enforcement camera allocation and cost analysis",
+          "img": "/images/ase.png",
+          "desc": "Allocation strategies for ASE programs targeting high-risk corridors, interactive community safety zones analysis, and cost-aware analysis that considers unit, installation, and operating costs to maximize safety impact per dollar under budget constraints.",
+          "links": [
+            {"label": "Tool Description", "href": "https://interactive-or.net/ase"}
+          ]
+        }
+      </div>
     </article>
 
-   <!-- TSP Game -->
-    <article class="card">
-      <button class="card-btn"
-        data-title="TSP Game"
-        data-yearrole="2024 · Product Developer"
-        data-sub="Gamifying Travel Salesman Problem"
-        data-img="/images/tsp.png"
-data-desc="Teach the complexity of solving traveling salesman problems as the problem size becomes larger - showing the NP-hard nature of the problem. "
-        data-links=''>
-        <div class="card-top">
-          <div class="title">TSP Game</div>
-          <div class="pill">2024 · Product Developer</div>
+    <!-- TSP Game -->
+    <article class="project-card" data-tags="education tsp gamification np-hard">
+      <div class="card-image-wrapper">
+        <img src="/images/tsp.png" alt="TSP Game preview" loading="lazy">
+      </div>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">TSP Game</h3>
+          <div class="card-meta">
+            <span class="card-year-role">2024 · Product Developer</span>
+          </div>
         </div>
-        <div class="pill">Explore and Play the Travel Salesman Problem (TSP) </div>
-        <img class="thumb" src="/images/tsp.png" alt="Vision Zero ASE preview">
-      </button>
+        <p class="card-tags">Explore and Play the Travel Salesman Problem (TSP)</p>
+      </div>
+      <div class="project-data" style="display: none;">
+        {
+          "title": "TSP Game",
+          "yearrole": "2024 · Product Developer",
+          "sub": "Explore and Play the Travel Salesman Problem (TSP)",
+          "img": "/images/tsp.png",
+          "desc": "Teach the complexity of solving traveling salesman problems as the problem size becomes larger - showing the NP-hard nature of the problem.",
+          "links": []
+        }
+      </div>
     </article>
 
-<!-- Wildfire Proof Pro (Upcoming) -->
-<!-- <article class="card upcoming">
-  <button class="card-btn" disabled
-    data-title="Wildfire Proof Pro"
-    data-yearrole="2025 · R&amp;D Director"
-    data-sub="Community risk, protection planning, and evacuation analytics"
-    data-img=""
-data-desc="Uses vegetation data to predict wildfire propagation and, with optimization models, recommends prioritized mitigation and response actions. Launching soon."
-    data-links='[]'>
-    <div class="card-top">
-      <div class="title">
-        Wildfire Proof Pro
-        <span class="status-chip">Coming soon</span>
+    <!-- Traffic Assignment Tool (Upcoming) -->
+    <article class="project-card upcoming" data-tags="traffic assignment construction planning network">
+      <div class="card-image-wrapper">
+        <div class="placeholder">Preview coming soon</div>
       </div>
-      <div class="pill">2025 · R&amp;D Director</div>
-    </div>
-    <div class="pill">Community risk, protection planning, and evacuation analytics</div>
-    <div class="thumb placeholder">Preview coming soon</div>
-  </button>
-</article> -->
-
-<!-- Traffic Assignment Tool (Upcoming) -->
-<article class="card upcoming">
-  <button class="card-btn" disabled
-    data-title="Traffic Assignment Tool"
-    data-yearrole="2025 · R&amp;D Director"
-    data-sub="Road network generation · construction-aware planning"
-    data-img=""
-    data-desc="We generate the road network and couple the planner with planned construction APIs. Users can add construction areas and time windows, then evaluate impacts on traffic flows, congestion, and related KPIs."
-    data-links='[]'>
-    <div class="card-top">
-      <div class="title">
-        Traffic Assignment Tool
-        <span class="status-chip">Coming soon</span>
+      <div class="card-content">
+        <div class="card-header">
+          <h3 class="card-title">
+            Traffic Assignment Tool
+            <span class="status-badge">Coming soon</span>
+          </h3>
+          <div class="card-meta">
+            <span class="card-year-role">2025 · R&D Director</span>
+          </div>
+        </div>
+        <p class="card-tags">Road network generation · construction-aware planning</p>
       </div>
-      <div class="pill">2025 · R&amp;D Director</div>
-    </div>
-    <div class="pill">Road network generation · construction-aware planning</div>
-    <div class="thumb placeholder">Preview coming soon</div>
-  </button>
-</article>
-
+      <div class="project-data" style="display: none;">
+        {
+          "title": "Traffic Assignment Tool",
+          "yearrole": "2025 · R&D Director",
+          "sub": "Road network generation · construction-aware planning",
+          "img": "",
+          "desc": "We generate the road network and couple the planner with planned construction APIs. Users can add construction areas and time windows, then evaluate impacts on traffic flows, congestion, and related KPIs.",
+          "links": []
+        }
+      </div>
+    </article>
   </div>
 
-  <p style="text-align:center; margin:20px 0 6px; color: #000000;">
-        For more, visit <a href="https://interactive-or.net/" target="_blank" rel="noopener">Interactive-OR</a>.
+  <!-- Empty State (hidden by default) -->
+  <div class="empty-state hidden" id="emptyState">
+    <div class="empty-state-icon">🔍</div>
+    <div class="empty-state-text">No projects found matching your search.</div>
+  </div>
 
-    <!-- For more, visit <a href="https://interactive-or.net/" target="_blank" rel="noopener">Interactive-OR</a> or <a href="https://github.com/ghazzaale" target="_blank" rel="noopener">GitHub</a>. -->
-  </p>
+  <!-- Footer -->
+  <div class="portfolio-footer">
+    <p>For more, visit <a href="https://interactive-or.net/" target="_blank" rel="noopener">Interactive-OR</a>.</p>
+  </div>
 </div>
 
 <!-- Modal -->
-<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-media"><img id="modalImg" src="" alt=""></div>
+<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modal-media">
+      <img id="modalImg" src="" alt="" loading="lazy">
+    </div>
     <div class="modal-body">
-      <div class="modal-head">
+      <div class="modal-header">
         <div>
-          <div id="modalTitle" class="modal-title"></div>
-          <div id="modalSub" class="modal-sub"></div>
+          <h2 id="modalTitle" class="modal-title"></h2>
+          <div id="modalSubtitle" class="modal-subtitle"></div>
         </div>
-        <button class="close-btn" id="modalClose">X</button>
+        <button class="close-btn" id="modalClose" aria-label="Close modal">×</button>
       </div>
-      <div id="modalDesc" class="modal-desc"></div>
-      <div id="modalLinks" class="links"></div>
+      <div id="modalDescription" class="modal-description"></div>
+      <div id="modalLinks" class="modal-links"></div>
     </div>
   </div>
 </div>
 
 <script>
-  const q = s => document.querySelector(s);
-  const qa = s => Array.from(document.querySelectorAll(s));
+(function() {
+  'use strict';
 
-  const backdrop = q('#modalBackdrop');
-  const img = q('#modalImg');
-  const title = q('#modalTitle');
-  const sub = q('#modalSub');
-  const desc = q('#modalDesc');
-  const links = q('#modalLinks');
-  const closeBtn = q('#modalClose');
+  // DOM Elements
+  const searchInput = document.getElementById('searchInput');
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  const modalImg = document.getElementById('modalImg');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalSubtitle = document.getElementById('modalSubtitle');
+  const modalDescription = document.getElementById('modalDescription');
+  const modalLinks = document.getElementById('modalLinks');
+  const modalClose = document.getElementById('modalClose');
+  const emptyState = document.getElementById('emptyState');
 
-  function openModal(data){
-    img.src = data.img || '';
-    img.alt = data.title ? data.title + ' preview' : 'Project preview';
-    title.textContent = data.title || '';
-    sub.textContent = data.yearrole ? data.yearrole + ' · ' + (data.sub || '') : (data.sub || '');
-    desc.textContent = data.desc || '';
-    links.innerHTML = '';
-    try{
-      const arr = JSON.parse(data.links || '[]');
-      arr.forEach(x => {
-        const a = document.createElement('a');
-        a.href = x.href; a.target = '_blank'; a.rel = 'noopener';
-        a.className = 'link-btn'; a.textContent = x.label;
-        links.appendChild(a);
-      });
-    }catch(e){}
-    backdrop.style.display = 'flex';
-    backdrop.setAttribute('aria-hidden','false');
+  // Move modal to body for proper viewport centering
+  if (modalBackdrop && modalBackdrop.parentNode !== document.body) {
+    document.body.appendChild(modalBackdrop);
   }
-  function closeModal(){
-    backdrop.style.display = 'none';
-    backdrop.setAttribute('aria-hidden','true');
+
+  // State
+  let currentFilter = 'all';
+  let currentSearch = '';
+
+  // Function to extract year from card
+  function getCardYear(card) {
+    const yearRole = card.querySelector('.card-year-role')?.textContent || '';
+    const yearMatch = yearRole.match(/(\d{4})/);
+    if (yearMatch) {
+      return parseInt(yearMatch[1], 10);
+    }
+    // Fallback: try to get from project-data
+    const projectData = card.querySelector('.project-data')?.textContent;
+    if (projectData) {
+      try {
+        const data = JSON.parse(projectData);
+        const yearMatch2 = (data.yearrole || '').match(/(\d{4})/);
+        if (yearMatch2) {
+          return parseInt(yearMatch2[1], 10);
+        }
+      } catch (e) {
+        // Ignore parse errors
+      }
+    }
+    return 0; // Default to 0 for unknown years (will appear last)
   }
-  qa('.card-btn').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      openModal({
-        title: btn.dataset.title,
-        yearrole: btn.dataset.yearrole,
-        sub: btn.dataset.sub,
-        img: btn.dataset.img,
-        desc: btn.dataset.desc,
-        links: btn.dataset.links
+
+  // Store original card positions for restoration
+  const originalCardPositions = new Map();
+  
+  // Store original positions on page load
+  projectCards.forEach(card => {
+    const category = card.closest('.portfolio-grid')?.dataset.category || 'other';
+    if (!originalCardPositions.has(category)) {
+      originalCardPositions.set(category, []);
+    }
+    originalCardPositions.get(category).push(card);
+  });
+
+  // Function to check if card is "coming soon"
+  function isComingSoon(card) {
+    return card.classList.contains('upcoming') || 
+           card.querySelector('.status-badge')?.textContent.includes('Coming soon');
+  }
+
+  // Function to sort cards by year (newest first)
+  function sortCardsByYear() {
+    const allGrids = document.querySelectorAll('.portfolio-grid:not(.unified-grid)');
+    const unifiedGrid = document.getElementById('unified-portfolio-grid');
+    
+    // If "All Projects" is selected, create unified sorted view
+    if (currentFilter === 'all' && !currentSearch && unifiedGrid) {
+      // First, restore cards to their original grids if they were moved
+      allGrids.forEach(grid => {
+        const category = grid.dataset.category;
+        const originalCards = originalCardPositions.get(category) || [];
+        originalCards.forEach(card => {
+          if (card.parentNode !== grid && card.parentNode) {
+            grid.appendChild(card);
+          }
+        });
       });
+      
+      // Collect all cards from all categories
+      const allCards = Array.from(projectCards);
+      
+      // Separate coming soon cards from regular cards
+      const regularCards = allCards.filter(card => !isComingSoon(card));
+      const comingSoonCards = allCards.filter(card => isComingSoon(card));
+      
+      // Sort regular cards by year (newest first)
+      regularCards.sort((a, b) => {
+        const yearA = getCardYear(a);
+        const yearB = getCardYear(b);
+        return yearB - yearA; // Descending order (newest first)
+      });
+      
+      // Sort coming soon cards by year (newest first)
+      comingSoonCards.sort((a, b) => {
+        const yearA = getCardYear(a);
+        const yearB = getCardYear(b);
+        return yearB - yearA;
+      });
+      
+      // Combine: regular cards first, then coming soon cards
+      const allCardsSorted = [...regularCards, ...comingSoonCards];
+      
+      // Hide all category sections
+      document.querySelectorAll('.section-title').forEach(title => {
+        title.style.display = 'none';
+      });
+      allGrids.forEach(grid => {
+        grid.style.display = 'none';
+      });
+      
+      // Clear unified grid and add sorted cards (move, don't clone to preserve event listeners)
+      unifiedGrid.innerHTML = '';
+      allCardsSorted.forEach(card => {
+        unifiedGrid.appendChild(card);
+      });
+      
+      // Show unified grid
+      unifiedGrid.style.display = 'grid';
+    } else {
+      // Restore cards to their original category grids
+      allGrids.forEach(grid => {
+        const category = grid.dataset.category;
+        const originalCards = originalCardPositions.get(category) || [];
+        originalCards.forEach(card => {
+          if (card.parentNode !== grid && card.parentNode) {
+            grid.appendChild(card);
+          }
+        });
+      });
+      
+      // Show category sections
+      document.querySelectorAll('.section-title').forEach(title => {
+        title.style.display = '';
+      });
+      allGrids.forEach(grid => {
+        grid.style.display = 'grid';
+      });
+      
+      // Hide unified grid
+      if (unifiedGrid) {
+        unifiedGrid.style.display = 'none';
+      }
+      
+      // Sort cards within each category grid by year (newest first), with coming soon at the end
+      allGrids.forEach(grid => {
+        const gridCards = Array.from(grid.querySelectorAll('.project-card'));
+        
+        // Separate coming soon from regular cards
+        const regularCards = gridCards.filter(card => !isComingSoon(card));
+        const comingSoonCards = gridCards.filter(card => isComingSoon(card));
+        
+        // Sort regular cards by year (newest first)
+        regularCards.sort((a, b) => {
+          const yearA = getCardYear(a);
+          const yearB = getCardYear(b);
+          return yearB - yearA; // Descending order (newest first)
+        });
+        
+        // Sort coming soon cards by year (newest first)
+        comingSoonCards.sort((a, b) => {
+          const yearA = getCardYear(a);
+          const yearB = getCardYear(b);
+          return yearB - yearA;
+        });
+        
+        // Combine: regular cards first, then coming soon cards
+        const sortedCards = [...regularCards, ...comingSoonCards];
+        
+        // Reorder cards in DOM (this preserves event listeners)
+        sortedCards.forEach(card => {
+          grid.appendChild(card);
+        });
+      });
+    }
+  }
+
+  // Filter functionality - scroll to section and highlight
+  function filterProjects() {
+    // Remove all hidden classes and highlights - show everything
+    projectCards.forEach(card => {
+      card.classList.remove('hidden', 'highlighted');
+    });
+    
+    // Remove highlight from all sections
+    document.querySelectorAll('.section-title').forEach(title => {
+      title.classList.remove('active-section');
+    });
+    document.querySelectorAll('.portfolio-grid').forEach(grid => {
+      grid.classList.remove('active-section-grid');
+    });
+    
+    // Hide empty state
+    emptyState.classList.add('hidden');
+    
+    // Sort cards by year
+    sortCardsByYear();
+    
+    // If "All Projects" is selected, just remove highlights
+    if (currentFilter === 'all' && !currentSearch) {
+      return;
+    }
+    
+    // Find and highlight the active section
+    const sectionIdMap = {
+      'micromobility': 'micromobility-section',
+      'electrification': 'electrification-section',
+      'emergency': 'emergency-section',
+      'transit': 'transit-section',
+      'other': 'other-section'
+    };
+    
+    // Highlight cards based on search (if search is active)
+    if (currentSearch) {
+      projectCards.forEach(card => {
+        const tags = (card.dataset.tags || '').toLowerCase();
+        const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+        const tagsText = card.querySelector('.card-tags')?.textContent.toLowerCase() || '';
+        
+        const matchesSearch = title.includes(currentSearch) || 
+          tags.includes(currentSearch) || 
+          tagsText.includes(currentSearch);
+        
+        if (matchesSearch) {
+          card.classList.add('highlighted');
+        }
+      });
+    }
+    
+    // Highlight section if filter is selected (not "all")
+    if (currentFilter !== 'all' && sectionIdMap[currentFilter]) {
+      const sectionTitle = document.getElementById(sectionIdMap[currentFilter]);
+      const sectionGrid = sectionTitle?.nextElementSibling;
+      
+      if (sectionTitle) {
+        sectionTitle.classList.add('active-section');
+      }
+      if (sectionGrid && sectionGrid.classList.contains('portfolio-grid')) {
+        sectionGrid.classList.add('active-section-grid');
+      }
+    }
+  }
+  
+  // Scroll to section function
+  function scrollToSection(filter) {
+    if (filter === 'all') {
+      // Scroll to top of portfolio
+      const portfolioContainer = document.querySelector('.portfolio-container');
+      if (portfolioContainer) {
+        portfolioContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      return;
+    }
+    
+    const sectionIdMap = {
+      'micromobility': 'micromobility-section',
+      'electrification': 'electrification-section',
+      'emergency': 'emergency-section',
+      'transit': 'transit-section',
+      'other': 'other-section'
+    };
+    
+    const sectionId = sectionIdMap[filter];
+    if (sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        // Calculate offset for fixed header
+        const headerHeight = 70; // Adjust based on your header height
+        const elementPosition = section.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+  }
+
+  // Filter button handlers
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Update active state
+      filterButtons.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+
+      // Update filter
+      currentFilter = btn.dataset.filter;
+      
+      // If "All Projects" is selected, scroll to top and show unified year-ordered view
+      if (currentFilter === 'all') {
+        const portfolioContainer = document.querySelector('.portfolio-container');
+        if (portfolioContainer) {
+          portfolioContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      } else {
+        // Scroll to section for category filters
+        scrollToSection(currentFilter);
+      }
+      
+      // Update highlights and sorting
+      filterProjects();
     });
   });
-  closeBtn.addEventListener('click', closeModal);
-  backdrop.addEventListener('click', e => { if(e.target === backdrop) closeModal(); });
-  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+
+  // Search handler
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      currentSearch = e.target.value.toLowerCase().trim();
+      filterProjects();
+    });
+  }
+
+  // Initialize: Sort cards by year on page load
+  sortCardsByYear();
+
+  // Modal functionality - Open popup with project details
+  function openModal(data) {
+    // Set image
+    if (data.img) {
+      modalImg.src = data.img;
+      modalImg.alt = data.title ? `${data.title} preview` : 'Project preview';
+      modalImg.style.display = 'block';
+    } else {
+      modalImg.style.display = 'none';
+    }
+    
+    // Set title
+    modalTitle.textContent = data.title || '';
+    
+    // Set subtitle (year, role, and tags)
+    const subtitleText = data.yearrole ? 
+      `${data.yearrole}${data.sub ? ' · ' + data.sub : ''}` : 
+      (data.sub || '');
+    modalSubtitle.textContent = subtitleText;
+    
+    // Set description
+    modalDescription.textContent = data.desc || '';
+    
+    // Clear and populate links
+    modalLinks.innerHTML = '';
+    if (data.links && data.links.length > 0) {
+      try {
+        const links = typeof data.links === 'string' ? JSON.parse(data.links) : data.links;
+        links.forEach(link => {
+          if (link.href && link.label) {
+            const a = document.createElement('a');
+            a.href = link.href;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.className = 'link-btn';
+            a.textContent = link.label;
+            modalLinks.appendChild(a);
+          }
+        });
+      } catch (e) {
+        console.error('Error parsing links:', e);
+      }
+    }
+
+    // Show modal popup
+    modalBackdrop.classList.add('active');
+    modalBackdrop.setAttribute('aria-hidden', 'false');
+    modalBackdrop.setAttribute('aria-modal', 'true');
+    document.body.style.overflow = 'hidden';
+
+    // Focus close button for accessibility
+    modalClose.focus();
+  }
+
+  // Close modal popup
+  function closeModal() {
+    modalBackdrop.classList.remove('active');
+    modalBackdrop.setAttribute('aria-hidden', 'true');
+    modalBackdrop.setAttribute('aria-modal', 'false');
+    document.body.style.overflow = '';
+  }
+
+  // Card click handlers - Open popup when card is clicked
+  projectCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Don't open modal for upcoming projects
+      if (card.classList.contains('upcoming')) {
+        return;
+      }
+
+      // Get project data from the hidden data element
+      const dataEl = card.querySelector('.project-data');
+      if (dataEl) {
+        try {
+          const data = JSON.parse(dataEl.textContent);
+          openModal(data);
+        } catch (e) {
+          console.error('Error parsing project data:', e);
+        }
+      }
+    });
+
+    // Keyboard accessibility - Enter or Space to open
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.click();
+      }
+    });
+  });
+
+  // Close modal handlers
+  // Click X button to close
+  modalClose.addEventListener('click', closeModal);
+  
+  // Click outside modal (on backdrop) to close
+  modalBackdrop.addEventListener('click', (e) => {
+    if (e.target === modalBackdrop) {
+      closeModal();
+    }
+  });
+
+  // Press Escape key to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalBackdrop.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
+  // Initialize
+  filterProjects();
+})();
 </script>
