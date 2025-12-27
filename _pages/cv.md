@@ -187,6 +187,8 @@ Delivered tutorials, mentored students, and supported simulation and design-base
 
 <h2>Honors and Awards</h2>
 <ul>
+  <li><strong> ITE Toronto Project of the Year Award, 2025</strong> <br>Recognized for the Transit Headway Management Tool developed in collaboration with Toronto Transit Commission (TTC).  </li>
+   <!-- <a href="https://www.linkedin.com/posts/itetoronto_ttc-itetoronto-transportation-activity-7409620649620496384-gh2R?utm_source=share&utm_medium=member_desktop&rcm=ACoAABTHrvgBk17mK_BgkAwln-q4XYMZo5fgSJw" target="_blank" rel="noopener noreferrer">Learn more</a> -->
   <li><strong> Women in Transportation (WTS) Canadian Education Foundation, 2025</strong> <br>Accessible Communities Scholarship (Sponsered by Left Turn Right Turn) </li>
   <li><strong> Semi-Finalist, Innovative Applications in Analytics Award (IAAA), INFORMS- 2025</strong> <br>Recognized for developing an advanced analytics-driven solution integrating deep learning and optimization modeling. </li>
   <li><strong> Finalist, TRB Transit Data Challenge: Innovative Analytical Tools to Improve Public Transit- 2024</strong> </li>
