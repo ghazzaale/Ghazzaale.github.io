@@ -773,7 +773,7 @@ html {
 <div class="portfolio-container">
   <!-- Hero Section -->
   <div class="portfolio-hero">
-    <h1>🚀 Selected Interactive Tools Portfolio</h1>
+    <h1>🚀 Selected Interactive Tools PortfolioXX</h1>
     <p class="portfolio-intro">
       Here you'll find a collection of projects that translate research into practice. These tools bring together data science, predictive modeling, optimization, and design to tackle real-world challenges in transportation, mobility, and urban systems. Explore by category using the filters, and open any card to dive deeper into demos, papers, and additional resources.
     </p>
@@ -1468,13 +1468,15 @@ html {
 
   // Function to extract year from card
   function getCardYear(card) {
-    const yearRole = card.querySelector('.card-year-role')?.textContent || '';
+    const yearRoleEl = card.querySelector('.card-year-role');
+    const yearRole = yearRoleEl ? yearRoleEl.textContent : '';
     const yearMatch = yearRole.match(/(\d{4})/);
     if (yearMatch) {
       return parseInt(yearMatch[1], 10);
     }
     // Fallback: try to get from project-data
-    const projectData = card.querySelector('.project-data')?.textContent?.trim();
+    const projectDataEl = card.querySelector('.project-data');
+    const projectData = projectDataEl && projectDataEl.textContent ? projectDataEl.textContent.trim() : '';
     if (projectData) {
       try {
         const data = JSON.parse(projectData);
@@ -1494,7 +1496,8 @@ html {
   
   // Store original positions on page load
   projectCards.forEach(card => {
-    const category = card.closest('.portfolio-grid')?.dataset.category || 'other';
+    const categoryGrid = card.closest('.portfolio-grid');
+    const category = (categoryGrid && categoryGrid.dataset.category) || 'other';
     if (!originalCardPositions.has(category)) {
       originalCardPositions.set(category, []);
     }
@@ -1670,8 +1673,10 @@ html {
     if (currentSearch) {
       currentCards.forEach(card => {
         const tags = (card.dataset.tags || '').toLowerCase();
-        const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
-        const tagsText = card.querySelector('.card-tags')?.textContent.toLowerCase() || '';
+        const titleEl = card.querySelector('.card-title');
+        const title = titleEl ? titleEl.textContent.toLowerCase() : '';
+        const tagsTextEl = card.querySelector('.card-tags');
+        const tagsText = tagsTextEl ? tagsTextEl.textContent.toLowerCase() : '';
         
         const matchesSearch = title.includes(currentSearch) || 
           tags.includes(currentSearch) || 
@@ -1685,8 +1690,8 @@ html {
     
     // Highlight section if filter is selected (not "all")
     if (currentFilter !== 'all' && sectionIdMap[currentFilter]) {
-      const sectionTitle = document.getElementById(sectionIdMap[currentFilter]);
-      const sectionGrid = sectionTitle?.nextElementSibling;
+    const sectionTitle = document.getElementById(sectionIdMap[currentFilter]);
+    const sectionGrid = sectionTitle ? sectionTitle.nextElementSibling : null;
       
       if (sectionTitle) {
         sectionTitle.classList.add('active-section');
