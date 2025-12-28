@@ -1423,36 +1423,48 @@ html {
 </div>
 
 <script>
-// Portfolio page JavaScript
+// Portfolio page JavaScript - Wait for DOM to be ready
 (function() {
   'use strict';
   
-  // Validate script is loading
-  if (typeof console !== 'undefined') {
-    console.log('Portfolio script loading...');
-  }
+  // Function to initialize portfolio functionality
+  function initPortfolio() {
+    // Validate script is loading
+    if (typeof console !== 'undefined') {
+      console.log('Portfolio script initializing...');
+    }
 
-  // DOM Elements
-  const searchInput = document.getElementById('searchInput');
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
-  const modalBackdrop = document.getElementById('modalBackdrop');
-  const modalImg = document.getElementById('modalImg');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalSubtitle = document.getElementById('modalSubtitle');
-  const modalDescription = document.getElementById('modalDescription');
-  const modalLinks = document.getElementById('modalLinks');
-  const modalClose = document.getElementById('modalClose');
-  const emptyState = document.getElementById('emptyState');
+    // DOM Elements - Query inside function to ensure DOM is ready
+    const searchInput = document.getElementById('searchInput');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    const modalBackdrop = document.getElementById('modalBackdrop');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalSubtitle = document.getElementById('modalSubtitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalLinks = document.getElementById('modalLinks');
+    const modalClose = document.getElementById('modalClose');
+    const emptyState = document.getElementById('emptyState');
+    
+    // Validate critical elements exist
+    if (!modalBackdrop || !modalClose) {
+      console.error('Portfolio: Required modal elements not found');
+      return;
+    }
+    
+    if (projectCards.length === 0) {
+      console.warn('Portfolio: No project cards found');
+    }
 
-  // Move modal to body for proper viewport centering
-  if (modalBackdrop && modalBackdrop.parentNode !== document.body) {
-    document.body.appendChild(modalBackdrop);
-  }
+    // Move modal to body for proper viewport centering
+    if (modalBackdrop && modalBackdrop.parentNode !== document.body) {
+      document.body.appendChild(modalBackdrop);
+    }
 
-  // State
-  let currentFilter = 'all';
-  let currentSearch = '';
+    // State
+    let currentFilter = 'all';
+    let currentSearch = '';
 
   // Function to extract year from card
   function getCardYear(card) {
@@ -1817,13 +1829,20 @@ html {
     document.body.style.overflow = '';
   }
 
-  // Card click handlers - Use event delegation so it works even when cards are moved
-  const portfolioContainer = document.querySelector('.portfolio-container');
-  if (portfolioContainer) {
+    // Card click handlers - Use event delegation so it works even when cards are moved
+    const portfolioContainer = document.querySelector('.portfolio-container');
+    if (!portfolioContainer) {
+      console.error('Portfolio: .portfolio-container not found');
+      return;
+    }
+    
+    console.log('Portfolio: Setting up event delegation on container');
     portfolioContainer.addEventListener('click', (e) => {
       // Find the closest project card
       const card = e.target.closest('.project-card');
       if (!card) return;
+      
+      console.log('Portfolio: Card clicked', card);
       
       // Don't open modal for upcoming projects
       if (card.classList.contains('upcoming')) {
@@ -1840,10 +1859,13 @@ html {
             return;
           }
           const data = JSON.parse(jsonText);
+          console.log('Portfolio: Opening modal with data', data.title);
           openModal(data);
         } catch (e) {
           console.error('Error parsing project data:', e, 'Data:', dataEl.textContent.substring(0, 100));
         }
+      } else {
+        console.error('Portfolio: No project-data element found in card');
       }
     });
     
@@ -1857,38 +1879,46 @@ html {
         card.click();
       }
     });
+    
+    // Set attributes for keyboard accessibility
+    projectCards.forEach(card => {
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'button');
+    });
+
+    // Close modal handlers
+    // Click X button to close
+    modalClose.addEventListener('click', closeModal);
+    
+    // Click outside modal (on backdrop) to close
+    modalBackdrop.addEventListener('click', (e) => {
+      if (e.target === modalBackdrop) {
+        closeModal();
+      }
+    });
+
+    // Press Escape key to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalBackdrop.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    // Initialize
+    filterProjects();
+    
+    // Validate script loaded successfully
+    if (typeof console !== 'undefined') {
+      console.log('Portfolio script loaded successfully');
+    }
   }
   
-  // Set attributes for keyboard accessibility
-  projectCards.forEach(card => {
-    card.setAttribute('tabindex', '0');
-    card.setAttribute('role', 'button');
-  });
-
-  // Close modal handlers
-  // Click X button to close
-  modalClose.addEventListener('click', closeModal);
-  
-  // Click outside modal (on backdrop) to close
-  modalBackdrop.addEventListener('click', (e) => {
-    if (e.target === modalBackdrop) {
-      closeModal();
-    }
-  });
-
-  // Press Escape key to close
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalBackdrop.classList.contains('active')) {
-      closeModal();
-    }
-  });
-
-  // Initialize
-  filterProjects();
-  
-  // Validate script loaded successfully
-  if (typeof console !== 'undefined') {
-    console.log('Portfolio script loaded successfully');
+  // Wait for DOM to be ready before initializing
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPortfolio);
+  } else {
+    // DOM is already ready
+    initPortfolio();
   }
 })();
 </script>
