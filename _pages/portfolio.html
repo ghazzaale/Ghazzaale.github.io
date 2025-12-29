@@ -285,7 +285,7 @@ html.modal-open {
 .project-card.highlighted {
   border-color: var(--primary);
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-  transform: translateY(-2px);
+    transform: translateY(-2px);
 }
 
 /* Active section grid highlighting */
@@ -394,6 +394,54 @@ html.modal-open {
   line-height: 1.4;
   margin-bottom: var(--spacing-md);
   flex: 1;
+}
+
+/* Learn More Button */
+.card-learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin-top: auto;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  width: fit-content;
+}
+
+.card-learn-more:hover,
+.card-learn-more:focus {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-learn-more::after {
+  content: "→";
+  transition: transform var(--transition-base);
+  font-size: 0.875rem;
+}
+
+.card-learn-more:hover::after,
+.card-learn-more:focus::after {
+  transform: translateX(2px);
+}
+
+.project-card.upcoming .card-learn-more {
+  background: var(--text-tertiary);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.project-card.upcoming .card-learn-more:hover {
+  transform: none;
+  box-shadow: none;
 }
 
 /* Status Badge */
@@ -523,7 +571,7 @@ html.modal-open {
   }
   
   .modal-backdrop {
-    padding: 20px;
+    padding: 20px;  
   }
   
   .modal-body,
@@ -774,7 +822,7 @@ html {
   <!-- Hero Section -->
   <div class="portfolio-hero">
     <h1>🚀 Selected Interactive Tools Portfolio</h1>
-    <p class="portfolio-intro">
+  <p class="portfolio-intro">
       Here you'll find a collection of projects that translate research into practice. These tools bring together data science, predictive modeling, optimization, and design to tackle real-world challenges in transportation, mobility, and urban systems. Explore by category using the filters, and open any card to dive deeper into demos, papers, and additional resources.
     </p>
   </div>
@@ -809,7 +857,7 @@ html {
     <article class="project-card" data-tags="ridership prediction station planning electrification transit integration optimization">
       <div class="card-image-wrapper">
         <img src="/images/bikeshare.png" alt="Bikeshare Pro preview" loading="lazy">
-      </div>
+        </div>
       <div class="card-content">
         <div class="card-header">
           <h3 class="card-title">Bikeshare Pro 🏆</h3>
@@ -818,6 +866,7 @@ html {
           </div>
         </div>
         <p class="card-tags">Ridership prediction, Station planning, Electrification, Transit integration</p>
+        <button class="card-learn-more" aria-label="Learn more about Bikeshare Pro">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -840,7 +889,7 @@ html {
     <article class="project-card" data-tags="optimization relocation tsp real-time api">
       <div class="card-image-wrapper">
         <img src="/images/relocation.png" alt="Real-Time Bike-Share Relocation Optimization preview" loading="lazy">
-      </div>
+        </div>
       <div class="card-content">
         <div class="card-header">
           <h3 class="card-title">Real-Time Bike-Share Relocation Optimization</h3>
@@ -849,6 +898,7 @@ html {
           </div>
         </div>
         <p class="card-tags">Optimization for full and partial bike relocation</p>
+        <button class="card-learn-more" aria-label="Learn more about Real-Time Bike-Share Relocation Optimization">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -868,7 +918,7 @@ html {
     <article class="project-card" data-tags="prediction transit integration weather demand forecasting">
       <div class="card-image-wrapper">
         <img src="/images/scooter.png" alt="E-Scooter Planner preview" loading="lazy">
-      </div>
+        </div>
       <div class="card-content">
         <div class="card-header">
           <h3 class="card-title">E-Scooter Planner</h3>
@@ -877,6 +927,7 @@ html {
           </div>
         </div>
         <p class="card-tags">Pick-up and drop-off prediction with transit integration</p>
+        <button class="card-learn-more" aria-label="Learn more about E-Scooter Planner">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -897,7 +948,7 @@ html {
     <article class="project-card" data-tags="routing multimodal kpi ghg calories transfers">
       <div class="card-image-wrapper">
         <img src="/images/multimodal.png" alt="Multimodal Trip Planner preview" loading="lazy">
-      </div>
+        </div>
       <div class="card-content">
         <div class="card-header">
           <h3 class="card-title">Multimodal Trip Planner</h3>
@@ -906,6 +957,7 @@ html {
           </div>
         </div>
         <p class="card-tags">Routing with KPIs: GHG, calories, transfers</p>
+        <button class="card-learn-more" aria-label="Learn more about Multimodal Trip Planner">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -925,7 +977,7 @@ html {
     <article class="project-card" data-tags="llm supply demand analysis marketplace">
       <div class="card-image-wrapper">
         <img src="/images/ridealike.png" alt="Peer-to-Peer Ridesharing preview" loading="lazy">
-      </div>
+        </div>
       <div class="card-content">
         <div class="card-header">
           <h3 class="card-title">Peer-to-Peer Ridesharing</h3>
@@ -934,6 +986,7 @@ html {
           </div>
         </div>
         <p class="card-tags">Supply and demand analysis using LLMs</p>
+        <button class="card-learn-more" aria-label="Learn more about Peer-to-Peer Ridesharing">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -957,14 +1010,15 @@ html {
       <div class="card-content">
         <div class="card-header">
           <h3 class="card-title">
-            Bike Lane Planning
+        Bike Lane Planning
             <span class="status-badge">Coming soon</span>
           </h3>
           <div class="card-meta">
             <span class="card-year-role">2025 · Lead R&D</span>
-          </div>
-        </div>
+      </div>
+    </div>
         <p class="card-tags">Corridor prioritization · equity and safety overlays</p>
+        <button class="card-learn-more" aria-label="Learn more about Bike Lane Planning">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -976,7 +1030,7 @@ html {
           "links": []
         }
       </div>
-    </article>
+</article>
   </div>
 
   <!-- Electrification Section -->
@@ -986,7 +1040,7 @@ html {
     <article class="project-card" data-tags="ev charging demand forecasting siting">
       <div class="card-image-wrapper">
         <img src="/images/evpro.png" alt="EV Charger Pro preview" loading="lazy">
-      </div>
+        </div>
       <div class="card-content">
         <div class="card-header">
           <h3 class="card-title">EV Charger Pro</h3>
@@ -995,6 +1049,7 @@ html {
           </div>
         </div>
         <p class="card-tags">EV demand forecasting and charger siting</p>
+        <button class="card-learn-more" aria-label="Learn more about EV Charger Pro">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -1014,7 +1069,7 @@ html {
     <article class="project-card" data-tags="transit scheduling gtfs charging optimization">
       <div class="card-image-wrapper">
         <img src="/images/etransit.png" alt="Electric Transit Scheduling Pro preview" loading="lazy">
-      </div>
+        </div>
       <div class="card-content">
         <div class="card-header">
           <h3 class="card-title">Electric Transit Scheduling Pro</h3>
@@ -1023,6 +1078,7 @@ html {
           </div>
         </div>
         <p class="card-tags">GTFS-based in-route charging optimization</p>
+        <button class="card-learn-more" aria-label="Learn more about Electric Transit Scheduling Pro">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -1043,7 +1099,7 @@ html {
     <article class="project-card" data-tags="depot charging optimization webassembly cost minimization">
       <div class="card-image-wrapper">
         <img src="/images/schoolbus.png" alt="Charging Optimization for School Buses preview" loading="lazy">
-      </div>
+        </div>
       <div class="card-content">
         <div class="card-header">
           <h3 class="card-title">Depot Charging Optimization</h3>
@@ -1052,6 +1108,7 @@ html {
           </div>
         </div>
         <p class="card-tags">Depot cost minimization and charging windows</p>
+        <button class="card-learn-more" aria-label="Learn more about Depot Charging Optimization">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -1072,11 +1129,11 @@ html {
   <!-- Emergency Management Section -->
   <h2 class="section-title" id="emergency-section">Emergency Management</h2>
   <div class="portfolio-grid" data-category="emergency">
-    <!-- ResponsePro -->
+ <!-- ResponsePro -->
     <article class="project-card" data-tags="fire station planning response analytics emergency services">
       <div class="card-image-wrapper">
         <img src="/images/responsepro.png" alt="ResponsePro preview" loading="lazy">
-      </div>
+        </div>
       <div class="card-content">
         <div class="card-header">
           <h3 class="card-title">ResponsePro</h3>
@@ -1085,6 +1142,7 @@ html {
           </div>
         </div>
         <p class="card-tags">Fire station planning and response analytics</p>
+        <button class="card-learn-more" aria-label="Learn more about ResponsePro">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -1100,11 +1158,11 @@ html {
       </div>
     </article>
 
-    <!-- Snow PlowingPro -->
+ <!-- Snow PlowingPro -->
     <article class="project-card" data-tags="arc routing winter maintenance optimization">
       <div class="card-image-wrapper">
         <img src="/images/snow.png" alt="Snow PlowingPro preview" loading="lazy">
-      </div>
+        </div>
       <div class="card-content">
         <div class="card-header">
           <h3 class="card-title">Snow PlowingPro</h3>
@@ -1113,6 +1171,7 @@ html {
           </div>
         </div>
         <p class="card-tags">Arc-routing for winter maintenance</p>
+        <button class="card-learn-more" aria-label="Learn more about Snow PlowingPro">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -1141,6 +1200,7 @@ html {
           </div>
         </div>
         <p class="card-tags">Real-time operational tool for monitoring, analysis, and decision-making in winter maintenance</p>
+        <button class="card-learn-more" aria-label="Learn more about Real-time Winter Maintenance Monitoring">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -1155,16 +1215,16 @@ html {
         }
       </div>
     </article>
-  </div>
+    </div>
 
   <!-- Transit Planning Section -->
   <h2 class="section-title" id="transit-section">Transit Planning</h2>
   <div class="portfolio-grid" data-category="transit">
-    <!-- Transit PlanningPro -->
+     <!-- Transit PlanningPro -->
     <article class="project-card" data-tags="gtfs network design congestion kpi">
       <div class="card-image-wrapper">
         <img src="/images/transitplanner.png" alt="Transit PlanningPro preview" loading="lazy">
-      </div>
+        </div>
       <div class="card-content">
         <div class="card-header">
           <h3 class="card-title">Transit PlanningPro</h3>
@@ -1173,6 +1233,7 @@ html {
           </div>
         </div>
         <p class="card-tags">Network edits with KPIs from demand to congestion</p>
+        <button class="card-learn-more" aria-label="Learn more about Transit PlanningPro">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -1199,9 +1260,10 @@ html {
           <h3 class="card-title">Transit Headway Management with AI - Supervisors Version</h3>
           <div class="card-meta">
             <span class="card-year-role">2025 · R&D Director</span>
-          </div>
+    </div>
         </div>
         <p class="card-tags">AI-powered headway management to reduce bus bunching and gapping</p>
+        <button class="card-learn-more" aria-label="Learn more about Transit Headway Management with AI - Supervisors Version">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -1231,6 +1293,7 @@ html {
           </div>
         </div>
         <p class="card-tags">AI-powered bunching detection, alleviation, and impact forecasting for high-frequency corridors</p>
+        <button class="card-learn-more" aria-label="Learn more about Transit Headway Management with AI - Managerial Version">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -1244,8 +1307,8 @@ html {
           ]
         }
       </div>
-    </article>
-  </div>
+</article>
+    </div>
 
   <!-- Other Tools Section -->
   <h2 class="section-title" id="other-section">Other Tools</h2>
@@ -1263,6 +1326,7 @@ html {
           </div>
         </div>
         <p class="card-tags">Real estate decision support combining open data, spatial analysis, and user-defined priorities</p>
+        <button class="card-learn-more" aria-label="Learn more about HouseScout">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -1282,7 +1346,7 @@ html {
     <article class="project-card" data-tags="pricing elasticity curbside management">
       <div class="card-image-wrapper">
         <img src="/images/parking.png" alt="Parking Pricing Tool preview" loading="lazy">
-      </div>
+        </div>
       <div class="card-content">
         <div class="card-header">
           <h3 class="card-title">Parking Pricing Tool</h3>
@@ -1291,6 +1355,7 @@ html {
           </div>
         </div>
         <p class="card-tags">Adaptive pricing strategies for curbside management</p>
+        <button class="card-learn-more" aria-label="Learn more about CurbPro">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -1310,7 +1375,7 @@ html {
     <article class="project-card" data-tags="safety ase speed enforcement allocation">
       <div class="card-image-wrapper">
         <img src="/images/ase.png" alt="Vision Zero Tool preview" loading="lazy">
-      </div>
+        </div>
       <div class="card-content">
         <div class="card-header">
           <h3 class="card-title">Vision Zero Tool</h3>
@@ -1319,6 +1384,7 @@ html {
           </div>
         </div>
         <p class="card-tags">Automated Speed Enforcement camera allocation and cost analysis</p>
+        <button class="card-learn-more" aria-label="Learn more about ASEPro">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -1334,19 +1400,20 @@ html {
       </div>
     </article>
 
-    <!-- TSP Game -->
+   <!-- TSP Game -->
     <article class="project-card" data-tags="education tsp gamification np-hard">
       <div class="card-image-wrapper">
         <img src="/images/tsp.png" alt="TSP Game preview" loading="lazy">
-      </div>
+        </div>
       <div class="card-content">
         <div class="card-header">
           <h3 class="card-title">TSP Game</h3>
           <div class="card-meta">
             <span class="card-year-role">2024 · Product Developer</span>
-          </div>
-        </div>
+      </div>
+    </div>
         <p class="card-tags">Explore and Play the Travel Salesman Problem (TSP)</p>
+        <button class="card-learn-more" aria-label="Learn more about TSP Playground">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -1360,7 +1427,7 @@ html {
       </div>
     </article>
 
-    <!-- Traffic Assignment Tool (Upcoming) -->
+<!-- Traffic Assignment Tool (Upcoming) -->
     <article class="project-card upcoming" data-tags="traffic assignment construction planning network">
       <div class="card-image-wrapper">
         <div class="placeholder">Preview coming soon</div>
@@ -1368,14 +1435,15 @@ html {
       <div class="card-content">
         <div class="card-header">
           <h3 class="card-title">
-            Traffic Assignment Tool
+        Traffic Assignment Tool
             <span class="status-badge">Coming soon</span>
           </h3>
           <div class="card-meta">
             <span class="card-year-role">2025 · R&D Director</span>
-          </div>
-        </div>
+      </div>
+    </div>
         <p class="card-tags">Road network generation · construction-aware planning</p>
+        <button class="card-learn-more" aria-label="Learn more about Road Network Generator">Learn more</button>
       </div>
       <div class="project-data" style="display: none;">
         {
@@ -1387,7 +1455,7 @@ html {
           "links": []
         }
       </div>
-    </article>
+</article>
   </div>
 
   <!-- Empty State (hidden by default) -->
